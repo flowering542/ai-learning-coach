@@ -1,0 +1,31 @@
+{
+  "name": "ai-learning-coach",
+  "version": "0.1.0",
+  "description": "AI 学习教练平台 - 个性化学习体验",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "openclaw dev",
+    "build": "openclaw build",
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
+    "logs": "pm2 logs",
+    "test": "jest"
+  },
+  "dependencies": {
+    "openclaw": "^2026.2.0",
+    "sqlite3": "^5.1.6",
+    "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "keywords": [
+    "ai",
+    "education",
+    "coach",
+    "qq-bot",
+    "learning"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
