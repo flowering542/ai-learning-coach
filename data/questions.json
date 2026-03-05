@@ -4,7 +4,7 @@
     "description": "临床输血技术（中级）考试真题及解析，代码：390",
     "category": "医学职称考试",
     "examCode": "390",
-    "totalQuestions": 25,
+    "totalQuestions": 50,
     "lastUpdated": "2026-03-05",
     "source": "考试宝典等公开资料整理"
   },
@@ -745,6 +745,706 @@
       "correctAnswer": "C",
       "explanation": "总误差反映了方法的准确度与精密度，是评价检验方法学最有价值的指标。",
       "source": "考试宝典真题"
+    },
+    {
+      "id": "q026",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "easy",
+      "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+      "options": [
+        {
+          "id": "A",
+          "text": "A抗原"
+        },
+        {
+          "id": "B",
+          "text": "B抗原"
+        },
+        {
+          "id": "C",
+          "text": "A和B抗原"
+        },
+        {
+          "id": "D",
+          "text": "无抗原"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A型血红细胞表面有A抗原，血清中有抗B抗体。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q027",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "ABO血型鉴定中，正定型是指",
+      "options": [
+        {
+          "id": "A",
+          "text": "用已知抗体检测红细胞抗原"
+        },
+        {
+          "id": "B",
+          "text": "用已知抗原检测血清抗体"
+        },
+        {
+          "id": "C",
+          "text": "交叉配血试验"
+        },
+        {
+          "id": "D",
+          "text": "抗体筛查"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "正定型（forward typing）是用已知抗体（抗A、抗B）检测红细胞表面的抗原。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q028",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "ABO血型鉴定中，反定型是指",
+      "options": [
+        {
+          "id": "A",
+          "text": "用已知抗体检测红细胞抗原"
+        },
+        {
+          "id": "B",
+          "text": "用已知抗原（A细胞、B细胞）检测血清中的抗体"
+        },
+        {
+          "id": "C",
+          "text": "直接抗人球蛋白试验"
+        },
+        {
+          "id": "D",
+          "text": "间接抗人球蛋白试验"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "反定型（reverse typing）是用已知抗原（A型红细胞、B型红细胞）检测血清中的抗体。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q029",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "easy",
+      "content": "Rh血型系统中，临床意义最大的抗原是",
+      "options": [
+        {
+          "id": "A",
+          "text": "C抗原"
+        },
+        {
+          "id": "B",
+          "text": "c抗原"
+        },
+        {
+          "id": "C",
+          "text": "D抗原"
+        },
+        {
+          "id": "D",
+          "text": "E抗原"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "D抗原是Rh血型系统中临床意义最大的抗原，Rh阳性/阴性即指D抗原的有无。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q030",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "Rh阴性患者首次接受Rh阳性血液后，可能产生",
+      "options": [
+        {
+          "id": "A",
+          "text": "抗D抗体"
+        },
+        {
+          "id": "B",
+          "text": "抗A抗体"
+        },
+        {
+          "id": "C",
+          "text": "抗B抗体"
+        },
+        {
+          "id": "D",
+          "text": "不会产生抗体"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Rh阴性患者首次接受Rh阳性血液后，可能产生抗D抗体，再次输注Rh阳性血液时会发生溶血反应。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q031",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "悬浮红细胞的主要适应证是",
+      "options": [
+        {
+          "id": "A",
+          "text": "补充血容量"
+        },
+        {
+          "id": "B",
+          "text": "提高携氧能力"
+        },
+        {
+          "id": "C",
+          "text": "补充凝血因子"
+        },
+        {
+          "id": "D",
+          "text": "补充血小板"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "悬浮红细胞主要用于提高携氧能力，适用于各种贫血患者。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q032",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "新鲜冰冻血浆(FFP)的主要适应证是",
+      "options": [
+        {
+          "id": "A",
+          "text": "补充血容量"
+        },
+        {
+          "id": "B",
+          "text": "补充凝血因子"
+        },
+        {
+          "id": "C",
+          "text": "提高血红蛋白"
+        },
+        {
+          "id": "D",
+          "text": "补充血小板"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "FFP含有全部凝血因子，主要用于补充凝血因子，如凝血因子缺乏、大量输血后等。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q033",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "机采血小板与手工分离血小板相比，优点是",
+      "options": [
+        {
+          "id": "A",
+          "text": "价格便宜"
+        },
+        {
+          "id": "B",
+          "text": "血小板含量高，白细胞污染少"
+        },
+        {
+          "id": "C",
+          "text": "保存时间长"
+        },
+        {
+          "id": "D",
+          "text": "不需要交叉配血"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "机采血小板血小板含量高（≥2.5×10¹¹），白细胞污染少，输血反应少。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q034",
+      "subjectId": "transfusion_reaction",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "输血后最常见的非溶血性发热反应的原因是",
+      "options": [
+        {
+          "id": "A",
+          "text": "细菌污染"
+        },
+        {
+          "id": "B",
+          "text": "白细胞抗体"
+        },
+        {
+          "id": "C",
+          "text": "血浆蛋白过敏"
+        },
+        {
+          "id": "D",
+          "text": "血型不合"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "非溶血性发热反应最常见的原因是患者体内白细胞抗体与供血者白细胞发生反应。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q035",
+      "subjectId": "transfusion_reaction",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "急性溶血性输血反应最常见的原因是",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rh血型不合"
+        },
+        {
+          "id": "B",
+          "text": "ABO血型不合"
+        },
+        {
+          "id": "C",
+          "text": "血小板血型不合"
+        },
+        {
+          "id": "D",
+          "text": "血浆蛋白过敏"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ABO血型不合是急性溶血性输血反应最常见的原因，由于天然抗体引起，病情凶险。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q036",
+      "subjectId": "transfusion_reaction",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "输血相关急性肺损伤(TRALI)的主要临床表现是",
+      "options": [
+        {
+          "id": "A",
+          "text": "发热、寒战"
+        },
+        {
+          "id": "B",
+          "text": "呼吸困难、低氧血症"
+        },
+        {
+          "id": "C",
+          "text": "血红蛋白尿"
+        },
+        {
+          "id": "D",
+          "text": "皮肤瘙痒、荨麻疹"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "TRALI主要表现为输血后6小时内出现急性呼吸困难、低氧血症、非心源性肺水肿。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q037",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "CPDA-1保存液保存的全血有效期是",
+      "options": [
+        {
+          "id": "A",
+          "text": "21天"
+        },
+        {
+          "id": "B",
+          "text": "28天"
+        },
+        {
+          "id": "C",
+          "text": "35天"
+        },
+        {
+          "id": "D",
+          "text": "42天"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "CPDA-1保存液保存的全血有效期为35天，ACD为21天，CPD为28天。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q038",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "红细胞添加SAGM保存液后，保存期可延长至",
+      "options": [
+        {
+          "id": "A",
+          "text": "28天"
+        },
+        {
+          "id": "B",
+          "text": "35天"
+        },
+        {
+          "id": "C",
+          "text": "42天"
+        },
+        {
+          "id": "D",
+          "text": "56天"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "SAGM（盐水-腺嘌呤-葡萄糖-甘露醇）保存液可使红细胞保存期延长至42天。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q039",
+      "subjectId": "immunohematology",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "新生儿溶血病最常见的血型系统是",
+      "options": [
+        {
+          "id": "A",
+          "text": "ABO血型系统"
+        },
+        {
+          "id": "B",
+          "text": "Rh血型系统"
+        },
+        {
+          "id": "C",
+          "text": "MN血型系统"
+        },
+        {
+          "id": "D",
+          "text": "Kell血型系统"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ABO新生儿溶血病最常见，虽然Rh溶血病病情更重，但ABO不合妊娠发生率更高。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q040",
+      "subjectId": "immunohematology",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "Rh新生儿溶血病很少发生在第一胎的原因是",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rh抗体是天然抗体"
+        },
+        {
+          "id": "B",
+          "text": "Rh抗体需免疫刺激产生"
+        },
+        {
+          "id": "C",
+          "text": "第一胎胎儿Rh阴性"
+        },
+        {
+          "id": "D",
+          "text": "母体对Rh抗原耐受"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Rh抗体是免疫抗体，需要Rh阳性红细胞刺激才能产生，所以第一胎通常不受影响。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q041",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "交叉配血试验的主要目的是",
+      "options": [
+        {
+          "id": "A",
+          "text": "鉴定ABO血型"
+        },
+        {
+          "id": "B",
+          "text": "检测不规则抗体"
+        },
+        {
+          "id": "C",
+          "text": "验证供受者血液相容性"
+        },
+        {
+          "id": "D",
+          "text": "检测Rh血型"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "交叉配血试验是验证供受者血液相容性的最后检查，包括主侧和次侧配血。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q042",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "交叉配血主侧试验是指",
+      "options": [
+        {
+          "id": "A",
+          "text": "供血者红细胞+受血者血清"
+        },
+        {
+          "id": "B",
+          "text": "受血者红细胞+供血者血清"
+        },
+        {
+          "id": "C",
+          "text": "供血者血浆+受血者血浆"
+        },
+        {
+          "id": "D",
+          "text": "受血者全血+供血者全血"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "主侧配血是供血者红细胞与受血者血清混合，检测受血者血清中是否有针对供血者红细胞的抗体。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q043",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "抗人球蛋白试验(Coombs试验)用于检测",
+      "options": [
+        {
+          "id": "A",
+          "text": "ABO血型"
+        },
+        {
+          "id": "B",
+          "text": "Rh血型"
+        },
+        {
+          "id": "C",
+          "text": "不完全抗体"
+        },
+        {
+          "id": "D",
+          "text": "血小板抗体"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "抗人球蛋白试验用于检测不完全抗体（IgG类抗体），如Rh抗体。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q044",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "贮存式自体输血适用于",
+      "options": [
+        {
+          "id": "A",
+          "text": "急性大出血"
+        },
+        {
+          "id": "B",
+          "text": "择期手术患者"
+        },
+        {
+          "id": "C",
+          "text": "严重贫血患者"
+        },
+        {
+          "id": "D",
+          "text": "感染患者"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "贮存式自体输血适用于择期手术患者，术前采血保存，术中或术后回输。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q045",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "稀释式自体输血采血时机是",
+      "options": [
+        {
+          "id": "A",
+          "text": "术前1-2周"
+        },
+        {
+          "id": "B",
+          "text": "术前即刻"
+        },
+        {
+          "id": "C",
+          "text": "术中失血前"
+        },
+        {
+          "id": "D",
+          "text": "术后"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "稀释式自体输血是在麻醉后、手术失血前采集血液，同时补充晶体液或胶体液。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q046",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "根据《献血法》，我国实行的献血制度是",
+      "options": [
+        {
+          "id": "A",
+          "text": "有偿献血"
+        },
+        {
+          "id": "B",
+          "text": "义务献血"
+        },
+        {
+          "id": "C",
+          "text": "无偿献血"
+        },
+        {
+          "id": "D",
+          "text": "强制献血"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "《中华人民共和国献血法》规定我国实行无偿献血制度。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q047",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "血站对献血者每次采集血液量一般为",
+      "options": [
+        {
+          "id": "A",
+          "text": "100ml"
+        },
+        {
+          "id": "B",
+          "text": "200ml"
+        },
+        {
+          "id": "C",
+          "text": "300ml"
+        },
+        {
+          "id": "D",
+          "text": "400ml"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "血站对献血者每次采集血液量一般为200ml，最多不得超过400ml。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q048",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "血站对同一献血者两次采集间隔期不少于",
+      "options": [
+        {
+          "id": "A",
+          "text": "3个月"
+        },
+        {
+          "id": "B",
+          "text": "6个月"
+        },
+        {
+          "id": "C",
+          "text": "9个月"
+        },
+        {
+          "id": "D",
+          "text": "12个月"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "《献血法》规定，两次采集间隔期不少于6个月。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q049",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "血站必须对采集的血液进行哪些检测",
+      "options": [
+        {
+          "id": "A",
+          "text": "血型、血红蛋白"
+        },
+        {
+          "id": "B",
+          "text": "转氨酶、乙肝、丙肝、艾滋、梅毒"
+        },
+        {
+          "id": "C",
+          "text": "血常规、凝血功能"
+        },
+        {
+          "id": "D",
+          "text": "肝功能、肾功能"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "血站必须对血液进行ALT、HBsAg、抗-HCV、抗-HIV、梅毒等检测。",
+      "source": "基于考试大纲生成"
+    },
+    {
+      "id": "q050",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "输血前四项检测不包括",
+      "options": [
+        {
+          "id": "A",
+          "text": "乙肝表面抗原"
+        },
+        {
+          "id": "B",
+          "text": "丙肝抗体"
+        },
+        {
+          "id": "C",
+          "text": "巨细胞病毒抗体"
+        },
+        {
+          "id": "D",
+          "text": "艾滋病毒抗体"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "输血前四项检测包括乙肝、丙肝、艾滋、梅毒，不包括巨细胞病毒。",
+      "source": "基于考试大纲生成"
     }
   ]
 }
