@@ -53,8 +53,8 @@ function generateCode() {
 function recognizeIntent(message) {
     const trimmed = message.trim().toLowerCase();
     // 练习意图
-    if (/^(练习|做题|答题|来一题|开始练习|我要练习|继续|下一题|lx|zt|practice|start)$/.test(trimmed) ||
-        trimmed.includes('做道题') || trimmed.includes('来道题')) {
+    if (/^(练习|做题|答题|来一题|开始练习|我要练习|继续|继续答题|下一题|lx|zt|practice|start)$/.test(trimmed) ||
+        trimmed.includes('做道题') || trimmed.includes('来道题') || trimmed.includes('继续答')) {
         return '/练习';
     }
     // 错题意图
@@ -383,9 +383,43 @@ export async function coachTool(command, userId, platform = 'qq', adminIds = [])
         output += `🎯 正确率：${acc}%\n`;
         output += `🔥 连续打卡：${userData.streakDays || 1}天\n\n`;
         if (!isCorrect) {
-            output += '📝 错题已记录，发送 /错题 可复习\n\n';
+            output += '📝 错题已记录\n\n';
         }
-        output += '💡 发送 /练习 继续答题';
+        output += '💡 继续答题...\n\n';
+        // 自动出下一题
+        const bank = loadQuestionBank();
+        if (bank.questions.length > 0) {
+            const nextQuestion = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+            // 保存新题目
+            userData.currentQuestion = nextQuestion;
+            userData.lastActiveAt = new Date().toISOString();
+            saveUserData(userId, userData);
+            output += '━━━━━━━━━━━━━━━━━━━━\n';
+            output += '📝 下一题\n';
+            output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+            const subjectMap = {
+                'blood_basic': '血液学基础',
+                'clinical_transfusion': '临床输血',
+                'blood_quality': '血液质量',
+                'immunohematology': '免疫血液学',
+                'transfusion_reaction': '输血反应',
+                'component_therapy': '成分输血',
+                'apheresis': '单采技术'
+            };
+            const subjectName = subjectMap[nextQuestion.subjectId] || nextQuestion.subjectId || '医学检验';
+            const diffMap = { 'easy': '简单', 'medium': '中等', 'hard': '困难' };
+            const diffName = diffMap[nextQuestion.difficulty] || nextQuestion.difficulty || '中等';
+            output += `📚 ${subjectName}  |  ${diffName}\n\n`;
+            output += `${nextQuestion.content}\n\n`;
+            if (nextQuestion.options) {
+                output += '────────────────────\n';
+                nextQuestion.options.forEach((opt) => {
+                    output += `${opt.id}. ${opt.text}\n`;
+                });
+            }
+            output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+            output += '💡 请回复 A/B/C/D 选择答案';
+        }
         return { result: output };
     }
     // ========== 帮助 ==========
