@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "title": "输血技术中级职称考试题库",
+    "description": "临床输血技术（中级）考试真题及模拟题",
+    "category": "医学职称考试",
+    "totalQuestions": 0,
+    "lastUpdated": "2026-03-05"
+  },
+  "subjects": [
+    {
+      "id": "blood_basic",
+      "name": "血液学基础",
+      "description": "血液成分、血型系统、血液生理"
+    },
+    {
+      "id": "transfusion_theory",
+      "name": "输血理论知识",
+      "description": "输血原理、适应症、禁忌症"
+    },
+    {
+      "id": "blood_test",
+      "name": "输血前检测",
+      "description": "血型鉴定、交叉配血、抗体筛查"
+    },
+    {
+      "id": "clinical_transfusion",
+      "name": "临床输血",
+      "description": "成分输血、自体输血、特殊输血"
+    },
+    {
+      "id": "transfusion_reaction",
+      "name": "输血不良反应",
+      "description": "过敏反应、溶血反应、细菌污染"
+    },
+    {
+      "id": "blood_quality",
+      "name": "血液质量管理",
+      "description": "血液保存、质量控制、法律法规"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q001",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "ABO血型系统中，A型血的抗原是",
+      "options": [
+        { "id": "A", "text": "A抗原" },
+        { "id": "B", "text": "B抗原" },
+        { "id": "C", "text": "A和B抗原" },
+        { "id": "D", "text": "无抗原" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A型血的红细胞表面有A抗原，血清中有抗B抗体。",
+      "source": "模拟题"
+    },
+    {
+      "id": "q002",
+      "subjectId": "transfusion_theory",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "下列哪种情况最适合输注新鲜冰冻血浆(FFP)",
+      "options": [
+        { "id": "A", "text": "补充血容量" },
+        { "id": "B", "text": "补充凝血因子" },
+        { "id": "C", "text": "提高血浆蛋白" },
+        { "id": "D", "text": "补充营养" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "FFP主要用于补充凝血因子，如凝血因子缺乏、华法林过量等。",
+      "source": "模拟题"
+    },
+    {
+      "id": "q003",
+      "subjectId": "transfusion_reaction",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "急性溶血性输血反应最常见的原因是",
+      "options": [
+        { "id": "A", "text": "细菌污染" },
+        { "id": "B", "text": "ABO血型不合" },
+        { "id": "C", "text": "Rh血型不合" },
+        { "id": "D", "text": "过敏反应" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ABO血型不合是最常见的急性溶血反应原因，由于天然抗体引起。",
+      "source": "模拟题"
+    }
+  ]
+}
