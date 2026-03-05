@@ -1,0 +1,750 @@
+{
+  "metadata": {
+    "title": "输血技术中级职称考试真题库",
+    "description": "临床输血技术（中级）考试真题及解析，代码：390",
+    "category": "医学职称考试",
+    "examCode": "390",
+    "totalQuestions": 25,
+    "lastUpdated": "2026-03-05",
+    "source": "考试宝典等公开资料整理"
+  },
+  "subjects": [
+    {
+      "id": "blood_basic",
+      "name": "血液学基础",
+      "description": "血液成分、血型系统、血液生理"
+    },
+    {
+      "id": "transfusion_theory",
+      "name": "输血理论知识",
+      "description": "输血原理、适应症、禁忌症"
+    },
+    {
+      "id": "blood_test",
+      "name": "输血前检测",
+      "description": "血型鉴定、交叉配血、抗体筛查"
+    },
+    {
+      "id": "clinical_transfusion",
+      "name": "临床输血",
+      "description": "成分输血、自体输血、特殊输血"
+    },
+    {
+      "id": "transfusion_reaction",
+      "name": "输血不良反应",
+      "description": "过敏反应、溶血反应、细菌污染"
+    },
+    {
+      "id": "blood_quality",
+      "name": "血液质量管理",
+      "description": "血液保存、质量控制、法律法规"
+    },
+    {
+      "id": "immunohematology",
+      "name": "免疫血液学",
+      "description": "HLA系统、血小板血型、血清学"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q001",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "一般输注6U悬浮红细胞可以使血红蛋白提升多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "10g/L"
+        },
+        {
+          "id": "B",
+          "text": "20g/L"
+        },
+        {
+          "id": "C",
+          "text": "30g/L"
+        },
+        {
+          "id": "D",
+          "text": "40g/L"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "一般输注1U悬浮红细胞（约200ml）可提升血红蛋白5g/L左右，因此6U约提升30g/L。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q002",
+      "subjectId": "transfusion_reaction",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "治疗枸橼酸盐中毒的有效措施是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "补充钙剂"
+        },
+        {
+          "id": "B",
+          "text": "补充钾剂"
+        },
+        {
+          "id": "C",
+          "text": "补充钠剂"
+        },
+        {
+          "id": "D",
+          "text": "补充镁剂"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "枸橼酸盐中毒主要是因为枸橼酸与血钙结合导致低钙血症，治疗应补充钙剂（如葡萄糖酸钙）。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q003",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "Rh血型系统中不包括的抗原是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "D抗原"
+        },
+        {
+          "id": "B",
+          "text": "E抗原"
+        },
+        {
+          "id": "C",
+          "text": "A抗原"
+        },
+        {
+          "id": "D",
+          "text": "c抗原"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A抗原属于ABO血型系统，不是Rh血型系统的抗原。Rh系统主要包括D、C、c、E、e等抗原。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q004",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "突发事件时，边远地区无正式血站或中心血库，当地医疗机构应急采血抢救后几日内报告当地县以上人民政府行政主管部门？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3日内"
+        },
+        {
+          "id": "B",
+          "text": "5日内"
+        },
+        {
+          "id": "C",
+          "text": "7日内"
+        },
+        {
+          "id": "D",
+          "text": "10日内"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "根据《献血法》规定，应急采血后应在10日内向当地县级以上人民政府卫生行政部门报告。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q005",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "新生儿换血注意事项错误的是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "换血前应禁食4小时"
+        },
+        {
+          "id": "B",
+          "text": "换血过程中应监测生命体征"
+        },
+        {
+          "id": "C",
+          "text": "换血后不需要继续光疗"
+        },
+        {
+          "id": "D",
+          "text": "换血应在无菌条件下进行"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "新生儿换血后通常需要继续光疗，以进一步降低血清胆红素水平，防止反跳。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q006",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "easy",
+      "content": "保存血小板的恒温室的温度应为？",
+      "options": [
+        {
+          "id": "A",
+          "text": "2-6°C"
+        },
+        {
+          "id": "B",
+          "text": "10-15°C"
+        },
+        {
+          "id": "C",
+          "text": "20-24°C"
+        },
+        {
+          "id": "D",
+          "text": "37°C"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "血小板应在20-24°C振荡保存，2-6°C会导致血小板失活，37°C易滋生细菌。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q007",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "血清学中滴度资料最常用来表示其平均水平的指标应为？",
+      "options": [
+        {
+          "id": "A",
+          "text": "算术均数"
+        },
+        {
+          "id": "B",
+          "text": "几何均数"
+        },
+        {
+          "id": "C",
+          "text": "中位数"
+        },
+        {
+          "id": "D",
+          "text": "众数"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "滴度资料呈对数正态分布，应使用几何均数来表示平均水平。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q008",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "引起系统误差的原因哪项不是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "试剂不纯"
+        },
+        {
+          "id": "B",
+          "text": "仪器未校准"
+        },
+        {
+          "id": "C",
+          "text": "操作者个体差异"
+        },
+        {
+          "id": "D",
+          "text": "环境温度变化"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "操作者个体差异引起的是随机误差，不是系统误差。系统误差是由固定因素引起的。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q009",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "临床用血的包装、储存、运输，不符合国家规定的卫生标准和要求的，由县级以上地方人民政府卫生行政部门责令改正，给予何种处罚，可以并处一万元以下的罚款？",
+      "options": [
+        {
+          "id": "A",
+          "text": "警告"
+        },
+        {
+          "id": "B",
+          "text": "罚款"
+        },
+        {
+          "id": "C",
+          "text": "吊销许可证"
+        },
+        {
+          "id": "D",
+          "text": "行政拘留"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "根据《献血法》规定，临床用血不符合卫生标准的，给予警告，可以并处一万元以下罚款。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q010",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "以下不属于国家规定血站必检项目的是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "HBsAg"
+        },
+        {
+          "id": "B",
+          "text": "HCV抗体"
+        },
+        {
+          "id": "C",
+          "text": "HIV抗体"
+        },
+        {
+          "id": "D",
+          "text": "CMV抗体"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "CMV（巨细胞病毒）抗体检测不是血站必检项目。必检项目包括HBsAg、HCV抗体、HIV抗体、梅毒等。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q011",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "在实际工作中人们广泛应用什么来评价行动方针？",
+      "options": [
+        {
+          "id": "A",
+          "text": "收益率"
+        },
+        {
+          "id": "B",
+          "text": "效果"
+        },
+        {
+          "id": "C",
+          "text": "效率"
+        },
+        {
+          "id": "D",
+          "text": "效益"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "效益是评价行动方针最常用的指标，综合考虑了效果和成本。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q012",
+      "subjectId": "immunohematology",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "强直性脊柱炎与HLA哪个抗原相关？",
+      "options": [
+        {
+          "id": "A",
+          "text": "HLA-A2"
+        },
+        {
+          "id": "B",
+          "text": "HLA-B27"
+        },
+        {
+          "id": "C",
+          "text": "HLA-DR4"
+        },
+        {
+          "id": "D",
+          "text": "HLA-DQ2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "强直性脊柱炎与HLA-B27高度相关，约90%的患者携带HLA-B27抗原。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q013",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "冰冻甘油红细胞的回收率应该是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥60%"
+        },
+        {
+          "id": "B",
+          "text": "≥70%"
+        },
+        {
+          "id": "C",
+          "text": "≥80%"
+        },
+        {
+          "id": "D",
+          "text": "≥90%"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "冰冻甘油红细胞的回收率应≥80%，以保证输血效果和安全性。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q014",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "当[S]=5Km时，酶促反应速度v应该是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.5Vmax"
+        },
+        {
+          "id": "B",
+          "text": "0.83Vmax"
+        },
+        {
+          "id": "C",
+          "text": "0.91Vmax"
+        },
+        {
+          "id": "D",
+          "text": "Vmax"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "根据米氏方程v=Vmax[S]/(Km+[S])，当[S]=5Km时，v=5Vmax/6≈0.83Vmax。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q015",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "某患者血型正定型为O型，反定型为B型，唾液血型物质测定为阴性，此时患者的血型可以肯定为？",
+      "options": [
+        {
+          "id": "A",
+          "text": "O型"
+        },
+        {
+          "id": "B",
+          "text": "B型"
+        },
+        {
+          "id": "C",
+          "text": "非分泌型"
+        },
+        {
+          "id": "D",
+          "text": "孟买型"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "正定型O型、反定型B型，且唾液血型物质阴性，符合孟买型（Oh型）的特征。孟买型红细胞上缺乏H抗原，正定型表现为O型，但血清中有抗H抗体，与O型红细胞反应表现为反定型异常。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q016",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "关于顺式作用元件描述错误的是",
+      "options": [
+        {
+          "id": "A",
+          "text": "是DNA序列"
+        },
+        {
+          "id": "B",
+          "text": "位于基因旁侧"
+        },
+        {
+          "id": "C",
+          "text": "编码蛋白质"
+        },
+        {
+          "id": "D",
+          "text": "调节基因表达"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "顺式作用元件是DNA序列，不编码蛋白质，而是通过结合转录因子来调节基因表达。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q017",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "急性白血病患者，血型鉴定正定型O型，反定型A型，该患者血型可能是",
+      "options": [
+        {
+          "id": "A",
+          "text": "A型"
+        },
+        {
+          "id": "B",
+          "text": "O型"
+        },
+        {
+          "id": "C",
+          "text": "类B抗原"
+        },
+        {
+          "id": "D",
+          "text": "孟买型"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "急性白血病患者红细胞上可能出现类B抗原，导致正定型为O型，反定型为A型的现象。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q018",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "关于孕妇血液生理，下列说法不正确的是",
+      "options": [
+        {
+          "id": "A",
+          "text": "血容量增加"
+        },
+        {
+          "id": "B",
+          "text": "血红蛋白浓度降低"
+        },
+        {
+          "id": "C",
+          "text": "凝血因子减少"
+        },
+        {
+          "id": "D",
+          "text": "血沉加快"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "孕妇血液处于高凝状态，多数凝血因子增加而非减少。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q019",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "病毒感染的快速诊断不包括以下哪项",
+      "options": [
+        {
+          "id": "A",
+          "text": "病毒分离培养"
+        },
+        {
+          "id": "B",
+          "text": "抗原检测"
+        },
+        {
+          "id": "C",
+          "text": "核酸检测"
+        },
+        {
+          "id": "D",
+          "text": "抗体检测"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "病毒分离培养需要较长时间，不属于快速诊断方法。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q020",
+      "subjectId": "blood_basic",
+      "type": "single",
+      "difficulty": "easy",
+      "content": "佝偻病与以下哪种维生素的缺乏有关",
+      "options": [
+        {
+          "id": "A",
+          "text": "维生素A"
+        },
+        {
+          "id": "B",
+          "text": "维生素D"
+        },
+        {
+          "id": "C",
+          "text": "维生素E"
+        },
+        {
+          "id": "D",
+          "text": "维生素K"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "佝偻病是由于维生素D缺乏导致钙磷代谢紊乱引起的骨骼疾病。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q021",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "洗涤红细胞血浆蛋白清除率的标准",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥80%"
+        },
+        {
+          "id": "B",
+          "text": "≥90%"
+        },
+        {
+          "id": "C",
+          "text": "≥95%"
+        },
+        {
+          "id": "D",
+          "text": "≥98%"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "洗涤红细胞血浆蛋白清除率应≥98%，白细胞清除率应≥80%。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q022",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "急性艾滋病感染者一般出现急性感染期症状的时间是",
+      "options": [
+        {
+          "id": "A",
+          "text": "1-2周"
+        },
+        {
+          "id": "B",
+          "text": "2-4周"
+        },
+        {
+          "id": "C",
+          "text": "1-3个月"
+        },
+        {
+          "id": "D",
+          "text": "3-6个月"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "HIV急性感染期症状通常在感染后2-4周出现。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q023",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "关于1U浓缩血小板的叙述，错误的是",
+      "options": [
+        {
+          "id": "A",
+          "text": "从200ml全血制备"
+        },
+        {
+          "id": "B",
+          "text": "血小板含量≥2.0×10¹⁰"
+        },
+        {
+          "id": "C",
+          "text": "可4°C保存"
+        },
+        {
+          "id": "D",
+          "text": "需轻摇保存"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "浓缩血小板应在20-24°C振荡保存，4°C保存会导致血小板失活。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q024",
+      "subjectId": "immunohematology",
+      "type": "single",
+      "difficulty": "medium",
+      "content": "IgE升高常见于",
+      "options": [
+        {
+          "id": "A",
+          "text": "细菌感染"
+        },
+        {
+          "id": "B",
+          "text": "病毒感染"
+        },
+        {
+          "id": "C",
+          "text": "过敏反应"
+        },
+        {
+          "id": "D",
+          "text": "自身免疫病"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "IgE主要参与I型超敏反应（过敏反应），在过敏性疾病时升高。",
+      "source": "考试宝典真题"
+    },
+    {
+      "id": "q025",
+      "subjectId": "blood_test",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "在检验方法学的研究中，最有价值的精度是以下哪项",
+      "options": [
+        {
+          "id": "A",
+          "text": "准确度"
+        },
+        {
+          "id": "B",
+          "text": "精密度"
+        },
+        {
+          "id": "C",
+          "text": "总误差"
+        },
+        {
+          "id": "D",
+          "text": "不确定度"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "总误差反映了方法的准确度与精密度，是评价检验方法学最有价值的指标。",
+      "source": "考试宝典真题"
+    }
+  ]
+}
