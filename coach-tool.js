@@ -53,8 +53,8 @@ function generateCode() {
 function recognizeIntent(message) {
     const trimmed = message.trim().toLowerCase();
     // 练习意图
-    if (/^(练习|做题|答题|来一题|开始练习|我要练习|继续|继续答题|下一题|lx|zt|practice|start)$/.test(trimmed) ||
-        trimmed.includes('做道题') || trimmed.includes('来道题') || trimmed.includes('继续答')) {
+    if (/^(练习|做题|答题|来一题|开始练习|我要练习|继续|继续答题|继续测试|下一题|lx|zt|practice|start)$/.test(trimmed) ||
+        trimmed.includes('做道题') || trimmed.includes('来道题') || trimmed.includes('继续答') || trimmed.includes('继续测')) {
         return '/练习';
     }
     // 错题意图

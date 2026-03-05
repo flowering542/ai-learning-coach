@@ -1,0 +1,46 @@
+{
+  "id": "stu_1772723532866",
+  "userId": "qq_test2",
+  "platform": "qq",
+  "totalQuestions": 1,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "lastActiveAt": "2026-03-05T17:29:12.184Z",
+  "wrongAnswers": [
+    {
+      "questionId": "q143",
+      "question": "父母血型分别为A型和B型，子女可能的血型是",
+      "yourAnswer": "A",
+      "correctAnswer": "C",
+      "timestamp": "2026-03-05T15:12:12.867Z"
+    }
+  ],
+  "currentQuestion": {
+    "id": "q241",
+    "subjectId": "blood_quality",
+    "type": "single",
+    "difficulty": "medium",
+    "content": "血站工作人员应",
+    "options": [
+      {
+        "id": "A",
+        "text": "每年体检1次"
+      },
+      {
+        "id": "B",
+        "text": "每2年体检1次"
+      },
+      {
+        "id": "C",
+        "text": "不需要体检"
+      },
+      {
+        "id": "D",
+        "text": "每5年体检1次"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "血站工作人员应每年体检1次，建立健康档案，患有传染病者不得从事血液工作。",
+    "source": "基于教材生成"
+  }
+}

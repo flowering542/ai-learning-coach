@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772726857054",
+  "userId": "qq_test_natural",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q233",
+    "subjectId": "transfusion_reaction",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "迟发性溶血性输血反应通常发生在输血后",
+    "options": [
+      {
+        "id": "A",
+        "text": "数分钟至数小时"
+      },
+      {
+        "id": "B",
+        "text": "24小时内"
+      },
+      {
+        "id": "C",
+        "text": "3-14天"
+      },
+      {
+        "id": "D",
+        "text": "1个月后"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "迟发性溶血反应通常发生在输血后3-14天，由回忆性免疫反应引起，症状较轻。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T16:07:37.054Z"
+}

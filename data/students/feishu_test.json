@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772725686952",
+  "userId": "feishu_test",
+  "platform": "feishu",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q065",
+    "subjectId": "immunohematology",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "新生儿溶血病换血治疗时，选择的血液应该是",
+    "options": [
+      {
+        "id": "A",
+        "text": "与母亲同型"
+      },
+      {
+        "id": "B",
+        "text": "与新生儿同型"
+      },
+      {
+        "id": "C",
+        "text": "O型红细胞+AB型血浆"
+      },
+      {
+        "id": "D",
+        "text": "任意血型"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "换血治疗通常选用O型红细胞（无A、B抗原）和AB型血浆（无抗A、抗B抗体），以避免溶血。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T15:48:06.952Z"
+}

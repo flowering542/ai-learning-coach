@@ -1,0 +1,95 @@
+{
+  "id": "stu_1772723192939",
+  "userId": "feishu_ou_59a71f8c62233d851385b132dcc8c09c",
+  "platform": "feishu",
+  "totalQuestions": 9,
+  "correctAnswers": 1,
+  "streakDays": 0,
+  "lastActiveAt": "2026-03-05T18:15:37.654Z",
+  "wrongAnswers": [
+    {
+      "questionId": "q153",
+      "question": "冰冻红细胞的保存温度是",
+      "yourAnswer": "A",
+      "correctAnswer": "C",
+      "timestamp": "2026-03-05T15:07:07.190Z"
+    },
+    {
+      "questionId": "q187",
+      "question": "大量输血方案(MTP)中，红细胞、血浆、血小板的比例通常是",
+      "yourAnswer": "B",
+      "correctAnswer": "A",
+      "timestamp": "2026-03-05T15:46:07.109Z"
+    },
+    {
+      "questionId": "q188",
+      "question": "大量输血时，血钙降低的原因是",
+      "yourAnswer": "B",
+      "correctAnswer": "A",
+      "timestamp": "2026-03-05T15:49:02.971Z"
+    },
+    {
+      "questionId": "q285",
+      "question": "血浆置换治疗吉兰-巴雷综合征，通常需要",
+      "yourAnswer": "C",
+      "correctAnswer": "B",
+      "timestamp": "2026-03-05T17:37:14.481Z"
+    },
+    {
+      "questionId": "q209",
+      "question": "血小板输注的剂量计算，1个治疗量通常指",
+      "yourAnswer": "A",
+      "correctAnswer": "C",
+      "timestamp": "2026-03-05T18:05:28.759Z"
+    },
+    {
+      "questionId": "q118",
+      "question": "血站实验室室内质控的变异系数(CV)一般要求不超过",
+      "yourAnswer": "A",
+      "correctAnswer": "B",
+      "timestamp": "2026-03-05T18:14:01.958Z"
+    },
+    {
+      "questionId": "q123",
+      "question": "严重肝肾功能障碍患者输血，应选择",
+      "yourAnswer": "B",
+      "correctAnswer": "C",
+      "timestamp": "2026-03-05T18:14:35.198Z"
+    },
+    {
+      "questionId": "q030",
+      "question": "Rh阴性患者首次接受Rh阳性血液后，可能产生",
+      "yourAnswer": "C",
+      "correctAnswer": "A",
+      "timestamp": "2026-03-05T18:15:37.652Z"
+    }
+  ],
+  "currentQuestion": {
+    "id": "q235",
+    "subjectId": "blood_quality",
+    "type": "single",
+    "difficulty": "medium",
+    "content": "血液储存冰箱的温度应保持在",
+    "options": [
+      {
+        "id": "A",
+        "text": "0-2°C"
+      },
+      {
+        "id": "B",
+        "text": "2-6°C"
+      },
+      {
+        "id": "C",
+        "text": "10-15°C"
+      },
+      {
+        "id": "D",
+        "text": "20-24°C"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "红细胞储存冰箱温度应保持在2-6°C，并24小时监控。",
+    "source": "基于教材生成"
+  }
+}

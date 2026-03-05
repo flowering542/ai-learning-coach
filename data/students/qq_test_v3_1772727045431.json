@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772727045433",
+  "userId": "qq_test_v3_1772727045431",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q144",
+    "subjectId": "blood_basic",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "父母血型均为O型，子女的血型应该是",
+    "options": [
+      {
+        "id": "A",
+        "text": "A型"
+      },
+      {
+        "id": "B",
+        "text": "B型"
+      },
+      {
+        "id": "C",
+        "text": "AB型"
+      },
+      {
+        "id": "D",
+        "text": "O型"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "父母均为O型（基因型OO），子女只能继承O基因，因此只能是O型。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T16:10:45.433Z"
+}

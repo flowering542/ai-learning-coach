@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772723085095",
+  "userId": "qq_1933622876",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q076",
+    "subjectId": "blood_test",
+    "type": "single",
+    "difficulty": "medium",
+    "content": "酶处理红细胞最常用的酶是",
+    "options": [
+      {
+        "id": "A",
+        "text": "胃蛋白酶"
+      },
+      {
+        "id": "B",
+        "text": "胰蛋白酶"
+      },
+      {
+        "id": "C",
+        "text": "木瓜蛋白酶或菠萝蛋白酶"
+      },
+      {
+        "id": "D",
+        "text": "淀粉酶"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "木瓜蛋白酶或菠萝蛋白酶可破坏红细胞表面唾液酸，降低Zeta电位，促进凝集。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T15:04:45.095Z"
+}

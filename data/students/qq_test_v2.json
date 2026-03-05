@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772727022290",
+  "userId": "qq_test_v2",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q267",
+    "subjectId": "transfusion_reaction",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "输血相关免疫调节(TRIM)的主要机制是",
+    "options": [
+      {
+        "id": "A",
+        "text": "供者白细胞介导"
+      },
+      {
+        "id": "B",
+        "text": "血浆蛋白介导"
+      },
+      {
+        "id": "C",
+        "text": "红细胞碎片介导"
+      },
+      {
+        "id": "D",
+        "text": "以上都是"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "TRIM主要由供者白细胞介导，可抑制受者免疫功能，增加感染和肿瘤复发风险。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T16:10:22.290Z"
+}

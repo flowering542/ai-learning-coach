@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772723486091",
+  "userId": "qq_test",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q262",
+    "subjectId": "blood_test",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "二硫苏糖醇(DTT)处理红细胞的目的是",
+    "options": [
+      {
+        "id": "A",
+        "text": "破坏IgM抗体"
+      },
+      {
+        "id": "B",
+        "text": "破坏IgG抗体"
+      },
+      {
+        "id": "C",
+        "text": "破坏二硫键，灭活Kell等血型抗原"
+      },
+      {
+        "id": "D",
+        "text": "增强抗原性"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "DTT可破坏二硫键，灭活Kell、Duffy等系统的抗原，用于抗体鉴定。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T15:11:26.091Z"
+}

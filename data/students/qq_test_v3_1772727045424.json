@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772727045427",
+  "userId": "qq_test_v3_1772727045424",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q171",
+    "subjectId": "clinical_transfusion",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "长期输血患者最常见的并发症是",
+    "options": [
+      {
+        "id": "A",
+        "text": "感染"
+      },
+      {
+        "id": "B",
+        "text": "铁过载"
+      },
+      {
+        "id": "C",
+        "text": "溶血"
+      },
+      {
+        "id": "D",
+        "text": "过敏"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "长期输血患者因红细胞破坏释放铁，而人体无有效排铁机制，导致铁过载，损害心肝肾。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T16:10:45.427Z"
+}

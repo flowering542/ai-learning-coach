@@ -1,0 +1,37 @@
+{
+  "id": "stu_1772727045430",
+  "userId": "qq_test_v3_1772727045427",
+  "platform": "qq",
+  "totalQuestions": 0,
+  "correctAnswers": 0,
+  "streakDays": 0,
+  "currentQuestion": {
+    "id": "q295",
+    "subjectId": "transfusion_reaction",
+    "type": "single",
+    "difficulty": "hard",
+    "content": "输血相关急性肺损伤(TRALI)的治疗主要是",
+    "options": [
+      {
+        "id": "A",
+        "text": "呼吸支持"
+      },
+      {
+        "id": "B",
+        "text": "利尿"
+      },
+      {
+        "id": "C",
+        "text": "强心"
+      },
+      {
+        "id": "D",
+        "text": "以上都是"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "TRALI主要是支持治疗，以呼吸支持（氧疗、机械通气）为主，避免利尿（非心源性肺水肿）。",
+    "source": "基于教材生成"
+  },
+  "lastActiveAt": "2026-03-05T16:10:45.430Z"
+}
