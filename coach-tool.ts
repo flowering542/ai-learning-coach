@@ -146,17 +146,34 @@ export async function coachTool(
     updatedData.lastActiveAt = new Date().toISOString();
     saveUserData(userId, updatedData);
     
-    let output = `📝 练习题\n\n`;
-    output += `【${question.subjectId || '医学检验'} | ${question.difficulty || '中等'}】\n\n`;
+    let output = '📝 练习题\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    const subjectMap: Record<string, string> = {
+      'blood_basic': '血液学基础',
+      'clinical_transfusion': '临床输血',
+      'blood_quality': '血液质量',
+      'immunohematology': '免疫血液学',
+      'transfusion_reaction': '输血反应',
+      'component_therapy': '成分输血',
+      'apheresis': '单采技术'
+    };
+    const subjectName = subjectMap[question.subjectId] || question.subjectId || '医学检验';
+    const diffMap: Record<string, string> = { 'easy': '简单', 'medium': '中等', 'hard': '困难' };
+    const diffName = diffMap[question.difficulty] || question.difficulty || '中等';
+    
+    output += `📚 ${subjectName}  |  ${diffName}\n\n`;
     output += `${question.content}\n\n`;
     
     if (question.options) {
+      output += '────────────────────\n';
       question.options.forEach((opt: any) => {
         output += `${opt.id}. ${opt.text}\n`;
       });
     }
     
-    output += `\n💡 请回复 A/B/C/D 选择答案`;
+    output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+    output += '💡 请回复 A/B/C/D 选择答案';
     return { result: output, data: { question } };
   }
   
@@ -169,9 +186,23 @@ export async function coachTool(
   if (trimmed === '/进度' || trimmed === '/progress') {
     const s = userData || { totalQuestions: 0, correctAnswers: 0, streakDays: 0 };
     const acc = s.totalQuestions > 0 ? Math.round((s.correctAnswers / s.totalQuestions) * 100) : 0;
-    return {
-      result: `📊 学习进度\n\n📝 总题数: ${s.totalQuestions}\n✅ 正确率: ${acc}%\n🔥 连续打卡: ${s.streakDays}天`
-    };
+    
+    let output = '📊 学习进度\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+    output += '📋 答题统计\n';
+    output += `  总题数：${s.totalQuestions}\n`;
+    output += `  正确数：${s.correctAnswers}\n`;
+    output += `  正确率：${acc}%\n\n`;
+    output += '🔥 连续打卡\n';
+    output += `  ${s.streakDays || 0} 天\n\n`;
+    
+    // 进度条
+    const filled = Math.round(acc / 10);
+    const empty = 10 - filled;
+    output += '📈 正确率\n';
+    output += `  [${'█'.repeat(filled)}${'░'.repeat(empty)}] ${acc}%`;
+    
+    return { result: output };
   }
   
   if (trimmed === '/分析' || trimmed === '/fx') {
@@ -277,17 +308,36 @@ export async function coachTool(
     delete userData.currentQuestion;
     saveUserData(userId, userData);
     
+    const acc = Math.round((userData.correctAnswers / userData.totalQuestions) * 100);
+    
     let output = '';
     if (isCorrect) {
-      output += '🎉 回答正确！\n\n';
+      output += '🎉 回答正确！\n';
+      output += '━━━━━━━━━━━━━━━━━━━━\n\n';
     } else {
-      output += '❌ 回答错误。\n\n';
+      output += '❌ 回答错误\n';
+      output += '━━━━━━━━━━━━━━━━━━━━\n\n';
     }
     
-    output += `正确答案：${question.correctAnswer}\n`;
-    output += `\n📖 解析：\n${question.explanation || '暂无解析'}\n\n`;
-    output += `📊 总题数：${userData.totalQuestions} | 正确率：${Math.round((userData.correctAnswers / userData.totalQuestions) * 100)}%\n\n`;
-    output += `发送 /练习 继续，或 /错题 复习薄弱点`;
+    output += `✅ 正确答案：${question.correctAnswer}\n\n`;
+    
+    if (question.explanation) {
+      output += '📖 解析\n';
+      output += '────────────────────\n';
+      output += `${question.explanation}\n\n`;
+    }
+    
+    output += '📊 学习统计\n';
+    output += '────────────────────\n';
+    output += `📋 总题数：${userData.totalQuestions}\n`;
+    output += `🎯 正确率：${acc}%\n`;
+    output += `🔥 连续打卡：${userData.streakDays || 1}天\n\n`;
+    
+    if (!isCorrect) {
+      output += '📝 错题已记录，发送 /错题 可复习\n\n';
+    }
+    
+    output += '💡 发送 /练习 继续答题';
     
     return { result: output };
   }
