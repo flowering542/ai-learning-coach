@@ -98,9 +98,45 @@ function generateQuickButtons() {
 │  🔄 错题  │  🏅 徽章  │
 └──────────┴──────────┘`;
 }
+// 生成数字菜单
+function generateNumberMenu() {
+    return `
+📚 学习教练菜单
+━━━━━━━━━━━━━━━━━━━━
+1️⃣  开始练习  (/练习)
+2️⃣  查看进度  (/进度)
+3️⃣  错题复习  (/错题)
+4️⃣  薄弱分析  (/分析)
+5️⃣  我的徽章  (/徽章)
+6️⃣  学习打卡  (/打卡)
+7️⃣  帮助说明  (/帮助)
+
+💡 回复数字 1-7 或输入命令`;
+}
+// 数字菜单映射
+const numberMenuMap = {
+    '1': '/练习',
+    '2': '/进度',
+    '3': '/错题',
+    '4': '/分析',
+    '5': '/徽章',
+    '6': '/打卡',
+    '7': '/帮助',
+    '①': '/练习',
+    '②': '/进度',
+    '③': '/错题',
+    '④': '/分析',
+    '⑤': '/徽章',
+    '⑥': '/打卡',
+    '⑦': '/帮助',
+};
 // 主处理函数
 export async function coachTool(command, userId, platform = 'qq', adminIds = []) {
     let trimmed = command.trim();
+    // 数字菜单识别（优先）
+    if (numberMenuMap[trimmed]) {
+        trimmed = numberMenuMap[trimmed];
+    }
     // 自然语言识别（只有在没有当前题目时才转换）
     let userData = loadUserData(userId);
     if (!userData?.currentQuestion && !trimmed.startsWith('/') && !/^[A-Da-d]$/.test(trimmed)) {
@@ -355,7 +391,7 @@ export async function coachTool(command, userId, platform = 'qq', adminIds = [])
     // ========== 帮助 ==========
     if (trimmed === '/帮助' || trimmed === '/help') {
         return {
-            result: `📖 学习教练帮助\n\n【快捷按钮】${generateQuickButtons()}\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "分析"/"薄弱点" → 薄弱分析\n\n【命令列表】\n• /练习 - 开始练习题\n• /错题 - 复习错题\n• /进度 - 查看学习进度\n• /分析 - 薄弱点分析\n• /徽章 - 成就徽章\n• /打卡 - 学习打卡`
+            result: `📖 学习教练帮助\n\n${generateNumberMenu()}\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "分析"/"薄弱点" → 薄弱分析`
         };
     }
     // ========== 访客默认 ==========
@@ -364,9 +400,9 @@ export async function coachTool(command, userId, platform = 'qq', adminIds = [])
             result: '👋 欢迎使用学习教练！\n\n请输入激活码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。'
         };
     }
-    // 未识别命令，显示按钮
+    // 未识别命令，显示数字菜单
     return {
-        result: `🤔 没听懂，试试这些：${generateQuickButtons()}\n\n或发送 /帮助 查看全部命令`
+        result: `🤔 没听懂，试试数字菜单：${generateNumberMenu()}`
     };
 }
 console.log('[CoachTool] 学习教练 Tool 已加载');
