@@ -3,7 +3,6 @@
 
 import {
   getStudentWrongAnswers,
-  getStudentAnswers,
   type Student,
 } from "./storage.js";
 

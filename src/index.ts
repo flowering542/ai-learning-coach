@@ -1,4 +1,4 @@
-// 学习教练 Agent - 主入口（支持单 Bot 多角色路由 + 题库练习 + 数据持久化）
+// 学习教练 Agent - 主入口（支持单 Bot 多角色路由 + 题库练习 + 数据持久化 + 错题归因）
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
 import * as fs from "fs";
 import * as path from "path";
@@ -18,6 +18,15 @@ import {
   checkStorage,
   type Student,
 } from "./storage.js";
+import {
+  generateErrorReasonPrompt,
+  parseErrorReason,
+  getSuggestionByReason,
+  generateWeakPointReport,
+  formatWeakPointReport,
+  generatePracticeRecommendation,
+  type ErrorReason,
+} from "./error-analysis.js";
 
 // ==================== 配置区域 ====================
 const ADMIN_QQ_IDS = new Set<string>([
@@ -51,6 +60,14 @@ interface QuestionBank {
 let questionBank: QuestionBank | null = null;
 const currentQuestions = new Map<string, Question>();
 
+// 错题归因状态
+interface ErrorAnalysisState {
+  questionId: string;
+  isCorrect: boolean;
+  answeredAt: string;
+}
+const errorAnalysisStates = new Map<string, ErrorAnalysisState>(); // qqId -> 状态
+
 // ==================== 初始化 ====================
 function init() {
   const storageStatus = checkStorage();
@@ -67,7 +84,7 @@ function init() {
 // ==================== 加载题库 ====================
 function loadQuestionBank(): QuestionBank {
   if (questionBank) return questionBank;
-  
+
   try {
     const dataPath = path.join(__dirname, "..", "data", "questions.json");
     const data = fs.readFileSync(dataPath, "utf-8");
@@ -95,11 +112,11 @@ async function handleMessage(
 ): Promise<string> {
   const trimmed = message.trim();
   const userType = getUserType(qqId);
-  
+
   if (userType === 'student' && isAnswer(trimmed)) {
     return await handleAnswer(trimmed, qqId);
   }
-  
+
   switch (userType) {
     case 'admin':
       return await handleAdminMessage(trimmed, qqId);
@@ -120,7 +137,7 @@ function isAnswer(message: string): boolean {
 async function handleAdminMessage(message: string, qqId: string): Promise<string> {
   if (message.startsWith("/") || message.startsWith("、")) {
     const cmd = message.slice(1).split(" ")[0].toLowerCase();
-    
+
     switch (cmd) {
       case "模式":
         return "🎯 当前模式：管理员\n\n可用命令：\n• /生成激活码\n• /学生列表\n• /统计\n• /备份";
@@ -153,14 +170,14 @@ function handlePersonalAssistant(message: string, qqId: string): string {
 async function handleStudentMessage(message: string, qqId: string): Promise<string> {
   const student = getStudentByQQ(qqId);
   if (!student) return "系统错误，请重新激活。";
-  
+
   student.lastActiveAt = new Date().toISOString();
   updateStreak(student);
-  
+
   if (message.startsWith("/") || message.startsWith("、")) {
     const cmd = message.slice(1).split(" ")[0].toLowerCase();
     const args = message.slice(cmd.length + 2).trim();
-    
+
     switch (cmd) {
       case "练习": case "lx":
         return await startPractice(qqId, student);
@@ -170,6 +187,8 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
         return await searchQuestions(args);
       case "进度": case "progress":
         return showProgress(student);
+      case "分析": case "fx":
+        return showWeakPointAnalysis(student);
       case "帮助": case "help":
         return showStudentHelp();
       case "恢复":
@@ -182,26 +201,26 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
         return `未知命令：${cmd}\n\n发送 /帮助 查看可用命令。`;
     }
   }
-  
+
   return handleStudentNaturalLanguage(message, student);
 }
 
 function updateStreak(student: Student): void {
   const today = new Date().toISOString().split('T')[0];
   const lastDate = student.lastStudyDate;
-  
+
   if (lastDate === today) return;
-  
+
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   const yesterdayStr = yesterday.toISOString().split('T')[0];
-  
+
   if (lastDate === yesterdayStr) {
     student.streakDays += 1;
   } else {
     student.streakDays = 1;
   }
-  
+
   student.lastStudyDate = today;
   updateStudent(student);
 }
@@ -209,10 +228,10 @@ function updateStreak(student: Student): void {
 async function startPractice(qqId: string, student: Student): Promise<string> {
   const bank = loadQuestionBank();
   if (bank.questions.length === 0) return "❌ 题库加载失败，请稍后再试。";
-  
+
   let question: Question;
   const weakPoints = getWeakPoints(student.id);
-  
+
   if (weakPoints.length > 0 && Math.random() < 0.6) {
     const weak = weakPoints[Math.floor(Math.random() * weakPoints.length)];
     const found = bank.questions.find(q => q.id === weak.questionId);
@@ -220,11 +239,11 @@ async function startPractice(qqId: string, student: Student): Promise<string> {
   } else {
     question = bank.questions[Math.floor(Math.random() * bank.questions.length)];
   }
-  
+
   currentQuestions.set(qqId, question);
   student.currentQuestionId = question.id;
   updateStudent(student);
-  
+
   return formatQuestion(question, student);
 }
 
@@ -233,64 +252,75 @@ async function startWrongPractice(qqId: string, student: Student): Promise<strin
   if (wrongAnswers.length === 0) {
     return "🎉 还没有错题记录！先去做些练习吧。\n\n发送 /练习 开始答题。";
   }
-  
+
   const bank = loadQuestionBank();
   const wrongIds = wrongAnswers.map(w => w.questionId);
-  
+
   for (const wrongId of wrongIds) {
     const question = bank.questions.find(q => q.id === wrongId);
     if (question) {
       currentQuestions.set(qqId, question);
       student.currentQuestionId = question.id;
       updateStudent(student);
-      
+
       let output = `🔄 错题复习模式\n`;
       output += `这道题你之前错了 ${wrongAnswers.find(w => w.questionId === wrongId)?.wrongCount || 1} 次\n\n`;
       output += formatQuestion(question, student, false);
       return output;
     }
   }
-  
+
   return "❌ 错题加载失败，请稍后再试。";
 }
 
 function formatQuestion(question: Question, student: Student, showStats: boolean = true): string {
   let output = "";
-  
+
   if (showStats) {
     const accuracy = student.totalQuestions > 0 ? Math.round((student.correctAnswers / student.totalQuestions) * 100) : 0;
     output += `📊 当前正确率：${accuracy}% | 🔥 连续${student.streakDays}天\n`;
     output += `━━━━━━━━━━━━━━━\n`;
   }
-  
+
   output += `📝 [${getSubjectName(question.subjectId)} | ${getDifficultyLabel(question.difficulty)}]\n\n`;
   output += `${question.content}\n\n`;
-  
+
   question.options.forEach(opt => {
     output += `${opt.id}. ${opt.text}\n`;
   });
-  
+
   output += `\n💡 请回复 A/B/C/D 选择答案`;
-  
+
   return output;
 }
 
 async function handleAnswer(message: string, qqId: string): Promise<string> {
   const student = getStudentByQQ(qqId);
   if (!student) return "请先发送 /练习 开始答题。";
-  
+
+  // 检查是否在错题归因流程中
+  const errorState = errorAnalysisStates.get(qqId);
+  if (errorState && !errorState.isCorrect) {
+    const reason = parseErrorReason(message);
+    if (reason) {
+      errorAnalysisStates.delete(qqId);
+      return `✅ 已记录错因\n${getSuggestionByReason(reason)}\n\n发送 /练习 继续，或 /分析 查看薄弱点报告`;
+    }
+    return "请回复数字 1-4 选择错因：\n1. 概念不清\n2. 粗心大意\n3. 没见过\n4. 审题错误";
+  }
+
   const question = currentQuestions.get(qqId);
   if (!question) return "请先发送 /练习 开始答题。";
-  
+
   const answer = message.replace("答案", "").trim().toUpperCase();
   const isCorrect = answer === question.correctAnswer;
-  
+
   student.totalQuestions++;
   if (isCorrect) {
     student.correctAnswers++;
   }
   updateStudent(student);
-  
+
   recordAnswer({
     id: `ans_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
     studentId: student.id,
@@ -299,40 +329,46 @@ async function handleAnswer(message: string, qqId: string): Promise<string> {
     answer,
     answeredAt: new Date().toISOString(),
   });
-  
+
   if (!isCorrect) {
     recordWrongAnswer(student.id, question.id);
+    // 记录错题归因状态
+    errorAnalysisStates.set(qqId, {
+      questionId: question.id,
+      isCorrect: false,
+      answeredAt: new Date().toISOString(),
+    });
   }
-  
+
   currentQuestions.delete(qqId);
   student.currentQuestionId = undefined;
   updateStudent(student);
-  
+
   return formatAnswerResponse(isCorrect, question, student);
 }
 
 function formatAnswerResponse(isCorrect: boolean, question: Question, student: Student): string {
   let output = "";
-  
+
   if (isCorrect) {
     const encouragements = ["🎉 太棒了！", "✅ 回答正确！", "👏 很好！", "💪 继续保持！"];
     output += encouragements[Math.floor(Math.random() * encouragements.length)] + "\n\n";
   } else {
     const comforts = ["❌ 回答错误。", "💔 错了，没关系！", "🤔 再想想看..."];
     output += comforts[Math.floor(Math.random() * comforts.length)] + "\n\n";
-    
+
     const wrongCount = getStudentWrongAnswers(student.id).filter(w => w.questionId === question.id).length;
     if (wrongCount >= 2) {
-      output += `💡 这道题你已经错了 ${wrongCount} 次了，建议重点复习\n`;
+      output += `💡 这道题你已经错了 ${wrongCount} 次了\n`;
     }
   }
-  
+
   output += `正确答案：${question.correctAnswer}\n`;
   output += `\n📖 解析：\n${question.explanation}\n\n`;
-  
+
   const accuracy = Math.round((student.correctAnswers / student.totalQuestions) * 100);
   output += `📊 总题数：${student.totalQuestions} | 正确率：${accuracy}% | 🔥 ${student.streakDays}天\n\n`;
-  
+
   const weekly = getWeeklyProgress(student.id);
   if (weekly.length >= 2) {
     const lastWeek = weekly[1];
@@ -346,9 +382,13 @@ function formatAnswerResponse(isCorrect: boolean, question: Question, student: S
       }
     }
   }
-  
-  output += `\n发送 /练习 继续，或 /错题 复习薄弱点`;
-  
+
+  if (!isCorrect) {
+    output += `\n${generateErrorReasonPrompt(question.content)}`;
+  } else {
+    output += `\n发送 /练习 继续，或 /错题 复习薄弱点`;
+  }
+
   return output;
 }
 
@@ -356,22 +396,22 @@ async function searchQuestions(keyword: string): Promise<string> {
   if (!keyword) {
     return "请输入搜索关键词，例如：/查询 ABO血型";
   }
-  
+
   const bank = loadQuestionBank();
-  const results = bank.questions.filter(q => 
-    q.content.includes(keyword) || 
+  const results = bank.questions.filter(q =>
+    q.content.includes(keyword) ||
     q.explanation.includes(keyword)
   ).slice(0, 5);
-  
+
   if (results.length === 0) {
     return `🔍 未找到包含"${keyword}"的题目。\n\n试试其他关键词：血型、输血、溶血...`;
   }
-  
+
   let output = `🔍 "${keyword}" 的搜索结果：\n\n`;
   results.forEach((q, i) => {
     output += `${i + 1}. [${getSubjectName(q.subjectId)}] ${q.content.slice(0, 30)}...\n`;
   });
-  
+
   output += `\n💡 发送 /练习 开始随机练习`;
   return output;
 }
@@ -381,7 +421,7 @@ function showProgress(student: Student): string {
   const wrongCount = getStudentWrongAnswers(student.id).length;
   const weekly = getWeeklyProgress(student.id);
   const thisWeek = weekly[0] || { correct: 0, total: 0 };
-  
+
   return `📊 学习进度报告
 
 👤 学员ID: ${student.id.slice(-6)}
@@ -399,6 +439,11 @@ function showProgress(student: Student): string {
 继续加油！💪`;
 }
 
+function showWeakPointAnalysis(student: Student): string {
+  const report = generateWeakPointReport(student.id);
+  return formatWeakPointReport(report);
+}
+
 function showStudentHelp(): string {
   return `📖 学习教练使用指南
 
@@ -407,16 +452,17 @@ function showStudentHelp(): string {
 /错题 或 /ct - 复习错题
 /查询 <关键词> - 搜索题目
 /进度 - 查看学习进度
+/分析 或 /fx - 薄弱点分析报告
 /帮助 - 显示此帮助
 
 【练习模式】
 • 回复 A/B/C/D 选择答案
-• 查看解析和正确答案
+• 答错后选择错因，获得针对性建议
 • 自动统计正确率
 
 【学习建议】
 • 每天坚持练习10-20题
-• 错题会自动记录
+• 错题会自动记录并分析原因
 • 系统会优先推荐薄弱点
 
 当前题库：${loadQuestionBank().questions.length}道真题
@@ -431,7 +477,7 @@ function handleStudentNaturalLanguage(message: string, student: Student): string
   }
   if (message.includes("谢谢")) return "不客气！继续加油学习吧 💪";
   if (message.includes("再见")) return "再见！记得明天继续练习哦 👋";
-  
+
   return `收到！你可以：
 
 /练习 - 开始练习题
@@ -442,19 +488,19 @@ function handleStudentNaturalLanguage(message: string, student: Student): string
 // ==================== 访客模式 ====================
 async function handleGuestMessage(message: string, qqId: string): Promise<string> {
   const trimmed = message.trim();
-  
+
   if (VALID_CODES.has(trimmed)) {
     const existing = getStudentByQQ(qqId);
     if (existing) {
       return "❌ 你已经激活过了，直接发送 /练习 开始学习。";
     }
-    
+
     const allStudents = getAllStudents();
     const codeUsed = allStudents.find(s => s.activationCode === trimmed);
     if (codeUsed) {
       return "❌ 该激活码已被使用，请联系管理员获取新码。";
     }
-    
+
     const student: Student = {
       id: `stu_${Date.now()}`,
       qqId,
@@ -465,9 +511,9 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
       lastActiveAt: new Date().toISOString(),
       streakDays: 0,
     };
-    
+
     createStudent(student);
-    
+
     return `🎉 激活成功！欢迎加入学习教练系统！
 
 你可以使用以下命令：
@@ -479,7 +525,7 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
 
 开始你的学习之旅吧！📚`;
   }
-  
+
   return `👋 欢迎使用学习教练！
 
 请输入你的激活码以开始使用。
@@ -495,7 +541,7 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
 function listStudents(): string {
   const students = getAllStudents();
   if (students.length === 0) return "📋 暂无已激活学生。";
-  
+
   let list = "📋 学生列表\n\n";
   students.forEach((s, i) => {
     const accuracy = s.totalQuestions > 0 ? Math.round((s.correctAnswers / s.totalQuestions) * 100) : 0;
@@ -507,7 +553,7 @@ function listStudents(): string {
 function showStats(): string {
   const stats = getGlobalStats();
   const bank = loadQuestionBank();
-  
+
   return `📊 学习统计
 
 👥 学生总数: ${stats.totalStudents}

@@ -32,6 +32,7 @@ export interface WrongAnswer {
   questionId: string;
   wrongCount: number;
   lastWrongAt: string;
+  reason?: string; // 错因：concept/careless/unfamiliar/misread
 }
 
 const DATA_DIR = './data';
