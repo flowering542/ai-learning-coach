@@ -4,7 +4,7 @@
     "description": "临床输血技术（中级）考试真题及解析，代码：390",
     "category": "医学职称考试",
     "examCode": "390",
-    "totalQuestions": 150,
+    "totalQuestions": 152,
     "lastUpdated": "2026-03-05",
     "source": "考试宝典等公开资料整理"
   },
@@ -4244,6 +4244,62 @@
       ],
       "correctAnswer": "D",
       "explanation": "血液条码标识包含献血编号、血型、采血日期、血液成分等信息，但不应显示献血者身份证号以保护隐私。",
+      "source": "基于教材生成"
+    },
+    {
+      "id": "q151",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "全血采集后，制备浓缩血小板的最佳温度是",
+      "options": [
+        {
+          "id": "A",
+          "text": "2-6°C"
+        },
+        {
+          "id": "B",
+          "text": "20-24°C"
+        },
+        {
+          "id": "C",
+          "text": "37°C"
+        },
+        {
+          "id": "D",
+          "text": "-20°C"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "全血采集后应在20-24°C保存，尽快制备血小板，低温会损伤血小板。",
+      "source": "基于教材生成"
+    },
+    {
+      "id": "q152",
+      "subjectId": "blood_quality",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "从400ml全血中制备的浓缩血小板，血小板含量应≥",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0×10¹⁰"
+        },
+        {
+          "id": "B",
+          "text": "4.0×10¹⁰"
+        },
+        {
+          "id": "C",
+          "text": "5.0×10¹⁰"
+        },
+        {
+          "id": "D",
+          "text": "8.0×10¹⁰"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "400ml全血制备的浓缩血小板，血小板含量应≥4.0×10¹⁰，是200ml全血的2倍。",
       "source": "基于教材生成"
     }
   ]
