@@ -54,6 +54,65 @@ function generateCode(): string {
   return `STU-${Date.now().toString(36).toUpperCase().slice(-6)}`;
 }
 
+// 自然语言意图识别
+function recognizeIntent(message: string): string | null {
+  const trimmed = message.trim().toLowerCase();
+  
+  // 练习意图
+  if (/^(练习|做题|答题|来一题|开始练习|我要练习|继续|下一题|lx|zt|practice|start)$/.test(trimmed) ||
+      trimmed.includes('做道题') || trimmed.includes('来道题')) {
+    return '/练习';
+  }
+  
+  // 错题意图
+  if (/^(错题|错|复习|错了哪些|错题本|ct|cw|wrong|review)$/.test(trimmed) ||
+      trimmed.includes('错题') || trimmed.includes('错了')) {
+    return '/错题';
+  }
+  
+  // 进度意图
+  if (/^(进度|统计|成绩|多少分|正确率|jd|tj|progress|stats)$/.test(trimmed) ||
+      trimmed.includes('正确率') || trimmed.includes('成绩')) {
+    return '/进度';
+  }
+  
+  // 分析意图
+  if (/^(分析|薄弱|哪里不行|弱点|fx|br|analysis|weak)$/.test(trimmed) ||
+      trimmed.includes('薄弱') || trimmed.includes('分析')) {
+    return '/分析';
+  }
+  
+  // 徽章意图
+  if (/^(徽章|成就|徽章|奖励|bj|ch|badge|achievement)$/.test(trimmed) ||
+      trimmed.includes('徽章') || trimmed.includes('成就')) {
+    return '/徽章';
+  }
+  
+  // 打卡意图
+  if (/^(打卡|签到|来了|开始学习|dk|qd|checkin|sign)$/.test(trimmed) ||
+      trimmed.includes('打卡')) {
+    return '/打卡';
+  }
+  
+  // 帮助意图
+  if (/^(帮助|怎么|怎么用|不会|bz|help|\?)$/.test(trimmed) ||
+      trimmed.startsWith('怎么') || trimmed.includes('帮助')) {
+    return '/帮助';
+  }
+  
+  return null;
+}
+
+// 生成快捷按钮（文本形式）
+function generateQuickButtons(): string {
+  return `
+┌──────────┬──────────┐
+│  📝 练习  │  📊 进度  │
+├──────────┼──────────┤
+│  🔄 错题  │  🏅 徽章  │
+└──────────┴──────────┘`;
+}
+
 // 主处理函数
 export async function coachTool(
   command: string,
@@ -61,9 +120,20 @@ export async function coachTool(
   platform: 'qq' | 'feishu' = 'qq',
   adminIds: string[] = []
 ): Promise<{ result: string; data?: any }> {
-  const trimmed = command.trim();
+  let trimmed = command.trim();
+  
+  // 自然语言识别（只有在没有当前题目时才转换）
+  let userData = loadUserData(userId);
+  if (!userData?.currentQuestion && !trimmed.startsWith('/') && !/^[A-Da-d]$/.test(trimmed)) {
+    const intent = recognizeIntent(trimmed);
+    if (intent) {
+      trimmed = intent;
+    }
+  }
+  
   const isAdmin = adminIds.includes(userId);
-  const userData = loadUserData(userId);
+  // 重新加载用户数据
+  userData = loadUserData(userId);
   
   // ========== 管理员命令 ==========
   if (isAdmin && trimmed === '/模式') {
@@ -345,7 +415,7 @@ export async function coachTool(
   // ========== 帮助 ==========
   if (trimmed === '/帮助' || trimmed === '/help') {
     return {
-      result: `📖 学习教练帮助\n\n【学生命令】\n• /练习 - 开始练习题\n• /错题 - 复习错题\n• /进度 - 查看学习进度\n• /分析 - 薄弱点分析\n• /徽章 - 成就徽章\n• /打卡 - 学习打卡\n\n【管理员命令】\n• /生成激活码 - 生成新激活码\n• /学生列表 - 查看所有学生\n• /统计 - 查看全局统计\n• /切换 - 切换到学生模式`
+      result: `📖 学习教练帮助\n\n【快捷按钮】${generateQuickButtons()}\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "分析"/"薄弱点" → 薄弱分析\n\n【命令列表】\n• /练习 - 开始练习题\n• /错题 - 复习错题\n• /进度 - 查看学习进度\n• /分析 - 薄弱点分析\n• /徽章 - 成就徽章\n• /打卡 - 学习打卡`
     };
   }
   
@@ -356,7 +426,10 @@ export async function coachTool(
     };
   }
   
-  return { result: null };
+  // 未识别命令，显示按钮
+  return { 
+    result: `🤔 没听懂，试试这些：${generateQuickButtons()}\n\n或发送 /帮助 查看全部命令` 
+  };
 }
 
 console.log('[CoachTool] 学习教练 Tool 已加载');
