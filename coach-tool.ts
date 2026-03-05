@@ -386,7 +386,44 @@ export async function coachTool(
     };
   }
 
-  // ========== 答题 ==========
+  // AI 自动分析错因
+function analyzeErrorReason(question: any, userAnswer: string): string {
+  const correctAnswer = question.correctAnswer;
+  
+  // 1. 检查是否是相邻选项（可能是粗心）
+  const options = ['A', 'B', 'C', 'D'];
+  const userIdx = options.indexOf(userAnswer);
+  const correctIdx = options.indexOf(correctAnswer);
+  
+  if (Math.abs(userIdx - correctIdx) === 1) {
+    // 选了相邻选项，可能是看错或手滑
+    return '粗心大意';
+  }
+  
+  // 2. 根据题目类型和难度判断
+  const difficulty = question.difficulty || 'medium';
+  const subject = question.subjectId || '';
+  
+  // 难题更容易概念不清
+  if (difficulty === 'hard') {
+    // 检查是否是常见混淆点
+    if (subject.includes('blood') || subject.includes('transfusion')) {
+      return '概念混淆';
+    }
+    return '知识盲区';
+  }
+  
+  // 3. 中等难度题目
+  if (difficulty === 'medium') {
+    // 简单题答错，可能是没见过类似题型
+    return '题型不熟';
+  }
+  
+  // 4. 简单题答错，大概率粗心
+  return '粗心大意';
+}
+
+// ========== 答题 ==========
   if (/^[A-Da-d]$/.test(trimmed)) {
     if (!userData?.currentQuestion) {
       return { result: '请先发送 /练习 开始答题。' };
@@ -401,13 +438,15 @@ export async function coachTool(
     if (isCorrect) {
       userData.correctAnswers++;
     } else {
-      // 记录错题
+      // 记录错题（带 AI 分析的错因）
       if (!userData.wrongAnswers) userData.wrongAnswers = [];
+      const errorReason = analyzeErrorReason(question, answer);
       userData.wrongAnswers.push({
         questionId: question.id,
         question: question.content,
         yourAnswer: answer,
         correctAnswer: question.correctAnswer,
+        reason: errorReason,
         timestamp: new Date().toISOString(),
       });
     }
