@@ -1,4 +1,4 @@
-// 学习教练 Agent - 主入口（支持单 Bot 多角色路由 + 题库练习 + 数据持久化 + 错题归因）
+// 学习教练 Agent - 主入口（支持单 Bot 多角色路由 + 题库练习 + 数据持久化 + 错题归因 + 情感陪伴）
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
 import * as fs from "fs";
 import * as path from "path";
@@ -27,6 +27,15 @@ import {
   generatePracticeRecommendation,
   type ErrorReason,
 } from "./error-analysis.js";
+import {
+  checkBadges,
+  formatBadges,
+  generateCheckInMessage,
+  generateProgressVisual,
+  generateExamCountdown,
+  generateDailyAdvice,
+  type UserStats,
+} from "./emotional-companion.js";
 
 // ==================== 配置区域 ====================
 const ADMIN_QQ_IDS = new Set<string>([
@@ -189,6 +198,12 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
         return showProgress(student);
       case "分析": case "fx":
         return showWeakPointAnalysis(student);
+      case "徽章": case "badge":
+        return showBadges(student);
+      case "打卡": case "checkin":
+        return showCheckIn(student);
+      case "状态": case "status":
+        return showStatus(student);
       case "帮助": case "help":
         return showStudentHelp();
       case "恢复":
@@ -444,6 +459,36 @@ function showWeakPointAnalysis(student: Student): string {
   return formatWeakPointReport(report);
 }
 
+function showBadges(student: Student): string {
+  const stats: UserStats = {
+    totalQuestions: student.totalQuestions,
+    correctAnswers: student.correctAnswers,
+    streakDays: student.streakDays,
+    wrongCount: getStudentWrongAnswers(student.id).length,
+    studyDays: student.streakDays,
+  };
+  const badges = checkBadges(stats);
+  return formatBadges(badges);
+}
+
+function showCheckIn(student: Student): string {
+  const checkInMsg = generateCheckInMessage(student);
+  const stats: UserStats = {
+    totalQuestions: student.totalQuestions,
+    correctAnswers: student.correctAnswers,
+    streakDays: student.streakDays,
+    wrongCount: getStudentWrongAnswers(student.id).length,
+    studyDays: student.streakDays,
+  };
+  const advice = generateDailyAdvice(stats);
+  return `${checkInMsg}\n\n${advice}`;
+}
+
+function showStatus(student: Student): string {
+  const accuracy = student.totalQuestions > 0 ? Math.round((student.correctAnswers / student.totalQuestions) * 100) : 0;
+  return generateProgressVisual(accuracy, student.streakDays);
+}
+
 function showStudentHelp(): string {
   return `📖 学习教练使用指南
 
@@ -453,6 +498,9 @@ function showStudentHelp(): string {
 /查询 <关键词> - 搜索题目
 /进度 - 查看学习进度
 /分析 或 /fx - 薄弱点分析报告
+/徽章 或 /badge - 查看成就徽章
+/打卡 或 /checkin - 学习打卡
+/状态 或 /status - 学习状态可视化
 /帮助 - 显示此帮助
 
 【练习模式】
