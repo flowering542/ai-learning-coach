@@ -286,33 +286,29 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
     return reply;
   }
   
-  // 答错：给解析+扩展，等待继续
+  // 答错：先引导思考，不给答案，等待用户回复
   state.waitingForContinue = true;
   questionStates.set(qqId, state);
   
-  let reply = `❌ 错了！\n\n💡 ${question.explanation}\n\n`;
-  if (question.extend) {
-    reply += `${question.extend}\n\n`;
-  }
-  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
-  return reply;
+  return `❌ 错了！\n\n💡 思考一下：这道题的关键点是什么？和什么有关？🤔\n\n（回复你的思考，或说"继续"看解析）`;
 }
 
-// 引导思考 + 最终给出解释
+// 引导思考 + 最终给出解释（用户说"继续"时调用）
 function guideAndTeach(message: string, qqId: string, state: QuestionState, student: Student): string {
   if (!state.lastQuestion) {
     return `💡 回复"继续"出下一题`;
   }
   
   const q = state.lastQuestion;
+  const acc = Math.round((student.correctAnswers / student.totalQuestions) * 100);
   
-  // 简单引导一句，然后给解释+扩展
-  let reply = `💡 思考一下：这道题的关键点是什么？\n\n`;
-  reply += `💡 ${q.explanation}\n\n`;
+  // 给答案+解析+扩展
+  let reply = `💡 正确答案是：${q.correctAnswer}\n\n`;
+  reply += `${q.explanation}\n\n`;
   if (q.extend) {
     reply += `${q.extend}\n\n`;
   }
-  reply += `📊 回复"继续"出下一题`;
+  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
   return reply;
 }
 
