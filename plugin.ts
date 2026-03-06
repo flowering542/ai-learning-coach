@@ -37,8 +37,14 @@ interface QuestionState {
     correctAnswer: string;
     explanation: string;
   } | null;
+  lastQuestion: {
+    id: string;
+    content: string;
+    correctAnswer: string;
+    explanation: string;
+    isCorrect: boolean;
+  } | null;
   waitingForContinue: boolean;
-  lastAnswerCorrect: boolean | null;
 }
 
 // ==================== 数据存储 ====================
@@ -165,7 +171,7 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
   // 获取或初始化答题状态
   let state = questionStates.get(qqId);
   if (!state) {
-    state = { currentQuestion: null, waitingForContinue: false, lastAnswerCorrect: null };
+    state = { currentQuestion: null, lastQuestion: null, waitingForContinue: false };
     questionStates.set(qqId, state);
   }
   
@@ -177,8 +183,8 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
       return generateQuestion(qqId, student);
     }
     
-    // 用户说其他内容（无关）→ 提醒说"继续"
-    return `💡 回复"继续"出下一题，或发送 /练习 重新开始`;
+    // 用户说其他内容（不懂）→ 直接教知识点
+    return teachLastQuestion(qqId, state, student);
   }
   
   // 检查是否在答题（回复 1-4）
@@ -225,7 +231,6 @@ function generateQuestion(qqId: string, student: Student): string {
   
   state.currentQuestion = question;
   state.waitingForContinue = false;
-  state.lastAnswerCorrect = null;
   
   // 显示统计（如果有答题记录）
   let stats = "";
@@ -248,10 +253,18 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   student.totalQuestions++;
   if (isCorrect) student.correctAnswers++;
   
+  // 保存到lastQuestion
+  state.lastQuestion = {
+    id: question.id,
+    content: question.content,
+    correctAnswer: question.correctAnswer,
+    explanation: question.explanation,
+    isCorrect: isCorrect
+  };
+  
   // 清除当前题目
   state.currentQuestion = null;
   state.waitingForContinue = true;
-  state.lastAnswerCorrect = isCorrect;
   questionStates.set(qqId, state);
   saveUserData(qqId, student);
   
@@ -261,6 +274,18 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   const result = isCorrect ? "✅ 对了！" : "❌ 错了！";
   
   return `${result}\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
+}
+
+// 教用户知识点（当用户不懂时）
+function teachLastQuestion(qqId: string, state: QuestionState, student: Student): string {
+  if (!state.lastQuestion) {
+    return `💡 回复"继续"出下一题，或发送 /练习 重新开始`;
+  }
+  
+  const q = state.lastQuestion;
+  const result = q.isCorrect ? "✅ 上一题你答对了！" : "❌ 上一题答案是" + q.correctAnswer + "。";
+  
+  return `${result}\n\n💡 ${q.explanation}\n\n📊 继续学习，回复"继续"出下一题`;
 }
 
 // 保存用户数据
