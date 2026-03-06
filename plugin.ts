@@ -270,10 +270,17 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   
   const acc = Math.round((student.correctAnswers / student.totalQuestions) * 100);
   
-  // 统一格式：无论对错都给解析+统计
-  const result = isCorrect ? "✅ 对了！" : "❌ 错了！";
+  // 答对：直接出下一题（高效）
+  if (isCorrect) {
+    const nextQuestion = generateQuestion(qqId, student);
+    return `✅ 对了！\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n${nextQuestion}`;
+  }
   
-  return `${result}\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
+  // 答错：给解析+引导，等待继续
+  state.waitingForContinue = true;
+  questionStates.set(qqId, state);
+  
+  return `❌ 错了！\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
 }
 
 // 引导思考 + 最终给出解释
