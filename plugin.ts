@@ -263,7 +263,9 @@ function handlePersonalAssistant(message: string, qqId: string): string {
 // ==================== 学生模式（v3.0 用户中心版） ====================
 async function handleStudentMessage(message: string, qqId: string): Promise<string> {
   const trimmed = message.trim().toLowerCase();
-  const student = students.get(qqId)!;
+  const student = students.get(qqId);
+  if (!student) return "请先发送激活码激活账号。";
+  
   student.lastActiveAt = new Date().toISOString();
   
   // 获取或初始化答题状态
@@ -381,7 +383,7 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   // 更新难度
   updateDifficulty(student);
   
-  // 清除当前题目
+  // 清除当前题目，设置等待状态
   state.currentQuestion = null;
   state.waitingForContinue = true;
   questionStates.set(qqId, state);
@@ -401,8 +403,7 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   }
   
   // 答错：给解析+扩展，等待用户说"继续"
-  state.waitingForContinue = true;
-  questionStates.set(qqId, state);
+  const guide = generateGuide(question);
   
   let reply = `❌ 错了！\n\n${guide}\n\n`;
   reply += `💡 正确答案是：${question.correctAnswer}\n\n`;
@@ -415,7 +416,7 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
 }
 
 // 引导思考 - AI自由发挥（根据题目内容）
-function generateGuide(question: any): string {
+function generateGuide(question: typeof questionBank[0]): string {
   // 根据题目关键词生成个性化引导
   const content = question.content;
   
