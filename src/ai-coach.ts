@@ -10,7 +10,8 @@ async function sessions_spawn(options: { task: string; model?: string; timeoutSe
   if (options.task.includes("答对了")) {
     return "很好！能解释一下你的思路吗？💡";
   } else if (options.task.includes("答错了")) {
-    return "这个选择很有意思，你是怎么考虑的？🤔";
+    // 苏格拉底式引导：不直接说错，而是层层提问
+    return "让我们一步步分析这道题...\n\n首先，题目问的是『必查项目』，你觉得输血安全最重要的是什么？🤔";
   }
   
   return "让我们继续思考... 💭";
@@ -40,7 +41,10 @@ const COACH_SYSTEM_PROMPT = `你是一位专业的医学检验学习教练，风
 4. 关注情绪：察觉学生的挫败感，及时给予肯定
 
 【对话策略】
-- 学生答错时：不直接说"错了"，而是问"你是怎么想的？"
+- 学生答错时：用3层提问引导发现
+  第1层：确认理解 - "这道题问的是什么？"
+  第2层：分析选项 - "你觉得这些选项有什么区别？"
+  第3层：引导发现 - "如果...会怎样？"
 - 学生答对时：不只说"对了"，而是问"能解释一下为什么吗？"
 - 引导发现：用"如果...会怎样？""你觉得...和...有什么区别？"
 - 及时肯定：看到进步立即表扬，"比上次有进步！"
@@ -162,12 +166,22 @@ function fallbackResponse(context: AICoachContext): string {
     ];
     return responses[Math.floor(Math.random() * responses.length)];
   } else {
-    const responses = [
-      "这个选择很有意思，你是怎么考虑的？",
-      "能说说你为什么选这个答案吗？",
-      "如果换个角度想，会不会有不同答案？",
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
+    // 苏格拉底式引导：根据题目内容设计问题
+    const question = context.question;
+    const subject = question.subject;
+    
+    // 第一层：确认理解题意
+    if (!context.history || context.history.length < 2) {
+      return `让我们一步步分析...\n\n这道题问的是「${question.content.substring(0, 30)}...」，\n你觉得关键信息是什么？🔍`;
+    }
+    
+    // 第二层：分析知识点
+    if (context.history.length < 4) {
+      return `这道题涉及${subject}的知识。\n\n你还记得这个知识点的核心原理吗？\n或者说说你对这个知识点的理解？🤔`;
+    }
+    
+    // 第三层：引导发现正确答案
+    return `很好的思考！\n\n让我们看看选项之间的区别...\n你觉得正确答案应该满足什么条件？💡`;
   }
 }
 
