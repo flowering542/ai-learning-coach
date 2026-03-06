@@ -8,10 +8,9 @@ async function sessions_spawn(options: { task: string; model?: string; timeoutSe
   
   // 根据任务内容返回模拟回复
   if (options.task.includes("答对了")) {
-    return "很好！能解释一下你的思路吗？💡";
+    return "✅ 对了！能简单说说为什么选这个吗？\n\n（说完回复"继续"出下一题）";
   } else if (options.task.includes("答错了")) {
-    // 苏格拉底式引导：不直接说错，而是层层提问
-    return "让我们一步步分析这道题...\n\n首先，题目问的是『必查项目』，你觉得输血安全最重要的是什么？🤔";
+    return "❌ 再想想。这道题的关键是什么？🤔\n\n（想明白后回复"继续"出下一题）";
   }
   
   return "让我们继续思考... 💭";
@@ -41,13 +40,10 @@ const COACH_SYSTEM_PROMPT = `你是一位专业的医学检验学习教练，风
 4. 关注情绪：察觉学生的挫败感，及时给予肯定
 
 【对话策略】
-- 学生答错时：用3层提问引导发现
-  第1层：确认理解 - "这道题问的是什么？"
-  第2层：分析选项 - "你觉得这些选项有什么区别？"
-  第3层：引导发现 - "如果...会怎样？"
-- 学生答对时：不只说"对了"，而是问"能解释一下为什么吗？"
-- 引导发现：用"如果...会怎样？""你觉得...和...有什么区别？"
-- 及时肯定：看到进步立即表扬，"比上次有进步！"
+- 学生答对时：确认理解 "对了！为什么选这个？"，等用户说"继续"再出下一题
+- 学生答错时：1层关键引导 "再想想，核心是...？"，等用户说"继续"再出下一题
+- 绝不自动出下一题，必须等用户主动说"继续"或"下一题"
+- 统一用数字 1-4 表示选项
 
 【约束】
 - 每次回复最多3句话
@@ -156,32 +152,16 @@ ${context.question.content}
 
 /**
  * 备用回复（API 失败时）
+ * 优化：简化引导，用户说"继续"才出下一题
  */
 function fallbackResponse(context: AICoachContext): string {
   if (context.isCorrect) {
-    const responses = [
-      "答对了！能分享一下你是怎么思考的吗？",
-      "很好！你是怎么排除其他选项的？",
-      "不错！这个知识点掌握得怎么样？",
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
+    // 答对后：确认理解，等用户说"继续"
+    return "✅ 对了！能简单说说为什么选这个吗？\n\n（说完回复"继续"出下一题）";
   } else {
-    // 苏格拉底式引导：根据题目内容设计问题
+    // 答错后：1层关键引导，等用户说"继续"
     const question = context.question;
-    const subject = question.subject;
-    
-    // 第一层：确认理解题意
-    if (!context.history || context.history.length < 2) {
-      return `让我们一步步分析...\n\n这道题问的是「${question.content.substring(0, 30)}...」，\n你觉得关键信息是什么？🔍`;
-    }
-    
-    // 第二层：分析知识点
-    if (context.history.length < 4) {
-      return `这道题涉及${subject}的知识。\n\n你还记得这个知识点的核心原理吗？\n或者说说你对这个知识点的理解？🤔`;
-    }
-    
-    // 第三层：引导发现正确答案
-    return `很好的思考！\n\n让我们看看选项之间的区别...\n你觉得正确答案应该满足什么条件？💡`;
+    return `❌ 再想想。\n\n这道题的关键是「${question.content.substring(0, 20)}...」，\n核心考点是什么？🤔\n\n（想明白后回复"继续"出下一题）`;
   }
 }
 
