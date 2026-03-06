@@ -9,7 +9,7 @@
     "source": "考试宝典等公开资料整理",
     "convertedAt": "2026-03-06",
     "format": "ai-coach-v3",
-    "categoryAdjusted": true
+    "categoryVerified": true
   },
   "questions": [
     {
@@ -41,7 +41,7 @@
       "explanation": "枸橼酸盐中毒主要是因为枸橼酸与血钙结合导致低钙血症，治疗应补充钙剂（如葡萄糖酸钙）。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -201,7 +201,7 @@
       "explanation": "强直性脊柱炎与HLA-B27高度相关，约90%的患者携带HLA-B27抗原。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -393,7 +393,7 @@
       "explanation": "IgE主要参与I型超敏反应（过敏反应），在过敏性疾病时升高。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "medium",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -553,7 +553,7 @@
       "explanation": "非溶血性发热反应最常见的原因是患者体内白细胞抗体与供血者白细胞发生反应。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -569,7 +569,7 @@
       "explanation": "ABO血型不合是急性溶血性输血反应最常见的原因，由于天然抗体引起，病情凶险。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -585,7 +585,7 @@
       "explanation": "TRALI主要表现为输血后6小时内出现急性呼吸困难、低氧血症、非心源性肺水肿。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -633,7 +633,7 @@
       "explanation": "ABO新生儿溶血病最常见，虽然Rh溶血病病情更重，但ABO不合妊娠发生率更高。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -649,7 +649,7 @@
       "explanation": "Rh抗体是免疫抗体，需要Rh阳性红细胞刺激才能产生，所以第一胎通常不受影响。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -825,7 +825,7 @@
       "explanation": "HLA（人类白细胞抗原）主要存在于白细胞表面，也分布于其他有核细胞。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -841,7 +841,7 @@
       "explanation": "HLA系统主要用于器官移植配型、亲子鉴定、疾病关联研究等，不用于ABO血型鉴定。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -857,7 +857,7 @@
       "explanation": "目前已发现24个HPA系统，其中12个为国际输血学会(ISBT)正式命名。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -873,7 +873,7 @@
       "explanation": "HLA抗体是血小板输注无效最常见的原因，约占70-80%。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -1033,7 +1033,7 @@
       "explanation": "O型母亲有抗A、抗B抗体，当胎儿为A型或B型时，易发生ABO新生儿溶血病。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -1049,7 +1049,7 @@
       "explanation": "换血治疗通常选用O型红细胞（无A、B抗原）和AB型血浆（无抗A、抗B抗体），以避免溶血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -1097,7 +1097,7 @@
       "explanation": "怀疑急性溶血反应时，应立即停止输血，保留静脉通路，进行核查和抢救。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1113,7 +1113,7 @@
       "explanation": "辐照血液制品可灭活淋巴细胞，是预防TA-GVHD的有效方法。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1513,7 +1513,7 @@
       "explanation": "药物诱导的免疫性溶血，红细胞表面有药物-抗体复合物或自身抗体，Coombs试验阳性。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1817,7 +1817,7 @@
       "explanation": "急性溶血性输血反应是红细胞抗原与相应抗体结合，激活补体系统，导致红细胞迅速破坏。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1833,7 +1833,7 @@
       "explanation": "血小板在20-24°C保存，细菌容易繁殖，是细菌污染性输血反应最常见的血液制品。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1849,7 +1849,7 @@
       "explanation": "血红蛋白尿是溶血反应的表现，循环超负荷表现为呼吸困难、血压升高、颈静脉怒张等心衰症状。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -1865,7 +1865,7 @@
       "explanation": "直接抗人球蛋白试验(DAT)阳性是新生儿溶血病的确诊试验，证明红细胞被母体抗体致敏。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -1881,7 +1881,7 @@
       "explanation": "换血血源Rh血型应与母亲同型（避免再次致敏），ABO血型与新生儿同型或选用O型红细胞+AB型血浆。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -2265,7 +2265,7 @@
       "explanation": "TRIM是指输血引起的免疫抑制现象，表现为术后感染率增加、肿瘤复发率增加等。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -2281,7 +2281,7 @@
       "explanation": "白细胞及其分泌的细胞因子是引起TRIM的主要原因，去白细胞输血可减少免疫抑制。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -2697,7 +2697,7 @@
       "explanation": "TRALI通常发生在输血后6小时内，表现为急性呼吸困难和低氧血症。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -2713,7 +2713,7 @@
       "explanation": "TRALI主要由供者血浆中的HLA或粒细胞抗体与受者白细胞反应，激活补体，导致肺毛细血管损伤。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -2729,7 +2729,7 @@
       "explanation": "PTP通常发生在输血后5-10天，表现为严重血小板减少，与抗血小板抗体有关。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3257,7 +3257,7 @@
       "explanation": "轻度过敏反应表现为皮肤瘙痒、荨麻疹，严重时可出现呼吸困难、过敏性休克。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3273,7 +3273,7 @@
       "explanation": "严重过敏反应应立即停止输血，给予肾上腺素、抗组胺药、糖皮质激素等，绝不能加快输血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3321,7 +3321,7 @@
       "explanation": "HLA配型相合程度越高，移植排斥反应风险越低，移植物存活时间越长。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -3337,7 +3337,7 @@
       "explanation": "粒细胞特异性抗体（如抗-HNA抗体）是TRALI的重要发病机制之一。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "basics",
+      "category": "professional",
       "subjectId": "immunohematology"
     },
     {
@@ -3609,7 +3609,7 @@
       "explanation": "迟发性溶血反应通常发生在输血后3-14天，由回忆性免疫反应引起，症状较轻。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3625,7 +3625,7 @@
       "explanation": "迟发性溶血反应多由Kidd、Rh等系统的抗体引起，这些抗体在初次免疫后水平下降，再次刺激后产生回忆反应。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3833,7 +3833,7 @@
       "explanation": "输血后紫癜首选IVIG治疗，可抑制抗体产生，血小板输注效果差。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -3849,7 +3849,7 @@
       "explanation": "输血后紫癜多由抗-HPA-1a抗体引起，破坏自身和输注的血小板。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4025,7 +4025,7 @@
       "explanation": "TRIM主要由供者白细胞介导，可抑制受者免疫功能，增加感染和肿瘤复发风险。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4041,7 +4041,7 @@
       "explanation": "去白细胞输血可预防TRIM、非溶血性发热反应、HLA同种免疫、CMV感染等。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4249,7 +4249,7 @@
       "explanation": "细菌污染性输血反应最常见的细菌是表皮葡萄球菌（皮肤污染）和革兰阴性杆菌（如假单胞菌、肠杆菌）。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4265,7 +4265,7 @@
       "explanation": "梅毒螺旋体在4°C储存3-6天后死亡，因此储存4天以上的血液传播梅毒的风险极低。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4473,7 +4473,7 @@
       "explanation": "TRALI主要是支持治疗，以呼吸支持（氧疗、机械通气）为主，避免利尿（非心源性肺水肿）。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4489,7 +4489,7 @@
       "explanation": "TACO处理包括立即停止输血、利尿、半卧位、吸氧，必要时给予强心药。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4697,7 +4697,7 @@
       "explanation": "免疫缺陷患者、早产儿、孕妇是CMV感染高危人群，应输注CMV阴性血或去白细胞血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
@@ -4713,7 +4713,7 @@
       "explanation": "HTLV主要存在于白细胞中，去白细胞输血可有效预防输血传播HTLV。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "related",
+      "category": "professional",
       "subjectId": "transfusion_reaction"
     },
     {
