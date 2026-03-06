@@ -233,7 +233,7 @@ function generateQuestion(qqId: string): string {
   state.waitingForContinue = false;
   state.lastAnswerCorrect = null;
   
-  return `📝 练习题\n━━━━━━━━━━━━━━━━━━━━\n\n📚 ${question.content}\n\n${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n━━━━━━━━━━━━━━━━━━━━\n💡 请回复 1/2/3/4 选择答案`;
+  return `📝 ${question.content}\n\n${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n回复 1/2/3/4`;
 }
 
 // 处理答题
@@ -249,22 +249,15 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   if (isCorrect) student.correctAnswers++;
   
   if (isCorrect) {
-    return `✅ 对了！\n\n能简单说说为什么选这个吗？🤔\n\n（说完回复"继续"出下一题）`;
+    return `✅ 对了！为什么选这个？🤔\n\n（回复"继续"）`;
   } else {
-    return `❌ 再想想。\n\n这道题的关键是什么？💡\n\n（想明白后回复"继续"出下一题）`;
+    return `❌ 再想想。关键是什么？💡\n\n（回复"继续"）`;
   }
 }
 
 // 处理讨论（用户答完后继续对话）
 function handleDiscussion(message: string, qqId: string, state: QuestionState): string {
-  const responses = [
-    "💡 很好的思考！\n\n回复"继续"出下一题",
-    "👍 理解到位！\n\n回复"继续"出下一题", 
-    "🤔 不错！\n\n回复"继续"出下一题",
-    "✨ 继续加油！\n\n回复"继续"出下一题"
-  ];
-  
-  return responses[Math.floor(Math.random() * responses.length)];
+  return `💡 收到！回复"继续"出下一题`;
 }
 
 // ==================== 访客模式 ====================
