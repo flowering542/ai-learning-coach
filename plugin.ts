@@ -282,6 +282,13 @@ function handleDeepDiscussion(message: string, qqId: string, state: QuestionStat
   }
 }
 
+// 保存用户数据（简化版，实际应使用文件或数据库）
+function saveUserData(qqId: string, student: Student): void {
+  // 数据已保存在 students Map 中
+  // 如需持久化，可在此添加文件写入逻辑
+  students.set(qqId, student);
+}
+
 // 获取相似概念（用于引导）
 function getSimilarConcept(question: any): string {
   // 根据题目返回相似但不同的概念
