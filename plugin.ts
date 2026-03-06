@@ -346,8 +346,9 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
     return reply;
   }
   
-  // 答错：给解析+扩展，然后直接下一题
-  const nextQuestion = generateQuestion(qqId, student);
+  // 答错：给解析+扩展，等待用户说"继续"
+  state.waitingForContinue = true;
+  questionStates.set(qqId, state);
   
   let reply = `❌ 错了！\n\n${guide}\n\n`;
   reply += `💡 正确答案是：${question.correctAnswer}\n\n`;
@@ -355,7 +356,7 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   if (question.extend) {
     reply += `${question.extend}\n\n`;
   }
-  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n${nextQuestion}`;
+  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
   return reply;
 }
 
@@ -381,29 +382,11 @@ function generateGuide(question: any): string {
   return "💡 思考一下：这道题的核心概念是什么？和临床实际有什么联系？🤔";
 }
 
-// 用户说"继续"后给出答案解析，然后直接下一题
+// 用户说"继续"后出下一题
 function guideAndTeach(message: string, qqId: string, state: QuestionState, student: Student): string {
-  if (!state.lastQuestion) {
-    return generateQuestion(qqId, student);
-  }
-  
-  const q = state.lastQuestion;
-  const acc = Math.round((student.correctAnswers / student.totalQuestions) * 100);
-  
-  // 清除等待状态
+  // 用户说"继续"，直接出下一题
   state.waitingForContinue = false;
-  questionStates.set(qqId, state);
-  
-  // 给答案+解析+扩展，然后直接下一题
-  const nextQuestion = generateQuestion(qqId, student);
-  
-  let reply = `💡 正确答案是：${q.correctAnswer}\n\n`;
-  reply += `${q.explanation}\n\n`;
-  if (q.extend) {
-    reply += `${q.extend}\n\n`;
-  }
-  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n${nextQuestion}`;
-  return reply;
+  return generateQuestion(qqId, student);
 }
 
 // 保存用户数据
