@@ -252,6 +252,9 @@ export async function coachTool(
     };
     updatedData.currentQuestion = question;
     updatedData.lastActiveAt = new Date().toISOString();
+    // 清除等待状态
+    delete updatedData.waitingForContinue;
+    delete updatedData.lastQuestionResult;
     saveUserData(userId, updatedData);
 
     let output = '📝 练习题\n';
@@ -275,13 +278,16 @@ export async function coachTool(
 
     if (question.options) {
       output += '────────────────────\n';
+      // 统一用数字 1-4
+      const optionMap: Record<string, string> = { 'A': '1', 'B': '2', 'C': '3', 'D': '4' };
       question.options.forEach((opt: any) => {
-        output += `${opt.id}. ${opt.text}\n`;
+        const numId = optionMap[opt.id] || opt.id;
+        output += `${numId}. ${opt.text}\n`;
       });
     }
 
     output += '\n━━━━━━━━━━━━━━━━━━━━\n';
-    output += '💡 请回复 A/B/C/D 选择答案';
+    output += '💡 请回复 1/2/3/4 选择答案';
     return { result: output, data: { question } };
   }
 
@@ -424,13 +430,16 @@ function analyzeErrorReason(question: any, userAnswer: string): string {
 }
 
 // ========== 答题 ==========
-  if (/^[A-Da-d]$/.test(trimmed)) {
+  // 支持数字 1-4 和字母 A-D
+  if (/^[1-4A-Da-d]$/.test(trimmed)) {
     if (!userData?.currentQuestion) {
       return { result: '请先发送 /练习 开始答题。' };
     }
 
     const question = userData.currentQuestion;
-    const answer = trimmed.toUpperCase();
+    // 转换数字到字母（1->A, 2->B, 3->C, 4->D）
+    const answerMap: Record<string, string> = { '1': 'A', '2': 'B', '3': 'C', '4': 'D' };
+    const answer = answerMap[trimmed] || trimmed.toUpperCase();
     const isCorrect = answer === question.correctAnswer;
 
     // 更新统计
@@ -451,27 +460,28 @@ function analyzeErrorReason(question: any, userAnswer: string): string {
       });
     }
 
-    // 清除当前题目
-    delete userData.currentQuestion;
+    // 不清除当前题目，改为设置等待状态
+    userData.waitingForContinue = true;
+    userData.lastQuestionResult = {
+      isCorrect,
+      correctAnswer: question.correctAnswer,
+      explanation: question.explanation,
+      yourAnswer: answer
+    };
     saveUserData(userId, userData);
 
     const acc = Math.round((userData.correctAnswers / userData.totalQuestions) * 100);
 
     let output = '';
     if (isCorrect) {
-      output += '🎉 回答正确！\n';
+      output += '✅ 对了！\n';
       output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+      output += '能简单说说为什么选这个吗？🤔\n\n';
     } else {
-      output += '❌ 回答错误\n';
+      output += '❌ 再想想。\n';
       output += '━━━━━━━━━━━━━━━━━━━━\n\n';
-    }
-
-    output += `✅ 正确答案：${question.correctAnswer}\n\n`;
-
-    if (question.explanation) {
-      output += '📖 解析\n';
-      output += '────────────────────\n';
-      output += `${question.explanation}\n\n`;
+      output += '这道题的关键是什么？💡\n\n';
+      output += `提示：${question.explanation?.substring(0, 40) || '仔细分析题干'}...\n\n`;
     }
 
     output += '📊 学习统计\n';
@@ -484,48 +494,67 @@ function analyzeErrorReason(question: any, userAnswer: string): string {
       output += '📝 错题已记录\n\n';
     }
 
-    output += '💡 继续答题...\n\n';
+    output += '（想明白后回复"继续"出下一题）';
 
-    // 自动出下一题
-    const bank = loadQuestionBank();
-    if (bank.questions.length > 0) {
-      const nextQuestion = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+    return { result: output };
+  }
 
-      // 保存新题目
-      userData.currentQuestion = nextQuestion;
-      userData.lastActiveAt = new Date().toISOString();
-      saveUserData(userId, userData);
-
-      output += '━━━━━━━━━━━━━━━━━━━━\n';
-      output += '📝 下一题\n';
-      output += '━━━━━━━━━━━━━━━━━━━━\n\n';
-
-      const subjectMap: Record<string, string> = {
-        'blood_basic': '血液学基础',
-        'clinical_transfusion': '临床输血',
-        'blood_quality': '血液质量',
-        'immunohematology': '免疫血液学',
-        'transfusion_reaction': '输血反应',
-        'component_therapy': '成分输血',
-        'apheresis': '单采技术'
-      };
-      const subjectName = subjectMap[nextQuestion.subjectId] || nextQuestion.subjectId || '医学检验';
-      const diffMap: Record<string, string> = { 'easy': '简单', 'medium': '中等', 'hard': '困难' };
-      const diffName = diffMap[nextQuestion.difficulty] || nextQuestion.difficulty || '中等';
-
-      output += `📚 ${subjectName}  |  ${diffName}\n\n`;
-      output += `${nextQuestion.content}\n\n`;
-
-      if (nextQuestion.options) {
-        output += '────────────────────\n';
-        nextQuestion.options.forEach((opt: any) => {
-          output += `${opt.id}. ${opt.text}\n`;
-        });
-      }
-
-      output += '\n━━━━━━━━━━━━━━━━━━━━\n';
-      output += '💡 请回复 A/B/C/D 选择答案';
+  // ========== 继续下一题 ==========
+  if (/^(继续|下一题|jt|xyt)$/.test(trimmed)) {
+    if (!userData?.waitingForContinue) {
+      return { result: '请先发送 /练习 开始答题。' };
     }
+
+    // 清除等待状态
+    delete userData.waitingForContinue;
+    delete userData.lastQuestionResult;
+    delete userData.currentQuestion;
+    saveUserData(userId, userData);
+
+    // 出下一题
+    const bank = loadQuestionBank();
+    if (bank.questions.length === 0) {
+      return { result: '❌ 题库加载失败' };
+    }
+
+    const question = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+
+    // 保存当前题目
+    userData.currentQuestion = question;
+    userData.lastActiveAt = new Date().toISOString();
+    saveUserData(userId, userData);
+
+    let output = '📝 练习题\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+
+    const subjectMap: Record<string, string> = {
+      'blood_basic': '血液学基础',
+      'clinical_transfusion': '临床输血',
+      'blood_quality': '血液质量',
+      'immunohematology': '免疫血液学',
+      'transfusion_reaction': '输血反应',
+      'component_therapy': '成分输血',
+      'apheresis': '单采技术'
+    };
+    const subjectName = subjectMap[question.subjectId] || question.subjectId || '医学检验';
+    const diffMap: Record<string, string> = { 'easy': '简单', 'medium': '中等', 'hard': '困难' };
+    const diffName = diffMap[question.difficulty] || question.difficulty || '中等';
+
+    output += `📚 ${subjectName}  |  ${diffName}\n\n`;
+    output += `${question.content}\n\n`;
+
+    if (question.options) {
+      output += '────────────────────\n';
+      // 统一用数字 1-4
+      const optionMap: Record<string, string> = { 'A': '1', 'B': '2', 'C': '3', 'D': '4' };
+      question.options.forEach((opt: any) => {
+        const numId = optionMap[opt.id] || opt.id;
+        output += `${numId}. ${opt.text}\n`;
+      });
+    }
+
+    output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+    output += '💡 请回复 1/2/3/4 选择答案';
 
     return { result: output };
   }
