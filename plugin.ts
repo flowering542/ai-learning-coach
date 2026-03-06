@@ -1,7 +1,7 @@
 // Coach Agent Plugin for OpenClaw
 // 学习教练 Agent - 优化版：答对直接下一题，答错深入引导
 
-import type { OpenClawPluginApi, AgentDefinition } from "openclaw/plugin-sdk";
+import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
 
 // ==================== 配置区域 ====================
 const ADMIN_QQ_IDS = new Set<string>([
@@ -250,12 +250,14 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   if (isCorrect) student.correctAnswers++;
   
   // 清除当前题目
-  delete state.currentQuestion;
+  state.currentQuestion = null;
   saveUserData(qqId, student);
   
   if (isCorrect) {
     // 答对：直接出下一题（不打扰）
-    return `✅ 对了！👍\n\n${generateQuestion(qqId)}`;
+    // 注意：先返回结果，再附加新题目
+    const nextQuestion = generateQuestion(qqId);
+    return `✅ 对了！👍\n\n${nextQuestion}`;
   } else {
     // 答错：进入深入引导模式
     state.waitingForContinue = true;
