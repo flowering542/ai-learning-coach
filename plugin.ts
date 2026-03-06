@@ -183,8 +183,8 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
       return generateQuestion(qqId, student);
     }
     
-    // 用户说其他内容（不懂）→ 直接教知识点
-    return teachLastQuestion(qqId, state, student);
+    // 用户说其他内容 → 引导思考，然后给解释
+    return guideAndTeach(message, qqId, state, student);
   }
   
   // 检查是否在答题（回复 1-4）
@@ -276,16 +276,16 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   return `${result}\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
 }
 
-// 教用户知识点（当用户不懂时）
-function teachLastQuestion(qqId: string, state: QuestionState, student: Student): string {
+// 引导思考 + 最终给出解释
+function guideAndTeach(message: string, qqId: string, state: QuestionState, student: Student): string {
   if (!state.lastQuestion) {
-    return `💡 回复"继续"出下一题，或发送 /练习 重新开始`;
+    return `💡 回复"继续"出下一题`;
   }
   
   const q = state.lastQuestion;
-  const result = q.isCorrect ? "✅ 上一题你答对了！" : "❌ 上一题答案是" + q.correctAnswer + "。";
   
-  return `${result}\n\n💡 ${q.explanation}\n\n📊 继续学习，回复"继续"出下一题`;
+  // 简单引导一句，然后直接给解释（不机械多轮）
+  return `💡 思考一下：这道题的关键点是什么？\n\n${q.explanation}\n\n📊 回复"继续"出下一题`;
 }
 
 // 保存用户数据
