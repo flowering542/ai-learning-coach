@@ -429,9 +429,36 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
 
 // 智能选择题目
 function selectSmartQuestion(student: Student): typeof questionBank[0] {
-  const history = student.questionHistory;
+  const history = student.questionHistory || [];
   
-  // 1. 如果有错题，优先出相关类型的题目（薄弱点针对性）
+  // 获取已做对的题目ID
+  const correctQuestionIds = new Set(
+    history.filter(h => h.isCorrect).map(h => h.questionId)
+  );
+  
+  // 获取做错的题目ID（用于复习）
+  const wrongQuestionIds = new Set(
+    history.filter(h => !h.isCorrect).map(h => h.questionId)
+  );
+  
+  // 1. 优先出未做过的题（学习新知）
+  const unansweredQuestions = questionBank.filter(q => 
+    !correctQuestionIds.has(q.id) && !wrongQuestionIds.has(q.id)
+  );
+  
+  if (unansweredQuestions.length > 0) {
+    // 按难度筛选
+    const candidates = unansweredQuestions.filter(q => 
+      q.difficulty === student.currentDifficulty
+    );
+    if (candidates.length > 0) {
+      return candidates[Math.floor(Math.random() * candidates.length)];
+    }
+    // 该难度没有未做题，返回所有未做题
+    return unansweredQuestions[Math.floor(Math.random() * unansweredQuestions.length)];
+  }
+  
+  // 2. 所有题都做过了，优先复习错题
   const wrongQuestions = history.filter(h => !h.isCorrect);
   if (wrongQuestions.length > 0) {
     // 找出错误最多的主题
@@ -452,25 +479,27 @@ function selectSmartQuestion(student: Student): typeof questionBank[0] {
       }
     }
     
-    // 从最薄弱主题中选一道没做过或做错的题
+    // 从最薄弱主题中选做错的题复习
     if (weakestSubject) {
+      const wrongIds = wrongQuestions.map(h => h.questionId);
       const candidates = questionBank.filter(q => 
-        q.subjectId === weakestSubject && 
-        q.difficulty === student.currentDifficulty
+        wrongIds.includes(q.id) && 
+        q.subjectId === weakestSubject
       );
       if (candidates.length > 0) {
         return candidates[Math.floor(Math.random() * candidates.length)];
       }
     }
+    
+    // 随机选一道错题复习
+    const wrongIds = wrongQuestions.map(h => h.questionId);
+    const candidates = questionBank.filter(q => wrongIds.includes(q.id));
+    if (candidates.length > 0) {
+      return candidates[Math.floor(Math.random() * candidates.length)];
+    }
   }
   
-  // 2. 根据当前难度选择题目
-  const candidates = questionBank.filter(q => q.difficulty === student.currentDifficulty);
-  if (candidates.length > 0) {
-    return candidates[Math.floor(Math.random() * candidates.length)];
-  }
-  
-  // 3. 默认随机
+  // 3. 所有题都做对了，随机出题（理论上不会到这里）
   return questionBank[Math.floor(Math.random() * questionBank.length)];
 }
 
