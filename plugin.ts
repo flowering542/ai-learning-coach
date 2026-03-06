@@ -36,12 +36,14 @@ interface QuestionState {
     options: string[];
     correctAnswer: string;
     explanation: string;
+    extend?: string;
   } | null;
   lastQuestion: {
     id: string;
     content: string;
     correctAnswer: string;
     explanation: string;
+    extend?: string;
     isCorrect: boolean;
   } | null;
   waitingForContinue: boolean;
@@ -51,28 +53,31 @@ interface QuestionState {
 const students = new Map<string, Student>();
 const questionStates = new Map<string, QuestionState>();
 
-// 模拟题库
+// 模拟题库（带扩展知识点）
 const questionBank = [
   {
     id: "q001",
     content: "输血前检查，下列哪项是必查项目？",
     options: ["ABO血型鉴定", "肝功能检查", "肾功能检查", "血糖检测"],
     correctAnswer: "1",
-    explanation: "ABO血型鉴定是输血前必查项目，确保血型匹配避免溶血反应。"
+    explanation: "ABO血型鉴定是输血前必查项目，确保血型匹配避免溶血反应。",
+    extend: "📚 扩展：除ABO血型外，Rh血型鉴定也很重要，特别是Rh阴性患者。输血前还需进行交叉配血试验，确保供血者和受血者血液相容。"
   },
   {
     id: "q002", 
     content: "治疗性红细胞去除术适用于",
     options: ["真性红细胞增多症", "缺铁性贫血", "再生障碍性贫血", "急性失血"],
     correctAnswer: "1",
-    explanation: "真性红细胞增多症是红细胞异常增多，需要去除多余红细胞。"
+    explanation: "真性红细胞增多症是红细胞异常增多，需要去除多余红细胞。",
+    extend: "📚 扩展：治疗性血液成分去除术还包括血小板去除术（用于原发性血小板增多症）、白细胞去除术（用于高白细胞血症）等。"
   },
   {
     id: "q003",
     content: "慢性贫血患者输血的红细胞输注指征是Hb低于",
     options: ["50g/L", "60g/L", "70g/L", "80g/L"],
     correctAnswer: "2",
-    explanation: "慢性贫血患者Hb<60g/L且伴有明显缺氧症状时应考虑输血。"
+    explanation: "慢性贫血患者Hb<60g/L且伴有明显缺氧症状时应考虑输血。",
+    extend: "📚 扩展：急性失血患者的输血指征不同，通常Hb<70g/L或出现明显休克症状时需要输血。老年人和心血管疾病患者的输血指征可适当放宽。"
   }
 ];
 
@@ -273,14 +278,24 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
   // 答对：直接出下一题（高效）
   if (isCorrect) {
     const nextQuestion = generateQuestion(qqId, student);
-    return `✅ 对了！\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n${nextQuestion}`;
+    let reply = `✅ 对了！\n\n💡 ${question.explanation}\n\n`;
+    if (question.extend) {
+      reply += `${question.extend}\n\n`;
+    }
+    reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n${nextQuestion}`;
+    return reply;
   }
   
-  // 答错：给解析+引导，等待继续
+  // 答错：给解析+扩展，等待继续
   state.waitingForContinue = true;
   questionStates.set(qqId, state);
   
-  return `❌ 错了！\n\n💡 ${question.explanation}\n\n📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
+  let reply = `❌ 错了！\n\n💡 ${question.explanation}\n\n`;
+  if (question.extend) {
+    reply += `${question.extend}\n\n`;
+  }
+  reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
+  return reply;
 }
 
 // 引导思考 + 最终给出解释
@@ -291,8 +306,14 @@ function guideAndTeach(message: string, qqId: string, state: QuestionState, stud
   
   const q = state.lastQuestion;
   
-  // 简单引导一句，然后直接给解释（不机械多轮）
-  return `💡 思考一下：这道题的关键点是什么？\n\n${q.explanation}\n\n📊 回复"继续"出下一题`;
+  // 简单引导一句，然后给解释+扩展
+  let reply = `💡 思考一下：这道题的关键点是什么？\n\n`;
+  reply += `💡 ${q.explanation}\n\n`;
+  if (q.extend) {
+    reply += `${q.extend}\n\n`;
+  }
+  reply += `📊 回复"继续"出下一题`;
+  return reply;
 }
 
 // 保存用户数据
