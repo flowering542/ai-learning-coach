@@ -8,7 +8,8 @@
     "lastUpdated": "2026-03-05",
     "source": "考试宝典等公开资料整理",
     "convertedAt": "2026-03-06",
-    "format": "ai-coach-v3"
+    "format": "ai-coach-v3",
+    "categoryAdjusted": true
   },
   "questions": [
     {
@@ -72,7 +73,7 @@
       "explanation": "根据《献血法》规定，应急采血后应在10日内向当地县级以上人民政府卫生行政部门报告。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -104,7 +105,7 @@
       "explanation": "血小板应在20-24°C振荡保存，2-6°C会导致血小板失活，37°C易滋生细菌。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "easy",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -152,7 +153,7 @@
       "explanation": "根据《献血法》规定，临床用血不符合卫生标准的，给予警告，可以并处一万元以下罚款。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -168,7 +169,7 @@
       "explanation": "CMV（巨细胞病毒）抗体检测不是血站必检项目。必检项目包括HBsAg、HCV抗体、HIV抗体、梅毒等。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -216,7 +217,7 @@
       "explanation": "冰冻甘油红细胞的回收率应≥80%，以保证输血效果和安全性。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -344,7 +345,7 @@
       "explanation": "洗涤红细胞血浆蛋白清除率应≥98%，白细胞清除率应≥80%。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -360,7 +361,7 @@
       "explanation": "HIV急性感染期症状通常在感染后2-4周出现。",
       "extend": "📚 来源：考试宝典真题",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -600,7 +601,7 @@
       "explanation": "CPDA-1保存液保存的全血有效期为35天，ACD为21天，CPD为28天。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -616,7 +617,7 @@
       "explanation": "SAGM（盐水-腺嘌呤-葡萄糖-甘露醇）保存液可使红细胞保存期延长至42天。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -744,7 +745,7 @@
       "explanation": "《中华人民共和国献血法》规定我国实行无偿献血制度。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -760,7 +761,7 @@
       "explanation": "血站对献血者每次采集血液量一般为200ml，最多不得超过400ml。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -776,7 +777,7 @@
       "explanation": "《献血法》规定，两次采集间隔期不少于6个月。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -792,7 +793,7 @@
       "explanation": "血站必须对血液进行ALT、HBsAg、抗-HCV、抗-HIV、梅毒等检测。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -808,7 +809,7 @@
       "explanation": "输血前四项检测包括乙肝、丙肝、艾滋、梅毒，不包括巨细胞病毒。",
       "extend": "📚 来源：基于考试大纲生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -888,7 +889,7 @@
       "explanation": "从200ml全血制备的浓缩血小板，血小板含量应≥2.0×10¹⁰。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -904,7 +905,7 @@
       "explanation": "少白细胞红细胞中白细胞残留量应≤2.5×10⁸，可显著减少非溶血性发热反应。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1128,7 +1129,7 @@
       "explanation": "室内质控的目的是监测检测过程的稳定性，及时发现和纠正系统误差。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1144,7 +1145,7 @@
       "explanation": "室间质量评价是通过外部机构发放质控品，评价实验室检测结果的准确性和可比性。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1288,7 +1289,7 @@
       "explanation": "ACD保存液：A=枸橼酸(Acid citrate)，C=枸橼酸钠，D=葡萄糖(Dextrose)。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1304,7 +1305,7 @@
       "explanation": "CPDA-1在CPD基础上增加了腺嘌呤(Adenine)，可延长红细胞保存期至35天。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1320,7 +1321,7 @@
       "explanation": "CMV（巨细胞病毒）不是必检项目，但对免疫缺陷患者应输注CMV阴性血或去白细胞血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1336,7 +1337,7 @@
       "explanation": "窗口期是指感染后到抗体或抗原可被检测到的时间，此期献血可能漏检。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1528,7 +1529,7 @@
       "explanation": "输血前必须签署输血治疗同意书，告知患者输血风险和替代方案。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1544,7 +1545,7 @@
       "explanation": "输血后血袋应保存24小时，以备发生输血不良反应时进行核查。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1560,7 +1561,7 @@
       "explanation": "血站血液库存一般应保持3天用量，以应对突发事件和血液供应波动。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1576,7 +1577,7 @@
       "explanation": "我国无偿献血每次献血量一般为200ml或400ml，由献血者选择。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1592,7 +1593,7 @@
       "explanation": "献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1720,7 +1721,7 @@
       "explanation": "FFP应在全血采集后6-8小时内分离出血浆并速冻至-18°C以下，以保留所有凝血因子活性。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1736,7 +1737,7 @@
       "explanation": "普通冰冻血浆缺乏不稳定的凝血因子V和VIII，因为制备时间较晚或保存时间较长。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1752,7 +1753,7 @@
       "explanation": "冷沉淀是在1-6°C融化后，在-20°C条件下沉淀的冷不溶解物质，富含纤维蛋白原和FVIII。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1896,7 +1897,7 @@
       "explanation": "血站实验室室内质控要求CV一般不超过5%，以保证检测结果的精密度。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1912,7 +1913,7 @@
       "explanation": "室间质评可接受标准一般为测定结果与靶值的偏差≤15%，超过则认为结果不可接受。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1928,7 +1929,7 @@
       "explanation": "血站献血者健康征询和体检不合格率一般应控制在3%左右，过高说明征询标准过严，过低可能存在漏检。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -1992,7 +1993,7 @@
       "explanation": "CMV主要存在于白细胞中，去白细胞血液可有效预防CMV感染，适用于免疫缺陷患者。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2008,7 +2009,7 @@
       "explanation": "辐照处理可灭活淋巴细胞，是预防TA-GVHD的有效方法，适用于免疫缺陷患者和亲属供血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2024,7 +2025,7 @@
       "explanation": "红细胞储存过程中糖酵解产生乳酸，pH下降而非升高，2,3-DPG和ATP也下降。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2040,7 +2041,7 @@
       "explanation": "储存红细胞2,3-DPG降低，输注后通常在12-24小时内恢复至正常水平，恢复氧释放能力。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2152,7 +2153,7 @@
       "explanation": "三查指：查血液有效期、查血液质量、查输血装置是否完好。不包括查肝功能。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "easy",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2168,7 +2169,7 @@
       "explanation": "输血前必须由2名医护人员共同核对患者信息和血液信息，确认无误后方可输注。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2184,7 +2185,7 @@
       "explanation": "我国献血者体重要求：男性≥50kg，女性≥45kg，以保证献血者安全和血液质量。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2200,7 +2201,7 @@
       "explanation": "献血者血压要求：收缩压90-140mmHg，舒张压60-90mmHg，脉压差≥30mmHg。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2216,7 +2217,7 @@
       "explanation": "阑尾切除术后3个月可以献血。感冒痊愈后需1个月，拔牙后需2周，疟疾治愈后需3年。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2232,7 +2233,7 @@
       "explanation": "单采血小板时，抗凝剂与全血的比例一般为1:10，防止血液凝固同时减少枸橼酸对献血者的影响。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2248,7 +2249,7 @@
       "explanation": "机采血小板1个治疗量应含血小板≥2.5×10¹¹，相当于10单位手工分离血小板。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2328,7 +2329,7 @@
       "explanation": "《中华人民共和国献血法》第二条规定：国家实行无偿献血制度。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2344,7 +2345,7 @@
       "explanation": "《献血法》规定，非法采血或组织卖血，可并处10万元以下罚款；构成犯罪的，依法追究刑事责任。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2360,7 +2361,7 @@
       "explanation": "亚甲蓝光化学法是目前血浆病毒灭活常用的方法，可有效灭活脂质包膜病毒。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2376,7 +2377,7 @@
       "explanation": "细小病毒B19是无包膜病毒，对理化因素抵抗力强，病毒灭活方法对其效果较差。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2392,7 +2393,7 @@
       "explanation": "血站管理信息系统应实现从献血者登记、体检、采血、检测、制备、储存到发放的全过程追溯。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2408,7 +2409,7 @@
       "explanation": "血液条码标识包含献血编号、血型、采血日期、血液成分等信息，但不应显示献血者身份证号以保护隐私。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2424,7 +2425,7 @@
       "explanation": "全血采集后应在20-24°C保存，尽快制备血小板，低温会损伤血小板。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2440,7 +2441,7 @@
       "explanation": "400ml全血制备的浓缩血小板，血小板含量应≥4.0×10¹⁰，是200ml全血的2倍。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2456,7 +2457,7 @@
       "explanation": "冰冻红细胞应在-65°C以下保存（通常-80°C），可保存10年。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2472,7 +2473,7 @@
       "explanation": "冰冻红细胞解冻洗涤后，应在24小时内输注，不能再次冰冻。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2488,7 +2489,7 @@
       "explanation": "我国常用甘油作为红细胞冷冻保护剂，浓度约40%。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2504,7 +2505,7 @@
       "explanation": "去白细胞滤器利用吸附原理，滤材表面可吸附白细胞，而让红细胞通过。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2520,7 +2521,7 @@
       "explanation": "去白细胞血液制品白细胞残留量应≤2.5×10⁸，可有效预防非溶血性发热反应。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2536,7 +2537,7 @@
       "explanation": "血液辐照剂量通常为15-25 Gy，可灭活淋巴细胞但不影响红细胞功能。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2552,7 +2553,7 @@
       "explanation": "辐照会损伤红细胞膜，辐照后红细胞保存期缩短为28天（原为35-42天）。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2808,7 +2809,7 @@
       "explanation": "发生严重输血不良反应应立即报告输血科和医务部门，并保留血袋和输血器材备查。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2824,7 +2825,7 @@
       "explanation": "输血不良反应报告应包括患者信息、输血信息、不良反应表现、处理措施等，不涉及家庭收入。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2840,7 +2841,7 @@
       "explanation": "医疗机构血液库存不足应向血站申请调配，血站负责血液的采集、制备和供应。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2856,7 +2857,7 @@
       "explanation": "即使紧急情况，血液也必须完成检测合格后才能发放，这是血液安全的底线。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2872,7 +2873,7 @@
       "explanation": "红细胞制品运输温度应维持在2-10°C，使用冷藏箱或冷藏车，保证冷链不间断。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -2888,7 +2889,7 @@
       "explanation": "血小板应在20-24°C运输，并持续轻摇，防止聚集，不能使用冷藏运输。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3064,7 +3065,7 @@
       "explanation": "输血记录应保存10年，以便发生输血不良反应或纠纷时追溯。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3080,7 +3081,7 @@
       "explanation": "输血不良反应回报单应保存10年，用于统计分析和质量改进。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3192,7 +3193,7 @@
       "explanation": "全血采集后应在6-8小时内制备成分血，以保证血小板等成分的活性和功能。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3208,7 +3209,7 @@
       "explanation": "白膜层是离心后红细胞和血浆之间的白色层，主要含有白细胞和血小板，是制备浓缩血小板的原料。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3288,7 +3289,7 @@
       "explanation": "ALT是肝细胞损伤的敏感指标，作为病毒性肝炎的替代筛查指标，ALT升高提示可能存在肝炎。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3304,7 +3305,7 @@
       "explanation": "我国献血者ALT合格标准为<40U/L（速率法），超过此值应暂缓献血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3416,7 +3417,7 @@
       "explanation": "血液制品标签应注明血型、采血日期、血液成分、献血编号等，但不应显示献血者姓名以保护隐私。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3432,7 +3433,7 @@
       "explanation": "血液追溯系统应能追溯到献血者、采血时间、血液制备过程、检测信息、发放和使用等全过程。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3544,7 +3545,7 @@
       "explanation": "血站采用ELISA检测抗体/抗原，部分项目采用核酸检测(NAT)，提高检测灵敏度。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3560,7 +3561,7 @@
       "explanation": "NAT直接检测病毒核酸，可缩短窗口期，比抗体检测更早发现感染。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3640,7 +3641,7 @@
       "explanation": "报废血液应记录报废原因、数量、处理方式等，并按医疗废物管理规定处理。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3656,7 +3657,7 @@
       "explanation": "血液报废原因包括检测不合格、过期、外观异常、破损等，献血者要求不是报废原因。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3768,7 +3769,7 @@
       "explanation": "红细胞储存冰箱温度应保持在2-6°C，并24小时监控。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3784,7 +3785,7 @@
       "explanation": "血液储存冰箱应配备温度自动记录仪，24小时连续监测和记录。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3864,7 +3865,7 @@
       "explanation": "血站工作人员应每年体检1次，建立健康档案，患有传染病者不得从事血液工作。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3880,7 +3881,7 @@
       "explanation": "血站实验室人员应具备医学检验专业学历或经培训考核合格，持证上岗。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3960,7 +3961,7 @@
       "explanation": "我国献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -3976,7 +3977,7 @@
       "explanation": "我国献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4056,7 +4057,7 @@
       "explanation": "血液成分制备时，离心温度通常控制在室温(18-24°C)，防止冷凝集和影响血小板回收。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4072,7 +4073,7 @@
       "explanation": "血浆应在-50°C以下快速冷冻，可形成小冰晶，减少蛋白质变性，更好保存凝血因子。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4184,7 +4185,7 @@
       "explanation": "健康征询应包括既往病史、用药史、旅行史、高危行为等，以评估献血者健康状况。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4200,7 +4201,7 @@
       "explanation": "感冒痊愈后需1个月，拔牙后需2周，阑尾切除术后需3个月才能献血。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4280,7 +4281,7 @@
       "explanation": "血液外观正常不是召回原因。召回原因包括献血者回告高危行为、漏检、检测发现传染病标志物等。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4296,7 +4297,7 @@
       "explanation": "血液召回后应追踪调查，了解血液使用情况，记录处理措施，必要时对受血者进行追踪检测。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4408,7 +4409,7 @@
       "explanation": "血站应每年参加2-3次室间质量评价，以评估检测结果的准确性和可比性。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4424,7 +4425,7 @@
       "explanation": "室内质控应包括阳性对照、阴性对照和弱阳性对照，以全面监测试剂和方法的性能。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4504,7 +4505,7 @@
       "explanation": "血液标识应唯一、可追溯，从献血者登记到血液发放的全程可追踪。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4520,7 +4521,7 @@
       "explanation": "血液隔离制度是指检测合格的血液才能转入合格品库发放，待检和不合格血液应隔离存放。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4632,7 +4633,7 @@
       "explanation": "献血前告知应包括献血的意义、献血过程、可能的不良反应、注意事项、献血者健康征询表内容等。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "medium",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4648,7 +4649,7 @@
       "explanation": "献血者隐私保护包括个人信息、血液检测结果、献血记录等，未经本人同意不得向第三方透露。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4728,7 +4729,7 @@
       "explanation": "白细胞滤除最佳时间是采血后24-48小时，此时白细胞尚未释放细胞因子，滤除效果好。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
@@ -4744,7 +4745,7 @@
       "explanation": "白细胞滤除对红细胞有轻微损伤，去白细胞红细胞保存期为42天（原35-42天）。",
       "extend": "📚 来源：基于教材生成",
       "difficulty": "hard",
-      "category": "professional",
+      "category": "related",
       "subjectId": "blood_quality"
     },
     {
