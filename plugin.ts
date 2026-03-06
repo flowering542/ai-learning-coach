@@ -346,14 +346,37 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
     return reply;
   }
   
-  // 答错：先引导思考，不给答案，等待用户回复
+  // 答错：个性化引导思考，不给答案，等待用户回复
   state.waitingForContinue = true;
   questionStates.set(qqId, state);
   
-  return `❌ 错了！\n\n💡 思考一下：这道题的关键点是什么？和什么有关？🤔\n\n（回复你的思考，或说"继续"看解析）`;
+  const guide = generateGuide(question);
+  return `❌ 错了！\n\n${guide}\n\n（回复你的思考，或说"继续"看解析）`;
 }
 
-// 引导思考 + 最终给出解释（用户说"继续"时调用）
+// 引导思考 - AI自由发挥（根据题目内容）
+function generateGuide(question: any): string {
+  // 根据题目关键词生成个性化引导
+  const content = question.content;
+  
+  if (content.includes('血型')) {
+    return "💡 想想：血型不匹配会有什么后果？临床上最担心什么情况？🤔";
+  }
+  if (content.includes('去除') || content.includes('增多')) {
+    return "💡 思考一下：什么情况下需要'去除'血液成分？是太多还是太少？🤔";
+  }
+  if (content.includes('输血') && content.includes('指征')) {
+    return "💡 考虑一下：慢性贫血和急性失血的输血标准一样吗？关键区别是什么？🤔";
+  }
+  if (content.includes('交叉配血')) {
+    return "💡 想想：交叉配血和单纯测血型有什么区别？为什么要'交叉'？🤔";
+  }
+  
+  // 默认引导
+  return "💡 思考一下：这道题的核心概念是什么？和临床实际有什么联系？🤔";
+}
+
+// 用户说"继续"后给出答案解析
 function guideAndTeach(message: string, qqId: string, state: QuestionState, student: Student): string {
   if (!state.lastQuestion) {
     return `💡 回复"继续"出下一题`;
