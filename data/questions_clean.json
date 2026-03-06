@@ -1,0 +1,4433 @@
+{
+  "metadata": {
+    "title": "输血技术中级职称考试真题库",
+    "description": "临床输血技术（中级）考试真题及解析，代码：390",
+    "category": "医学职称考试",
+    "examCode": "390",
+    "totalQuestions": 276,
+    "lastUpdated": "2026-03-05",
+    "source": "考试宝典等公开资料整理",
+    "convertedAt": "2026-03-06",
+    "format": "ai-coach-v3.1",
+    "categoryFixed": true,
+    "cleaned": true
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "content": "一般输注6U悬浮红细胞可以使血红蛋白提升多少？",
+      "options": [
+        "10g/L",
+        "20g/L",
+        "30g/L",
+        "40g/L"
+      ],
+      "correctAnswer": "3",
+      "explanation": "一般输注1U悬浮红细胞（约200ml）可提升血红蛋白5g/L左右，因此6U约提升30g/L。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q002",
+      "content": "治疗枸橼酸盐中毒的有效措施是？",
+      "options": [
+        "补充钙剂",
+        "补充钾剂",
+        "补充钠剂",
+        "补充镁剂"
+      ],
+      "correctAnswer": "1",
+      "explanation": "枸橼酸盐中毒主要是因为枸橼酸与血钙结合导致低钙血症，治疗应补充钙剂（如葡萄糖酸钙）。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q003",
+      "content": "Rh血型系统中不包括的抗原是？",
+      "options": [
+        "D抗原",
+        "E抗原",
+        "A抗原",
+        "c抗原"
+      ],
+      "correctAnswer": "3",
+      "explanation": "A抗原属于ABO血型系统，不是Rh血型系统的抗原。Rh系统主要包括D、C、c、E、e等抗原。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q004",
+      "content": "突发事件时，边远地区无正式血站或中心血库，当地医疗机构应急采血抢救后几日内报告当地县以上人民政府行政主管部门？",
+      "options": [
+        "3日内",
+        "5日内",
+        "7日内",
+        "10日内"
+      ],
+      "correctAnswer": "4",
+      "explanation": "根据《献血法》规定，应急采血后应在10日内向当地县级以上人民政府卫生行政部门报告。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q005",
+      "content": "新生儿换血注意事项错误的是？",
+      "options": [
+        "换血前应禁食4小时",
+        "换血过程中应监测生命体征",
+        "换血后不需要继续光疗",
+        "换血应在无菌条件下进行"
+      ],
+      "correctAnswer": "3",
+      "explanation": "新生儿换血后通常需要继续光疗，以进一步降低血清胆红素水平，防止反跳。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q006",
+      "content": "保存血小板的恒温室的温度应为？",
+      "options": [
+        "2-6°C",
+        "10-15°C",
+        "20-24°C",
+        "37°C"
+      ],
+      "correctAnswer": "3",
+      "explanation": "血小板应在20-24°C振荡保存，2-6°C会导致血小板失活，37°C易滋生细菌。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "easy",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q007",
+      "content": "血清学中滴度资料最常用来表示其平均水平的指标应为？",
+      "options": [
+        "算术均数",
+        "几何均数",
+        "中位数",
+        "众数"
+      ],
+      "correctAnswer": "2",
+      "explanation": "滴度资料呈对数正态分布，应使用几何均数来表示平均水平。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q008",
+      "content": "引起系统误差的原因哪项不是？",
+      "options": [
+        "试剂不纯",
+        "仪器未校准",
+        "操作者个体差异",
+        "环境温度变化"
+      ],
+      "correctAnswer": "3",
+      "explanation": "操作者个体差异引起的是随机误差，不是系统误差。系统误差是由固定因素引起的。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q009",
+      "content": "临床用血的包装、储存、运输，不符合国家规定的卫生标准和要求的，由县级以上地方人民政府卫生行政部门责令改正，给予何种处罚，可以并处一万元以下的罚款？",
+      "options": [
+        "警告",
+        "罚款",
+        "吊销许可证",
+        "行政拘留"
+      ],
+      "correctAnswer": "1",
+      "explanation": "根据《献血法》规定，临床用血不符合卫生标准的，给予警告，可以并处一万元以下罚款。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q010",
+      "content": "以下不属于国家规定血站必检项目的是？",
+      "options": [
+        "HBsAg",
+        "HCV抗体",
+        "HIV抗体",
+        "CMV抗体"
+      ],
+      "correctAnswer": "4",
+      "explanation": "CMV（巨细胞病毒）抗体检测不是血站必检项目。必检项目包括HBsAg、HCV抗体、HIV抗体、梅毒等。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q011",
+      "content": "在实际工作中人们广泛应用什么来评价行动方针？",
+      "options": [
+        "收益率",
+        "效果",
+        "效率",
+        "效益"
+      ],
+      "correctAnswer": "4",
+      "explanation": "效益是评价行动方针最常用的指标，综合考虑了效果和成本。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q012",
+      "content": "强直性脊柱炎与HLA哪个抗原相关？",
+      "options": [
+        "HLA-A2",
+        "HLA-B27",
+        "HLA-DR4",
+        "HLA-DQ2"
+      ],
+      "correctAnswer": "2",
+      "explanation": "强直性脊柱炎与HLA-B27高度相关，约90%的患者携带HLA-B27抗原。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q013",
+      "content": "冰冻甘油红细胞的回收率应该是？",
+      "options": [
+        "≥60%",
+        "≥70%",
+        "≥80%",
+        "≥90%"
+      ],
+      "correctAnswer": "3",
+      "explanation": "冰冻甘油红细胞的回收率应≥80%，以保证输血效果和安全性。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q014",
+      "content": "当[S]=5Km时，酶促反应速度v应该是？",
+      "options": [
+        "0.5Vmax",
+        "0.83Vmax",
+        "0.91Vmax",
+        "Vmax"
+      ],
+      "correctAnswer": "2",
+      "explanation": "根据米氏方程v=Vmax[S]/(Km+[S])，当[S]=5Km时，v=5Vmax/6≈0.83Vmax。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q015",
+      "content": "某患者血型正定型为O型，反定型为B型，唾液血型物质测定为阴性，此时患者的血型可以肯定为？",
+      "options": [
+        "O型",
+        "B型",
+        "非分泌型",
+        "孟买型"
+      ],
+      "correctAnswer": "4",
+      "explanation": "正定型O型、反定型B型，且唾液血型物质阴性，符合孟买型（Oh型）的特征。孟买型红细胞上缺乏H抗原，正定型表现为O型，但血清中有抗H抗体，与O型红细胞反应表现为反定型异常。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q016",
+      "content": "关于顺式作用元件描述错误的是",
+      "options": [
+        "是DNA序列",
+        "位于基因旁侧",
+        "编码蛋白质",
+        "调节基因表达"
+      ],
+      "correctAnswer": "3",
+      "explanation": "顺式作用元件是DNA序列，不编码蛋白质，而是通过结合转录因子来调节基因表达。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q017",
+      "content": "急性白血病患者，血型鉴定正定型O型，反定型A型，该患者血型可能是",
+      "options": [
+        "A型",
+        "O型",
+        "类B抗原",
+        "孟买型"
+      ],
+      "correctAnswer": "3",
+      "explanation": "急性白血病患者红细胞上可能出现类B抗原，导致正定型为O型，反定型为A型的现象。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q018",
+      "content": "关于孕妇血液生理，下列说法不正确的是",
+      "options": [
+        "血容量增加",
+        "血红蛋白浓度降低",
+        "凝血因子减少",
+        "血沉加快"
+      ],
+      "correctAnswer": "3",
+      "explanation": "孕妇血液处于高凝状态，多数凝血因子增加而非减少。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q019",
+      "content": "病毒感染的快速诊断不包括以下哪项",
+      "options": [
+        "病毒分离培养",
+        "抗原检测",
+        "核酸检测",
+        "抗体检测"
+      ],
+      "correctAnswer": "1",
+      "explanation": "病毒分离培养需要较长时间，不属于快速诊断方法。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q020",
+      "content": "佝偻病与以下哪种维生素的缺乏有关",
+      "options": [
+        "维生素A",
+        "维生素D",
+        "维生素E",
+        "维生素K"
+      ],
+      "correctAnswer": "2",
+      "explanation": "佝偻病是由于维生素D缺乏导致钙磷代谢紊乱引起的骨骼疾病。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "easy",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q021",
+      "content": "洗涤红细胞血浆蛋白清除率的标准",
+      "options": [
+        "≥80%",
+        "≥90%",
+        "≥95%",
+        "≥98%"
+      ],
+      "correctAnswer": "4",
+      "explanation": "洗涤红细胞血浆蛋白清除率应≥98%，白细胞清除率应≥80%。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q022",
+      "content": "急性艾滋病感染者一般出现急性感染期症状的时间是",
+      "options": [
+        "1-2周",
+        "2-4周",
+        "1-3个月",
+        "3-6个月"
+      ],
+      "correctAnswer": "2",
+      "explanation": "HIV急性感染期症状通常在感染后2-4周出现。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q023",
+      "content": "关于1U浓缩血小板的叙述，错误的是",
+      "options": [
+        "从200ml全血制备",
+        "血小板含量≥2.0×10¹⁰",
+        "可4°C保存",
+        "需轻摇保存"
+      ],
+      "correctAnswer": "3",
+      "explanation": "浓缩血小板应在20-24°C振荡保存，4°C保存会导致血小板失活。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q024",
+      "content": "IgE升高常见于",
+      "options": [
+        "细菌感染",
+        "病毒感染",
+        "过敏反应",
+        "自身免疫病"
+      ],
+      "correctAnswer": "3",
+      "explanation": "IgE主要参与I型超敏反应（过敏反应），在过敏性疾病时升高。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q025",
+      "content": "在检验方法学的研究中，最有价值的精度是以下哪项",
+      "options": [
+        "准确度",
+        "精密度",
+        "总误差",
+        "不确定度"
+      ],
+      "correctAnswer": "3",
+      "explanation": "总误差反映了方法的准确度与精密度，是评价检验方法学最有价值的指标。",
+      "extend": "📚 来源：考试宝典真题",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q026",
+      "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+      "options": [
+        "A抗原",
+        "B抗原",
+        "A和B抗原",
+        "无抗原"
+      ],
+      "correctAnswer": "1",
+      "explanation": "A型血红细胞表面有A抗原，血清中有抗B抗体。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "easy",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q027",
+      "content": "ABO血型鉴定中，正定型是指",
+      "options": [
+        "用已知抗体检测红细胞抗原",
+        "用已知抗原检测血清抗体",
+        "交叉配血试验",
+        "抗体筛查"
+      ],
+      "correctAnswer": "1",
+      "explanation": "正定型（forward typing）是用已知抗体（抗A、抗B）检测红细胞表面的抗原。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q028",
+      "content": "ABO血型鉴定中，反定型是指",
+      "options": [
+        "用已知抗体检测红细胞抗原",
+        "用已知抗原（A细胞、B细胞）检测血清中的抗体",
+        "直接抗人球蛋白试验",
+        "间接抗人球蛋白试验"
+      ],
+      "correctAnswer": "2",
+      "explanation": "反定型（reverse typing）是用已知抗原（A型红细胞、B型红细胞）检测血清中的抗体。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q029",
+      "content": "Rh血型系统中，临床意义最大的抗原是",
+      "options": [
+        "C抗原",
+        "c抗原",
+        "D抗原",
+        "E抗原"
+      ],
+      "correctAnswer": "3",
+      "explanation": "D抗原是Rh血型系统中临床意义最大的抗原，Rh阳性/阴性即指D抗原的有无。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "easy",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q030",
+      "content": "Rh阴性患者首次接受Rh阳性血液后，可能产生",
+      "options": [
+        "抗D抗体",
+        "抗A抗体",
+        "抗B抗体",
+        "不会产生抗体"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Rh阴性患者首次接受Rh阳性血液后，可能产生抗D抗体，再次输注Rh阳性血液时会发生溶血反应。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q031",
+      "content": "悬浮红细胞的主要适应证是",
+      "options": [
+        "补充血容量",
+        "提高携氧能力",
+        "补充凝血因子",
+        "补充血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "悬浮红细胞主要用于提高携氧能力，适用于各种贫血患者。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q032",
+      "content": "新鲜冰冻血浆(FFP)的主要适应证是",
+      "options": [
+        "补充血容量",
+        "补充凝血因子",
+        "提高血红蛋白",
+        "补充血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "FFP含有全部凝血因子，主要用于补充凝血因子，如凝血因子缺乏、大量输血后等。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q033",
+      "content": "机采血小板与手工分离血小板相比，优点是",
+      "options": [
+        "价格便宜",
+        "血小板含量高，白细胞污染少",
+        "保存时间长",
+        "不需要交叉配血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "机采血小板血小板含量高（≥2.5×10¹¹），白细胞污染少，输血反应少。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q034",
+      "content": "输血后最常见的非溶血性发热反应的原因是",
+      "options": [
+        "细菌污染",
+        "白细胞抗体",
+        "血浆蛋白过敏",
+        "血型不合"
+      ],
+      "correctAnswer": "2",
+      "explanation": "非溶血性发热反应最常见的原因是患者体内白细胞抗体与供血者白细胞发生反应。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q035",
+      "content": "急性溶血性输血反应最常见的原因是",
+      "options": [
+        "Rh血型不合",
+        "ABO血型不合",
+        "血小板血型不合",
+        "血浆蛋白过敏"
+      ],
+      "correctAnswer": "2",
+      "explanation": "ABO血型不合是急性溶血性输血反应最常见的原因，由于天然抗体引起，病情凶险。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q036",
+      "content": "输血相关急性肺损伤(TRALI)的主要临床表现是",
+      "options": [
+        "发热、寒战",
+        "呼吸困难、低氧血症",
+        "血红蛋白尿",
+        "皮肤瘙痒、荨麻疹"
+      ],
+      "correctAnswer": "2",
+      "explanation": "TRALI主要表现为输血后6小时内出现急性呼吸困难、低氧血症、非心源性肺水肿。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q037",
+      "content": "CPDA-1保存液保存的全血有效期是",
+      "options": [
+        "21天",
+        "28天",
+        "35天",
+        "42天"
+      ],
+      "correctAnswer": "3",
+      "explanation": "CPDA-1保存液保存的全血有效期为35天，ACD为21天，CPD为28天。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q038",
+      "content": "红细胞添加SAGM保存液后，保存期可延长至",
+      "options": [
+        "28天",
+        "35天",
+        "42天",
+        "56天"
+      ],
+      "correctAnswer": "3",
+      "explanation": "SAGM（盐水-腺嘌呤-葡萄糖-甘露醇）保存液可使红细胞保存期延长至42天。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q039",
+      "content": "新生儿溶血病最常见的血型系统是",
+      "options": [
+        "ABO血型系统",
+        "Rh血型系统",
+        "MN血型系统",
+        "Kell血型系统"
+      ],
+      "correctAnswer": "1",
+      "explanation": "ABO新生儿溶血病最常见，虽然Rh溶血病病情更重，但ABO不合妊娠发生率更高。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q040",
+      "content": "Rh新生儿溶血病很少发生在第一胎的原因是",
+      "options": [
+        "Rh抗体是天然抗体",
+        "Rh抗体需免疫刺激产生",
+        "第一胎胎儿Rh阴性",
+        "母体对Rh抗原耐受"
+      ],
+      "correctAnswer": "2",
+      "explanation": "Rh抗体是免疫抗体，需要Rh阳性红细胞刺激才能产生，所以第一胎通常不受影响。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q041",
+      "content": "交叉配血试验的主要目的是",
+      "options": [
+        "鉴定ABO血型",
+        "检测不规则抗体",
+        "验证供受者血液相容性",
+        "检测Rh血型"
+      ],
+      "correctAnswer": "3",
+      "explanation": "交叉配血试验是验证供受者血液相容性的最后检查，包括主侧和次侧配血。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q042",
+      "content": "交叉配血主侧试验是指",
+      "options": [
+        "供血者红细胞+受血者血清",
+        "受血者红细胞+供血者血清",
+        "供血者血浆+受血者血浆",
+        "受血者全血+供血者全血"
+      ],
+      "correctAnswer": "1",
+      "explanation": "主侧配血是供血者红细胞与受血者血清混合，检测受血者血清中是否有针对供血者红细胞的抗体。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q043",
+      "content": "抗人球蛋白试验(Coombs试验)用于检测",
+      "options": [
+        "ABO血型",
+        "Rh血型",
+        "不完全抗体",
+        "血小板抗体"
+      ],
+      "correctAnswer": "3",
+      "explanation": "抗人球蛋白试验用于检测不完全抗体（IgG类抗体），如Rh抗体。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q044",
+      "content": "贮存式自体输血适用于",
+      "options": [
+        "急性大出血",
+        "择期手术患者",
+        "严重贫血患者",
+        "感染患者"
+      ],
+      "correctAnswer": "2",
+      "explanation": "贮存式自体输血适用于择期手术患者，术前采血保存，术中或术后回输。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q045",
+      "content": "稀释式自体输血采血时机是",
+      "options": [
+        "术前1-2周",
+        "术前即刻",
+        "术中失血前",
+        "术后"
+      ],
+      "correctAnswer": "3",
+      "explanation": "稀释式自体输血是在麻醉后、手术失血前采集血液，同时补充晶体液或胶体液。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q046",
+      "content": "根据《献血法》，我国实行的献血制度是",
+      "options": [
+        "有偿献血",
+        "义务献血",
+        "无偿献血",
+        "强制献血"
+      ],
+      "correctAnswer": "3",
+      "explanation": "《中华人民共和国献血法》规定我国实行无偿献血制度。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q047",
+      "content": "血站对献血者每次采集血液量一般为",
+      "options": [
+        "100ml",
+        "200ml",
+        "300ml",
+        "400ml"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站对献血者每次采集血液量一般为200ml，最多不得超过400ml。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q048",
+      "content": "血站对同一献血者两次采集间隔期不少于",
+      "options": [
+        "3个月",
+        "6个月",
+        "9个月",
+        "12个月"
+      ],
+      "correctAnswer": "2",
+      "explanation": "《献血法》规定，两次采集间隔期不少于6个月。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q049",
+      "content": "血站必须对采集的血液进行哪些检测",
+      "options": [
+        "血型、血红蛋白",
+        "转氨酶、乙肝、丙肝、艾滋、梅毒",
+        "血常规、凝血功能",
+        "肝功能、肾功能"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站必须对血液进行ALT、HBsAg、抗-HCV、抗-HIV、梅毒等检测。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q050",
+      "content": "输血前四项检测不包括",
+      "options": [
+        "乙肝表面抗原",
+        "丙肝抗体",
+        "巨细胞病毒抗体",
+        "艾滋病毒抗体"
+      ],
+      "correctAnswer": "3",
+      "explanation": "输血前四项检测包括乙肝、丙肝、艾滋、梅毒，不包括巨细胞病毒。",
+      "extend": "📚 来源：基于考试大纲生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q051",
+      "content": "HLA抗原主要存在于",
+      "options": [
+        "红细胞表面",
+        "白细胞表面",
+        "血小板表面",
+        "血浆中"
+      ],
+      "correctAnswer": "2",
+      "explanation": "HLA（人类白细胞抗原）主要存在于白细胞表面，也分布于其他有核细胞。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q052",
+      "content": "HLA系统在医学上的主要应用不包括",
+      "options": [
+        "器官移植配型",
+        "亲子鉴定",
+        "ABO血型鉴定",
+        "疾病关联研究"
+      ],
+      "correctAnswer": "3",
+      "explanation": "HLA系统主要用于器官移植配型、亲子鉴定、疾病关联研究等，不用于ABO血型鉴定。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q053",
+      "content": "人类血小板抗原(HPA)系统目前已发现",
+      "options": [
+        "6个系统",
+        "12个系统",
+        "24个系统",
+        "36个系统"
+      ],
+      "correctAnswer": "3",
+      "explanation": "目前已发现24个HPA系统，其中12个为国际输血学会(ISBT)正式命名。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q054",
+      "content": "血小板输注无效最常见的原因是",
+      "options": [
+        "血小板储存损伤",
+        "HLA抗体",
+        "细菌污染",
+        "输注剂量不足"
+      ],
+      "correctAnswer": "2",
+      "explanation": "HLA抗体是血小板输注无效最常见的原因，约占70-80%。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q055",
+      "content": "从200ml全血中可制备的浓缩血小板含量应",
+      "options": [
+        "≥1.0×10¹⁰",
+        "≥2.0×10¹⁰",
+        "≥2.5×10¹⁰",
+        "≥5.0×10¹⁰"
+      ],
+      "correctAnswer": "2",
+      "explanation": "从200ml全血制备的浓缩血小板，血小板含量应≥2.0×10¹⁰。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q056",
+      "content": "少白细胞红细胞中白细胞残留量应",
+      "options": [
+        "≤2.5×10⁶",
+        "≤2.5×10⁸",
+        "≤5.0×10⁸",
+        "≤1.0×10⁹"
+      ],
+      "correctAnswer": "2",
+      "explanation": "少白细胞红细胞中白细胞残留量应≤2.5×10⁸，可显著减少非溶血性发热反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q057",
+      "content": "红细胞血型分子生物学检测最常用的方法是",
+      "options": [
+        "Southern blot",
+        "PCR-SSP",
+        "Northern blot",
+        "Western blot"
+      ],
+      "correctAnswer": "2",
+      "explanation": "PCR-SSP（序列特异性引物PCR）是红细胞血型分子生物学检测最常用的方法。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q058",
+      "content": "PCR技术用于血型检测的主要优势是",
+      "options": [
+        "成本低",
+        "可检测血清学难以鉴定的血型",
+        "操作简单",
+        "不需要特殊设备"
+      ],
+      "correctAnswer": "2",
+      "explanation": "PCR技术可检测血清学方法难以鉴定的血型，如胎儿血型、大量输血后的血型等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q059",
+      "content": "孟买型(Oh型)红细胞的特点是",
+      "options": [
+        "缺乏A抗原",
+        "缺乏B抗原",
+        "缺乏H抗原",
+        "缺乏D抗原"
+      ],
+      "correctAnswer": "3",
+      "explanation": "孟买型是罕见的H基因缺乏型，红细胞上缺乏H抗原，因此不能形成A、B抗原。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q060",
+      "content": "类B抗原最常见于",
+      "options": [
+        "正常人",
+        "肠梗阻患者",
+        "孕妇",
+        "新生儿"
+      ],
+      "correctAnswer": "2",
+      "explanation": "类B抗原常见于肠梗阻、结肠癌等肠道疾病患者，由肠道细菌脱乙酰基酶作用于A抗原产生。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q061",
+      "content": "聚凝胺试验的主要优点是",
+      "options": [
+        "可检测IgM抗体",
+        "可检测IgG抗体",
+        "可检测所有血型抗体",
+        "操作复杂但敏感度高"
+      ],
+      "correctAnswer": "2",
+      "explanation": "聚凝胺试验可检测IgG类不完全抗体，灵敏度高，速度快，是交叉配血的常用方法。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q062",
+      "content": "微柱凝集试验中，红细胞沉于柱底表示",
+      "options": [
+        "强阳性反应",
+        "弱阳性反应",
+        "阴性反应",
+        "无效反应"
+      ],
+      "correctAnswer": "3",
+      "explanation": "微柱凝集试验中，红细胞沉于柱底表示阴性反应（无凝集），分布于凝胶表面或柱中为阳性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q063",
+      "content": "吸收放散试验主要用于",
+      "options": [
+        "ABO血型鉴定",
+        "弱抗原的鉴定和抗体纯化",
+        "Rh血型鉴定",
+        "交叉配血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "吸收放散试验主要用于弱抗原的鉴定、抗体纯化、自身抗体的吸收等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q064",
+      "content": "ABO新生儿溶血病最常见于",
+      "options": [
+        "A型母亲的新生儿",
+        "B型母亲的新生儿",
+        "O型母亲的新生儿",
+        "AB型母亲的新生儿"
+      ],
+      "correctAnswer": "3",
+      "explanation": "O型母亲有抗A、抗B抗体，当胎儿为A型或B型时，易发生ABO新生儿溶血病。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q065",
+      "content": "新生儿溶血病换血治疗时，选择的血液应该是",
+      "options": [
+        "与母亲同型",
+        "与新生儿同型",
+        "O型红细胞+AB型血浆",
+        "任意血型"
+      ],
+      "correctAnswer": "3",
+      "explanation": "换血治疗通常选用O型红细胞（无A、B抗原）和AB型血浆（无抗A、抗B抗体），以避免溶血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q066",
+      "content": "大量输血是指",
+      "options": [
+        "一次输血量超过500ml",
+        "一次输血量超过1000ml",
+        "24小时内输血量超过患者血容量",
+        "一周内输血超过3次"
+      ],
+      "correctAnswer": "3",
+      "explanation": "大量输血通常指24小时内输血量超过患者自身血容量，或3小时内输血量超过50%血容量。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q067",
+      "content": "大量输血后可能出现的并发症不包括",
+      "options": [
+        "低体温",
+        "凝血功能障碍",
+        "高钙血症",
+        "酸碱平衡紊乱"
+      ],
+      "correctAnswer": "3",
+      "explanation": "大量输血后由于枸橼酸盐抗凝剂的作用，常出现低钙血症而非高钙血症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q068",
+      "content": "发生急性溶血性输血反应时，首先应采取的措施是",
+      "options": [
+        "给予利尿剂",
+        "立即停止输血",
+        "给予糖皮质激素",
+        "换血治疗"
+      ],
+      "correctAnswer": "2",
+      "explanation": "怀疑急性溶血反应时，应立即停止输血，保留静脉通路，进行核查和抢救。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q069",
+      "content": "输血相关移植物抗宿主病(TA-GVHD)的预防方法是",
+      "options": [
+        "去除白细胞",
+        "辐照血液制品",
+        "病毒灭活",
+        "延长储存时间"
+      ],
+      "correctAnswer": "2",
+      "explanation": "辐照血液制品可灭活淋巴细胞，是预防TA-GVHD的有效方法。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q070",
+      "content": "血站实验室室内质控的目的是",
+      "options": [
+        "通过外部评审",
+        "监测检测过程的稳定性",
+        "降低检测成本",
+        "提高检测速度"
+      ],
+      "correctAnswer": "2",
+      "explanation": "室内质控的目的是监测检测过程的稳定性，及时发现和纠正系统误差。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q071",
+      "content": "室间质量评价(EQA)的主要目的是",
+      "options": [
+        "评价实验室检测结果的准确性",
+        "降低检测成本",
+        "提高检测速度",
+        "简化操作流程"
+      ],
+      "correctAnswer": "1",
+      "explanation": "室间质量评价是通过外部机构发放质控品，评价实验室检测结果的准确性和可比性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q072",
+      "content": "冷沉淀中主要含有",
+      "options": [
+        "凝血因子V和VIII",
+        "凝血因子VIII和纤维蛋白原",
+        "凝血因子II和VII",
+        "凝血因子IX和X"
+      ],
+      "correctAnswer": "2",
+      "explanation": "冷沉淀富含凝血因子VIII、纤维蛋白原、血管性血友病因子(vWF)等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q073",
+      "content": "冷沉淀融化后应在多长时间内输注",
+      "options": [
+        "10分钟内",
+        "30分钟内",
+        "2小时内",
+        "6小时内"
+      ],
+      "correctAnswer": "4",
+      "explanation": "冷沉淀融化后应在6小时内输注，室温放置过久会导致凝血因子活性下降。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q074",
+      "content": "粒细胞输注的适应证不包括",
+      "options": [
+        "严重粒细胞缺乏伴感染",
+        "抗生素治疗无效",
+        "预防性输注",
+        "败血症"
+      ],
+      "correctAnswer": "3",
+      "explanation": "粒细胞输注主要用于治疗性目的，不推荐预防性输注，因为效果不确定且风险大。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q075",
+      "content": "粒细胞输注前应进行",
+      "options": [
+        "ABO血型鉴定",
+        "Rh血型鉴定",
+        "交叉配血试验",
+        "HLA配型"
+      ],
+      "correctAnswer": "3",
+      "explanation": "粒细胞输注前应进行交叉配血试验，因为粒细胞制品中含有大量淋巴细胞和血浆。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q076",
+      "content": "酶处理红细胞最常用的酶是",
+      "options": [
+        "胃蛋白酶",
+        "胰蛋白酶",
+        "木瓜蛋白酶或菠萝蛋白酶",
+        "淀粉酶"
+      ],
+      "correctAnswer": "3",
+      "explanation": "木瓜蛋白酶或菠萝蛋白酶可破坏红细胞表面唾液酸，降低Zeta电位，促进凝集。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q077",
+      "content": "酶试验技术可增强某些血型系统的抗原抗体反应，但不包括",
+      "options": [
+        "Rh系统",
+        "Kidd系统",
+        "MNSs系统",
+        "Kell系统"
+      ],
+      "correctAnswer": "4",
+      "explanation": "Kell系统抗原对酶敏感，酶处理会破坏Kell抗原，因此酶试验不增强Kell系统的反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q078",
+      "content": "不规则抗体筛选试验常用的筛选细胞是",
+      "options": [
+        "A型细胞和B型细胞",
+        "O型细胞，带有常见抗原",
+        "AB型细胞",
+        "患者自身细胞"
+      ],
+      "correctAnswer": "2",
+      "explanation": "筛选细胞通常是O型红细胞，带有常见的Rh、Kell、Duffy、Kidd等抗原。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q079",
+      "content": "抗体鉴定试验中，自身细胞的作用是",
+      "options": [
+        "作为阳性对照",
+        "检测自身抗体",
+        "检测同种抗体",
+        "作为阴性对照"
+      ],
+      "correctAnswer": "2",
+      "explanation": "自身细胞用于检测是否存在自身抗体，如自身抗体阳性，需先吸收后再鉴定同种抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q080",
+      "content": "ACD保存液中的A代表",
+      "options": [
+        "腺嘌呤",
+        "抗凝剂",
+        "枸橼酸",
+        "葡萄糖"
+      ],
+      "correctAnswer": "3",
+      "explanation": "ACD保存液：A=枸橼酸(Acid citrate)，C=枸橼酸钠，D=葡萄糖(Dextrose)。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q081",
+      "content": "CPDA-1保存液与CPD相比，增加了哪种成分",
+      "options": [
+        "枸橼酸",
+        "腺嘌呤",
+        "磷酸盐",
+        "葡萄糖"
+      ],
+      "correctAnswer": "2",
+      "explanation": "CPDA-1在CPD基础上增加了腺嘌呤(Adenine)，可延长红细胞保存期至35天。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q082",
+      "content": "我国规定血液必须检测的病毒不包括",
+      "options": [
+        "HBV",
+        "HCV",
+        "HIV",
+        "CMV"
+      ],
+      "correctAnswer": "4",
+      "explanation": "CMV（巨细胞病毒）不是必检项目，但对免疫缺陷患者应输注CMV阴性血或去白细胞血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q083",
+      "content": "窗口期是指",
+      "options": [
+        "感染后到出现症状的时间",
+        "感染后到抗体/抗原可被检测到的时间",
+        "输血后到出现不良反应的时间",
+        "献血后到血液可使用的时间"
+      ],
+      "correctAnswer": "2",
+      "explanation": "窗口期是指感染后到抗体或抗原可被检测到的时间，此期献血可能漏检。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q084",
+      "content": "治疗性红细胞去除术适用于",
+      "options": [
+        "真性红细胞增多症",
+        "缺铁性贫血",
+        "再生障碍性贫血",
+        "急性失血"
+      ],
+      "correctAnswer": "1",
+      "explanation": "治疗性红细胞去除术主要用于真性红细胞增多症等红细胞增多的疾病。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q085",
+      "content": "治疗性血小板去除术的主要并发症是",
+      "options": [
+        "低血压",
+        "枸橼酸中毒",
+        "溶血反应",
+        "过敏反应"
+      ],
+      "correctAnswer": "2",
+      "explanation": "治疗性血小板去除术使用大量抗凝剂，常见并发症是枸橼酸中毒导致的低钙血症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q086",
+      "content": "血浆置换中常用的置换液是",
+      "options": [
+        "全血",
+        "新鲜冰冻血浆+白蛋白",
+        "浓缩红细胞",
+        "血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血浆置换常用新鲜冰冻血浆(FFP)和5%白蛋白作为置换液，补充被去除的血浆成分。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q087",
+      "content": "一个血浆置换量大约可去除患者血浆中致病物质的",
+      "options": [
+        "50%",
+        "63%",
+        "75%",
+        "90%"
+      ],
+      "correctAnswer": "2",
+      "explanation": "一个血浆置换量（约患者血浆容量）可去除约63%的血浆成分，两个置换量可去除约86%。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q088",
+      "content": "宫内输血常用的血液制品是",
+      "options": [
+        "全血",
+        "浓缩红细胞（辐照、CMV阴性）",
+        "新鲜冰冻血浆",
+        "血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "宫内输血常用浓缩红细胞，需辐照灭活淋巴细胞，且CMV阴性，防止TA-GVHD和CMV感染。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q089",
+      "content": "新生儿输血时，为防止GVHD，血液应",
+      "options": [
+        "去除白细胞",
+        "辐照处理",
+        "洗涤处理",
+        "冰冻保存"
+      ],
+      "correctAnswer": "2",
+      "explanation": "新生儿免疫系统未成熟，输血应辐照处理，灭活淋巴细胞，防止TA-GVHD。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q090",
+      "content": "老年人输血的原则是",
+      "options": [
+        "大量快速输血",
+        "少量多次输血",
+        "只输全血",
+        "避免输血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "老年人心脏功能储备下降，应少量多次输血，避免循环超负荷。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q091",
+      "content": "孕妇贫血的诊断标准是血红蛋白低于",
+      "options": [
+        "100g/L",
+        "110g/L",
+        "120g/L",
+        "130g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "孕妇贫血诊断标准为Hb<110g/L（正常女性为<120g/L），因妊娠期血液稀释。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q092",
+      "content": "温抗体型自身免疫性溶血性贫血患者的抗体多为",
+      "options": [
+        "IgM型",
+        "IgG型",
+        "IgA型",
+        "IgE型"
+      ],
+      "correctAnswer": "2",
+      "explanation": "温抗体型AIHA的自身抗体多为IgG型，最适反应温度37°C。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q093",
+      "content": "冷抗体型自身免疫性溶血性贫血患者的抗体多为",
+      "options": [
+        "IgM型",
+        "IgG型",
+        "IgA型",
+        "IgE型"
+      ],
+      "correctAnswer": "1",
+      "explanation": "冷抗体型AIHA的自身抗体多为IgM型，最适反应温度4°C，可引起冷凝集素病。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q094",
+      "content": "药物诱导的免疫性溶血性贫血，Coombs试验通常为",
+      "options": [
+        "阴性",
+        "阳性",
+        "弱阳性",
+        "不确定"
+      ],
+      "correctAnswer": "2",
+      "explanation": "药物诱导的免疫性溶血，红细胞表面有药物-抗体复合物或自身抗体，Coombs试验阳性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q095",
+      "content": "输血前患者必须签署的文书是",
+      "options": [
+        "病历首页",
+        "输血治疗同意书",
+        "手术同意书",
+        "麻醉同意书"
+      ],
+      "correctAnswer": "2",
+      "explanation": "输血前必须签署输血治疗同意书，告知患者输血风险和替代方案。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q096",
+      "content": "输血后血袋应保存多长时间",
+      "options": [
+        "6小时",
+        "12小时",
+        "24小时",
+        "48小时"
+      ],
+      "correctAnswer": "3",
+      "explanation": "输血后血袋应保存24小时，以备发生输血不良反应时进行核查。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q097",
+      "content": "血站血液库存的最低库存量应满足",
+      "options": [
+        "1天用量",
+        "3天用量",
+        "7天用量",
+        "15天用量"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站血液库存一般应保持3天用量，以应对突发事件和血液供应波动。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q098",
+      "content": "无偿献血者每次献血量一般为",
+      "options": [
+        "100ml",
+        "200ml或400ml",
+        "500ml",
+        "600ml"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国无偿献血每次献血量一般为200ml或400ml，由献血者选择。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q099",
+      "content": "献血者血红蛋白男性应不低于",
+      "options": [
+        "110g/L",
+        "120g/L",
+        "130g/L",
+        "140g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q100",
+      "content": "人类血型系统目前已发现",
+      "options": [
+        "10个",
+        "20个",
+        "30个",
+        "40个以上"
+      ],
+      "correctAnswer": "4",
+      "explanation": "人类血型系统已发现40个以上，其中ABO和Rh系统临床意义最大。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q101",
+      "content": "ABO血型基因位于第几号染色体",
+      "options": [
+        "第1号",
+        "第9号",
+        "第19号",
+        "第21号"
+      ],
+      "correctAnswer": "2",
+      "explanation": "ABO血型基因位于第9号染色体长臂(9q34)，由A、B、O三个等位基因控制。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q102",
+      "content": "Rh血型基因位于第几号染色体",
+      "options": [
+        "第1号",
+        "第6号",
+        "第9号",
+        "第19号"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Rh血型基因(RHD和RHCE)位于第1号染色体短臂(1p36.11)，紧密连锁遗传。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q103",
+      "content": "H基因编码的糖基转移酶作用于哪种底物",
+      "options": [
+        "半乳糖",
+        "N-乙酰半乳糖胺",
+        "H物质（岩藻糖）",
+        "葡萄糖"
+      ],
+      "correctAnswer": "3",
+      "explanation": "H基因编码岩藻糖转移酶，将岩藻糖连接到糖链末端形成H物质，是A、B抗原的前体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q104",
+      "content": "盐水介质凝集试验可检测的抗体是",
+      "options": [
+        "IgG型抗体",
+        "IgM型抗体",
+        "所有血型抗体",
+        "不完全抗体"
+      ],
+      "correctAnswer": "2",
+      "explanation": "盐水介质凝集试验只能检测IgM型完全抗体（如ABO血型抗体），不能检测IgG型不完全抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q105",
+      "content": "间接抗人球蛋白试验用于检测",
+      "options": [
+        "红细胞表面的抗体",
+        "血清中的游离抗体",
+        "补体C3",
+        "血小板抗体"
+      ],
+      "correctAnswer": "2",
+      "explanation": "间接抗人球蛋白试验(IAT)用于检测血清中的游离不完全抗体，如抗体筛选和鉴定。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q106",
+      "content": "直接抗人球蛋白试验用于检测",
+      "options": [
+        "血清中的游离抗体",
+        "红细胞表面的抗体或补体",
+        "血小板抗体",
+        "白细胞抗体"
+      ],
+      "correctAnswer": "2",
+      "explanation": "直接抗人球蛋白试验(DAT)用于检测体内已被致敏的红细胞表面的抗体或补体，用于诊断溶血性贫血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q107",
+      "content": "新鲜冰冻血浆(FFP)的制备条件是",
+      "options": [
+        "全血采集后6小时内分离并速冻",
+        "全血采集后24小时内分离并速冻",
+        "4°C保存24小时后分离",
+        "室温保存6小时后分离"
+      ],
+      "correctAnswer": "1",
+      "explanation": "FFP应在全血采集后6-8小时内分离出血浆并速冻至-18°C以下，以保留所有凝血因子活性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q108",
+      "content": "普通冰冻血浆与新鲜冰冻血浆的主要区别是",
+      "options": [
+        "血浆蛋白含量不同",
+        "凝血因子V和VIII含量不同",
+        "白蛋白含量不同",
+        "免疫球蛋白含量不同"
+      ],
+      "correctAnswer": "2",
+      "explanation": "普通冰冻血浆缺乏不稳定的凝血因子V和VIII，因为制备时间较晚或保存时间较长。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q109",
+      "content": "冷沉淀的制备温度条件是",
+      "options": [
+        "4°C",
+        "-20°C",
+        "-80°C",
+        "-196°C"
+      ],
+      "correctAnswer": "2",
+      "explanation": "冷沉淀是在1-6°C融化后，在-20°C条件下沉淀的冷不溶解物质，富含纤维蛋白原和FVIII。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q110",
+      "content": "急性失血患者输血的红细胞输注指征是Hb低于",
+      "options": [
+        "60g/L",
+        "70g/L",
+        "80g/L",
+        "100g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "急性失血患者Hb<70g/L时应考虑输注红细胞，但需结合患者症状和失血速度综合判断。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q111",
+      "content": "慢性贫血患者输血的红细胞输注指征是Hb低于",
+      "options": [
+        "50g/L",
+        "60g/L",
+        "70g/L",
+        "80g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "慢性贫血患者Hb<60g/L且伴有明显缺氧症状时应考虑输血，慢性贫血对低Hb耐受性较好。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q112",
+      "content": "血小板输注的阈值在手术或侵入性操作时应维持在",
+      "options": [
+        "≥10×10⁹/L",
+        "≥20×10⁹/L",
+        "≥50×10⁹/L",
+        "≥100×10⁹/L"
+      ],
+      "correctAnswer": "3",
+      "explanation": "手术或侵入性操作时血小板应≥50×10⁹/L，神经外科或眼科手术应≥100×10⁹/L。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q113",
+      "content": "急性溶血性输血反应的主要机制是",
+      "options": [
+        "抗原抗体反应激活补体",
+        "细菌毒素作用",
+        "物理性溶血",
+        "渗透压改变"
+      ],
+      "correctAnswer": "1",
+      "explanation": "急性溶血性输血反应是红细胞抗原与相应抗体结合，激活补体系统，导致红细胞迅速破坏。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q114",
+      "content": "细菌污染性输血反应最常见于哪种血液制品",
+      "options": [
+        "浓缩红细胞",
+        "血小板",
+        "新鲜冰冻血浆",
+        "冷沉淀"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血小板在20-24°C保存，细菌容易繁殖，是细菌污染性输血反应最常见的血液制品。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q115",
+      "content": "循环超负荷的常见表现不包括",
+      "options": [
+        "呼吸困难",
+        "血压升高",
+        "颈静脉怒张",
+        "血红蛋白尿"
+      ],
+      "correctAnswer": "4",
+      "explanation": "血红蛋白尿是溶血反应的表现，循环超负荷表现为呼吸困难、血压升高、颈静脉怒张等心衰症状。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q116",
+      "content": "新生儿溶血病确诊试验是",
+      "options": [
+        "血型鉴定",
+        "抗体筛选",
+        "直接抗人球蛋白试验",
+        "游离抗体检测"
+      ],
+      "correctAnswer": "3",
+      "explanation": "直接抗人球蛋白试验(DAT)阳性是新生儿溶血病的确诊试验，证明红细胞被母体抗体致敏。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q117",
+      "content": "新生儿溶血病换血时，血源选择的原则是",
+      "options": [
+        "与母亲同型",
+        "与新生儿同型",
+        "Rh血型与母亲同型，ABO血型与新生儿同型或O型",
+        "任意O型血"
+      ],
+      "correctAnswer": "3",
+      "explanation": "换血血源Rh血型应与母亲同型（避免再次致敏），ABO血型与新生儿同型或选用O型红细胞+AB型血浆。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q118",
+      "content": "血站实验室室内质控的变异系数(CV)一般要求不超过",
+      "options": [
+        "1%",
+        "5%",
+        "10%",
+        "15%"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站实验室室内质控要求CV一般不超过5%，以保证检测结果的精密度。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q119",
+      "content": "室间质评(EQA)的可接受标准是测定结果与靶值的偏差应",
+      "options": [
+        "≤5%",
+        "≤10%",
+        "≤15%",
+        "≤20%"
+      ],
+      "correctAnswer": "3",
+      "explanation": "室间质评可接受标准一般为测定结果与靶值的偏差≤15%，超过则认为结果不可接受。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q120",
+      "content": "血站对献血者进行健康征询和体检，不合格率应控制在",
+      "options": [
+        "≤1%",
+        "≤3%",
+        "≤5%",
+        "≤10%"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站献血者健康征询和体检不合格率一般应控制在3%左右，过高说明征询标准过严，过低可能存在漏检。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q121",
+      "content": "自身免疫性溶血性贫血患者输血，应选择",
+      "options": [
+        "全血",
+        "洗涤红细胞",
+        "浓缩血小板",
+        "新鲜冰冻血浆"
+      ],
+      "correctAnswer": "2",
+      "explanation": "AIHA患者输血应选择洗涤红细胞，去除血浆中的补体和抗体，减少溶血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q122",
+      "content": "阵发性睡眠性血红蛋白尿(PNH)患者输血，应选择",
+      "options": [
+        "全血",
+        "洗涤红细胞",
+        "浓缩血小板",
+        "冷沉淀"
+      ],
+      "correctAnswer": "2",
+      "explanation": "PNH患者红细胞对补体敏感，应输注洗涤红细胞，去除血浆中的补体成分。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q123",
+      "content": "严重肝肾功能障碍患者输血，应选择",
+      "options": [
+        "全血",
+        "悬浮红细胞",
+        "洗涤红细胞",
+        "新鲜冰冻血浆"
+      ],
+      "correctAnswer": "3",
+      "explanation": "肝肾功能障碍患者排钾能力下降，应输注洗涤红细胞，去除血浆中的钾离子。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q124",
+      "content": "预防输血传播CMV感染，应输注",
+      "options": [
+        "新鲜全血",
+        "去白细胞血液",
+        "冰冻红细胞",
+        "随机血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "CMV主要存在于白细胞中，去白细胞血液可有效预防CMV感染，适用于免疫缺陷患者。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q125",
+      "content": "预防TA-GVHD，血液制品应",
+      "options": [
+        "去除白细胞",
+        "辐照处理",
+        "冰冻保存",
+        "洗涤处理"
+      ],
+      "correctAnswer": "2",
+      "explanation": "辐照处理可灭活淋巴细胞，是预防TA-GVHD的有效方法，适用于免疫缺陷患者和亲属供血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q126",
+      "content": "红细胞储存损伤后，细胞内变化不包括",
+      "options": [
+        "2,3-DPG下降",
+        "ATP下降",
+        "钾离子升高",
+        "pH升高"
+      ],
+      "correctAnswer": "4",
+      "explanation": "红细胞储存过程中糖酵解产生乳酸，pH下降而非升高，2,3-DPG和ATP也下降。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q127",
+      "content": "储存红细胞输注后，2,3-DPG恢复至正常水平需要",
+      "options": [
+        "数小时",
+        "12-24小时",
+        "2-3天",
+        "1周"
+      ],
+      "correctAnswer": "2",
+      "explanation": "储存红细胞2,3-DPG降低，输注后通常在12-24小时内恢复至正常水平，恢复氧释放能力。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q128",
+      "content": "临床输血决策应遵循的原则是",
+      "options": [
+        "尽可能多输血",
+        "能不输就不输，能少输不多输",
+        "预防性输血",
+        "根据患者要求输血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "临床输血应遵循'能不输就不输，能少输不多输'的原则，严格掌握输血适应证。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q129",
+      "content": "限制性输血策略是指维持Hb在",
+      "options": [
+        "60-70g/L",
+        "70-90g/L",
+        "90-100g/L",
+        "100-120g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "限制性输血策略维持Hb在70-90g/L，适用于大多数非心脏手术患者，可减少输血风险。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q130",
+      "content": "输血开始时，护士应",
+      "options": [
+        "快速输注",
+        "缓慢输注，密切观察",
+        "离开患者",
+        "加热血液"
+      ],
+      "correctAnswer": "2",
+      "explanation": "输血开始时应缓慢输注(2ml/min)，密切观察15分钟，无不良反应后再调整速度。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "easy",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q131",
+      "content": "输血过程中出现发热反应，体温38.5°C，应",
+      "options": [
+        "立即停止输血",
+        "减慢输血速度，对症处理",
+        "加快输血速度",
+        "继续观察不做处理"
+      ],
+      "correctAnswer": "2",
+      "explanation": "轻度发热反应可减慢输血速度，给予解热镇痛药对症处理；如症状加重再停止输血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q132",
+      "content": "红细胞制品开始输注后应在多长时间内完成",
+      "options": [
+        "1小时内",
+        "2小时内",
+        "4小时内",
+        "6小时内"
+      ],
+      "correctAnswer": "3",
+      "explanation": "红细胞制品应在离开冰箱后30分钟内开始输注，并在4小时内完成，防止细菌繁殖。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q133",
+      "content": "血小板输注应在多长时间内完成",
+      "options": [
+        "10分钟内",
+        "20分钟内",
+        "30分钟内",
+        "以患者能耐受的最快速度"
+      ],
+      "correctAnswer": "4",
+      "explanation": "血小板输注应以患者能耐受的最快速度进行，一般1个治疗量应在20-30分钟内输完。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q134",
+      "content": "输血前'三查八对'中的'三查'不包括",
+      "options": [
+        "查血液有效期",
+        "查血液质量",
+        "查输血装置是否完好",
+        "查患者肝功能"
+      ],
+      "correctAnswer": "4",
+      "explanation": "三查指：查血液有效期、查血液质量、查输血装置是否完好。不包括查肝功能。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "easy",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q135",
+      "content": "输血前必须由几名医护人员核对",
+      "options": [
+        "1名",
+        "2名",
+        "3名",
+        "4名"
+      ],
+      "correctAnswer": "2",
+      "explanation": "输血前必须由2名医护人员共同核对患者信息和血液信息，确认无误后方可输注。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q136",
+      "content": "献血者体重应",
+      "options": [
+        "男≥45kg，女≥40kg",
+        "男≥50kg，女≥45kg",
+        "男≥55kg，女≥50kg",
+        "无要求"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国献血者体重要求：男性≥50kg，女性≥45kg，以保证献血者安全和血液质量。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q137",
+      "content": "献血者血压应在什么范围",
+      "options": [
+        "收缩压90-140mmHg，舒张压60-90mmHg",
+        "收缩压100-150mmHg，舒张压70-100mmHg",
+        "收缩压90-120mmHg，舒张压60-80mmHg",
+        "无要求"
+      ],
+      "correctAnswer": "1",
+      "explanation": "献血者血压要求：收缩压90-140mmHg，舒张压60-90mmHg，脉压差≥30mmHg。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q138",
+      "content": "下列哪种情况可以献血",
+      "options": [
+        "感冒痊愈后1周",
+        "拔牙后1周",
+        "阑尾切除术后3个月",
+        "疟疾治愈后2年"
+      ],
+      "correctAnswer": "3",
+      "explanation": "阑尾切除术后3个月可以献血。感冒痊愈后需1个月，拔牙后需2周，疟疾治愈后需3年。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q139",
+      "content": "单采血小板采集时，抗凝剂与全血的比例一般为",
+      "options": [
+        "1:5",
+        "1:10",
+        "1:15",
+        "1:20"
+      ],
+      "correctAnswer": "2",
+      "explanation": "单采血小板时，抗凝剂与全血的比例一般为1:10，防止血液凝固同时减少枸橼酸对献血者的影响。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q140",
+      "content": "机采血小板1个治疗量应含血小板",
+      "options": [
+        "≥1.0×10¹¹",
+        "≥2.0×10¹¹",
+        "≥2.5×10¹¹",
+        "≥5.0×10¹¹"
+      ],
+      "correctAnswer": "3",
+      "explanation": "机采血小板1个治疗量应含血小板≥2.5×10¹¹，相当于10单位手工分离血小板。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q141",
+      "content": "输血相关免疫调节(TRIM)的主要表现是",
+      "options": [
+        "免疫功能增强",
+        "免疫抑制",
+        "过敏反应",
+        "溶血反应"
+      ],
+      "correctAnswer": "2",
+      "explanation": "TRIM是指输血引起的免疫抑制现象，表现为术后感染率增加、肿瘤复发率增加等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q142",
+      "content": "去白细胞输血可减少TRIM，主要机制是去除",
+      "options": [
+        "红细胞",
+        "血浆蛋白",
+        "白细胞及其分泌的细胞因子",
+        "血小板"
+      ],
+      "correctAnswer": "3",
+      "explanation": "白细胞及其分泌的细胞因子是引起TRIM的主要原因，去白细胞输血可减少免疫抑制。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q143",
+      "content": "父母血型分别为A型和B型，子女可能的血型是",
+      "options": [
+        "只能是AB型",
+        "A型、B型、AB型",
+        "A型、B型、AB型、O型",
+        "只能是O型"
+      ],
+      "correctAnswer": "3",
+      "explanation": "父母为A型和B型（基因型可能为AA/AO和BB/BO），子女可能为A型、B型、AB型或O型。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q144",
+      "content": "父母血型均为O型，子女的血型应该是",
+      "options": [
+        "A型",
+        "B型",
+        "AB型",
+        "O型"
+      ],
+      "correctAnswer": "4",
+      "explanation": "父母均为O型（基因型OO），子女只能继承O基因，因此只能是O型。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q145",
+      "content": "《献血法》规定，我国实行",
+      "options": [
+        "有偿献血制度",
+        "义务献血制度",
+        "无偿献血制度",
+        "强制献血制度"
+      ],
+      "correctAnswer": "3",
+      "explanation": "《中华人民共和国献血法》第二条规定：国家实行无偿献血制度。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q146",
+      "content": "非法采集血液或组织他人出卖血液的，由县级以上卫生行政部门予以取缔，没收违法所得，可以并处多少罚款",
+      "options": [
+        "1万元以下",
+        "5万元以下",
+        "10万元以下",
+        "20万元以下"
+      ],
+      "correctAnswer": "3",
+      "explanation": "《献血法》规定，非法采血或组织卖血，可并处10万元以下罚款；构成犯罪的，依法追究刑事责任。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q147",
+      "content": "血浆病毒灭活常用的方法是",
+      "options": [
+        "加热",
+        "辐照",
+        "亚甲蓝光化学法",
+        "过滤"
+      ],
+      "correctAnswer": "3",
+      "explanation": "亚甲蓝光化学法是目前血浆病毒灭活常用的方法，可有效灭活脂质包膜病毒。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q148",
+      "content": "病毒灭活对哪种病毒效果较差",
+      "options": [
+        "HIV",
+        "HBV",
+        "HCV",
+        "细小病毒B19"
+      ],
+      "correctAnswer": "4",
+      "explanation": "细小病毒B19是无包膜病毒，对理化因素抵抗力强，病毒灭活方法对其效果较差。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q149",
+      "content": "血站管理信息系统应实现",
+      "options": [
+        "仅记录献血者信息",
+        "从献血者登记到血液发放的全过程追溯",
+        "仅记录血液检测结果",
+        "仅用于财务管理"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站管理信息系统应实现从献血者登记、体检、采血、检测、制备、储存到发放的全过程追溯。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q150",
+      "content": "血液条码标识应包含的信息不包括",
+      "options": [
+        "献血编号",
+        "血型",
+        "采血日期",
+        "献血者身份证号"
+      ],
+      "correctAnswer": "4",
+      "explanation": "血液条码标识包含献血编号、血型、采血日期、血液成分等信息，但不应显示献血者身份证号以保护隐私。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q151",
+      "content": "全血采集后，制备浓缩血小板的最佳温度是",
+      "options": [
+        "2-6°C",
+        "20-24°C",
+        "37°C",
+        "-20°C"
+      ],
+      "correctAnswer": "2",
+      "explanation": "全血采集后应在20-24°C保存，尽快制备血小板，低温会损伤血小板。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q152",
+      "content": "从400ml全血中制备的浓缩血小板，血小板含量应≥",
+      "options": [
+        "2.0×10¹⁰",
+        "4.0×10¹⁰",
+        "5.0×10¹⁰",
+        "8.0×10¹⁰"
+      ],
+      "correctAnswer": "2",
+      "explanation": "400ml全血制备的浓缩血小板，血小板含量应≥4.0×10¹⁰，是200ml全血的2倍。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q153",
+      "content": "冰冻红细胞的保存温度是",
+      "options": [
+        "-20°C",
+        "-40°C",
+        "-65°C以下",
+        "-196°C"
+      ],
+      "correctAnswer": "3",
+      "explanation": "冰冻红细胞应在-65°C以下保存（通常-80°C），可保存10年。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q154",
+      "content": "冰冻红细胞解冻后，应在多长时间内输注",
+      "options": [
+        "6小时内",
+        "12小时内",
+        "24小时内",
+        "48小时内"
+      ],
+      "correctAnswer": "3",
+      "explanation": "冰冻红细胞解冻洗涤后，应在24小时内输注，不能再次冰冻。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q155",
+      "content": "冰冻红细胞制备时加入的冷冻保护剂是",
+      "options": [
+        "DMSO",
+        "甘油",
+        "丙二醇",
+        "乙醇"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国常用甘油作为红细胞冷冻保护剂，浓度约40%。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q156",
+      "content": "去白细胞滤器去除白细胞的原理主要是",
+      "options": [
+        "过滤",
+        "离心",
+        "吸附",
+        "沉淀"
+      ],
+      "correctAnswer": "3",
+      "explanation": "去白细胞滤器利用吸附原理，滤材表面可吸附白细胞，而让红细胞通过。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q157",
+      "content": "去白细胞血液制品中白细胞残留量应≤",
+      "options": [
+        "2.5×10⁶",
+        "2.5×10⁸",
+        "5.0×10⁸",
+        "1.0×10⁹"
+      ],
+      "correctAnswer": "2",
+      "explanation": "去白细胞血液制品白细胞残留量应≤2.5×10⁸，可有效预防非溶血性发热反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q158",
+      "content": "血液辐照预防TA-GVHD的推荐剂量是",
+      "options": [
+        "5-10 Gy",
+        "15-25 Gy",
+        "50 Gy",
+        "100 Gy"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血液辐照剂量通常为15-25 Gy，可灭活淋巴细胞但不影响红细胞功能。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q159",
+      "content": "辐照后红细胞的保存期是",
+      "options": [
+        "与未辐照相同",
+        "缩短为14天",
+        "缩短为28天",
+        "不能保存"
+      ],
+      "correctAnswer": "3",
+      "explanation": "辐照会损伤红细胞膜，辐照后红细胞保存期缩短为28天（原为35-42天）。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q160",
+      "content": "输血前评估应包括",
+      "options": [
+        "输血史、妊娠史、输血不良反应史",
+        "仅血型鉴定",
+        "仅血常规检查",
+        "仅肝肾功能"
+      ],
+      "correctAnswer": "1",
+      "explanation": "输血前评估应全面了解患者输血史、妊娠史、输血不良反应史，以评估输血风险。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q161",
+      "content": "有输血发热反应史的患者，再次输血应选择",
+      "options": [
+        "普通红细胞",
+        "去白细胞红细胞",
+        "冰冻红细胞",
+        "洗涤红细胞"
+      ],
+      "correctAnswer": "2",
+      "explanation": "有发热反应史的患者，应输注去白细胞红细胞，去除白细胞可减少细胞因子和发热反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q162",
+      "content": "心衰患者输血，输注速度应控制在",
+      "options": [
+        "1ml/kg/h",
+        "2ml/kg/h",
+        "5ml/kg/h",
+        "尽可能快"
+      ],
+      "correctAnswer": "1",
+      "explanation": "心衰患者输血速度应慢，一般1ml/kg/h，防止循环超负荷，必要时可利尿。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q163",
+      "content": "婴幼儿输血，每次输注量一般不超过",
+      "options": [
+        "5ml/kg",
+        "10ml/kg",
+        "15ml/kg",
+        "20ml/kg"
+      ],
+      "correctAnswer": "2",
+      "explanation": "婴幼儿输血每次输注量一般不超过10ml/kg，防止循环超负荷。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q164",
+      "content": "A2亚型与A1亚型的主要区别是",
+      "options": [
+        "A2型红细胞上A抗原数量少",
+        "A2型血清中有抗A1抗体",
+        "A2型H抗原多",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "A2亚型特点：A抗原数量少（约为A1的1/5），部分A2型血清中有抗A1抗体，H抗原较多。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q165",
+      "content": "A2型患者输注A1型血液可能发生",
+      "options": [
+        "无反应",
+        "溶血反应",
+        "过敏反应",
+        "发热反应"
+      ],
+      "correctAnswer": "2",
+      "explanation": "约1-8%的A2型人血清中有抗A1抗体，输注A1型血液可能发生溶血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q166",
+      "content": "抗体鉴定时，谱细胞通常有几组",
+      "options": [
+        "5组",
+        "8-12组",
+        "20组",
+        "50组"
+      ],
+      "correctAnswer": "2",
+      "explanation": "抗体鉴定使用谱细胞，通常有8-12组，带有不同组合的抗原，用于确定抗体特异性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q167",
+      "content": "自身抗体吸收试验常用的吸收细胞是",
+      "options": [
+        "A型红细胞",
+        "B型红细胞",
+        "O型红细胞",
+        "自身红细胞"
+      ],
+      "correctAnswer": "4",
+      "explanation": "自身抗体吸收试验使用患者自身红细胞（经酶处理或ZZAP处理），吸收血清中的自身抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q168",
+      "content": "TRALI发生的时间是输血后",
+      "options": [
+        "即刻",
+        "6小时内",
+        "6-72小时",
+        "1周后"
+      ],
+      "correctAnswer": "2",
+      "explanation": "TRALI通常发生在输血后6小时内，表现为急性呼吸困难和低氧血症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q169",
+      "content": "TRALI的主要发病机制是",
+      "options": [
+        "供者白细胞抗体与受者白细胞反应",
+        "细菌污染",
+        "血容量过多",
+        "过敏反应"
+      ],
+      "correctAnswer": "1",
+      "explanation": "TRALI主要由供者血浆中的HLA或粒细胞抗体与受者白细胞反应，激活补体，导致肺毛细血管损伤。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q170",
+      "content": "输血后紫癜(PTP)通常发生在输血后",
+      "options": [
+        "数小时",
+        "5-10天",
+        "1个月",
+        "3个月"
+      ],
+      "correctAnswer": "2",
+      "explanation": "PTP通常发生在输血后5-10天，表现为严重血小板减少，与抗血小板抗体有关。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q171",
+      "content": "长期输血患者最常见的并发症是",
+      "options": [
+        "感染",
+        "铁过载",
+        "溶血",
+        "过敏"
+      ],
+      "correctAnswer": "2",
+      "explanation": "长期输血患者因红细胞破坏释放铁，而人体无有效排铁机制，导致铁过载，损害心肝肾。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q172",
+      "content": "每输注1单位红细胞，体内增加铁约",
+      "options": [
+        "50mg",
+        "100mg",
+        "200-250mg",
+        "500mg"
+      ],
+      "correctAnswer": "3",
+      "explanation": "每输注1单位红细胞（200ml），体内增加铁约200-250mg，长期输血导致铁过载。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q173",
+      "content": "铁过载患者血清铁蛋白应维持在",
+      "options": [
+        "<100μg/L",
+        "<500μg/L",
+        "<1000μg/L",
+        "<2500μg/L"
+      ],
+      "correctAnswer": "3",
+      "explanation": "长期输血患者血清铁蛋白应维持在<1000μg/L，过高需去铁治疗。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q174",
+      "content": "去铁胺(Desferal)的作用是",
+      "options": [
+        "促进铁吸收",
+        "螯合铁并促进排出",
+        "抑制红细胞破坏",
+        "促进造血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "去铁胺是铁螯合剂，与体内游离铁结合形成可溶性复合物，经尿液排出。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q175",
+      "content": "发生严重输血不良反应，应在多长时间内报告",
+      "options": [
+        "立即",
+        "6小时内",
+        "24小时内",
+        "1周内"
+      ],
+      "correctAnswer": "1",
+      "explanation": "发生严重输血不良反应应立即报告输血科和医务部门，并保留血袋和输血器材备查。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q176",
+      "content": "输血不良反应报告内容不包括",
+      "options": [
+        "患者基本信息",
+        "输血信息和不良反应表现",
+        "处理措施和转归",
+        "患者家庭收入"
+      ],
+      "correctAnswer": "4",
+      "explanation": "输血不良反应报告应包括患者信息、输血信息、不良反应表现、处理措施等，不涉及家庭收入。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q177",
+      "content": "医疗机构血液库存不足时，应向谁申请调配",
+      "options": [
+        "其他医院",
+        "血站",
+        "患者家属",
+        "红十字会"
+      ],
+      "correctAnswer": "2",
+      "explanation": "医疗机构血液库存不足应向血站申请调配，血站负责血液的采集、制备和供应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q178",
+      "content": "紧急情况下，血液发放应遵循",
+      "options": [
+        "先检测后发血",
+        "先发血后检测",
+        "边检测边发血",
+        "无需检测"
+      ],
+      "correctAnswer": "1",
+      "explanation": "即使紧急情况，血液也必须完成检测合格后才能发放，这是血液安全的底线。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q179",
+      "content": "红细胞制品运输温度应维持在",
+      "options": [
+        "0°C以下",
+        "2-10°C",
+        "15-20°C",
+        "25°C"
+      ],
+      "correctAnswer": "2",
+      "explanation": "红细胞制品运输温度应维持在2-10°C，使用冷藏箱或冷藏车，保证冷链不间断。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q180",
+      "content": "血小板运输应",
+      "options": [
+        "冷藏运输",
+        "常温运输并轻摇",
+        "冰冻运输",
+        "加热运输"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血小板应在20-24°C运输，并持续轻摇，防止聚集，不能使用冷藏运输。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q181",
+      "content": "电子交叉配血的前提是",
+      "options": [
+        "患者抗体筛选阴性且既往无输血不良反应",
+        "任何患者都可以",
+        "急诊患者",
+        "仅需要ABO同型"
+      ],
+      "correctAnswer": "1",
+      "explanation": "电子交叉配血适用于抗体筛选阴性、既往无输血不良反应的患者，通过计算机核对ABO/Rh血型相容性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q182",
+      "content": "新生儿交叉配血时，血清或血浆应",
+      "options": [
+        "用母亲血清代替",
+        "用父亲血清代替",
+        "用新生儿自身血清",
+        "不需要血清"
+      ],
+      "correctAnswer": "1",
+      "explanation": "新生儿血清中抗体来自母亲，交叉配血应使用母亲血清（或血浆）与供血者红细胞进行配血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q183",
+      "content": "Rhnull型红细胞的特点是",
+      "options": [
+        "缺乏所有Rh抗原",
+        "只有D抗原",
+        "只有C抗原",
+        "Rh抗原增强"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Rhnull型是极其罕见的血型，红细胞上完全缺乏所有Rh抗原，输血困难。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q184",
+      "content": "i表型红细胞的特点是",
+      "options": [
+        "H抗原增强",
+        "只有i抗原，无I抗原",
+        "ABO抗原增强",
+        "Rh抗原缺乏"
+      ],
+      "correctAnswer": "2",
+      "explanation": "i表型是I血型系统的罕见表型，红细胞上只有i抗原而无I抗原，与成人I抗原表达不同。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q185",
+      "content": "造血干细胞移植患者输血，红细胞应选择",
+      "options": [
+        "与供者同型",
+        "与受者同型",
+        "O型",
+        "根据移植阶段选择"
+      ],
+      "correctAnswer": "4",
+      "explanation": "造血干细胞移植患者输血血型选择复杂，移植前用受者型，植入后用供者型，过渡期用O型红细胞和AB型血浆。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q186",
+      "content": "造血干细胞移植患者所有血液制品应",
+      "options": [
+        "去白细胞",
+        "辐照",
+        "洗涤",
+        "冰冻"
+      ],
+      "correctAnswer": "2",
+      "explanation": "造血干细胞移植患者免疫功能低下，所有血液制品必须辐照，预防TA-GVHD。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q187",
+      "content": "大量输血方案(MTP)中，红细胞、血浆、血小板的比例通常是",
+      "options": [
+        "1:1:1",
+        "2:1:1",
+        "4:2:1",
+        "6:4:1"
+      ],
+      "correctAnswer": "1",
+      "explanation": "大量输血方案通常采用1:1:1比例（红细胞:血浆:血小板），模拟全血成分，纠正凝血障碍。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q188",
+      "content": "大量输血时，血钙降低的原因是",
+      "options": [
+        "枸橼酸与钙结合",
+        "钙被红细胞消耗",
+        "钙从尿液丢失",
+        "甲状旁腺功能抑制"
+      ],
+      "correctAnswer": "1",
+      "explanation": "血液保存液中的枸橼酸与钙结合，大量输血时枸橼酸入血，导致低钙血症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q189",
+      "content": "输血前血液加温的指征是",
+      "options": [
+        "所有输血患者",
+        "快速大量输血或新生儿输血",
+        "发热患者",
+        "不需要加温"
+      ],
+      "correctAnswer": "2",
+      "explanation": "快速大量输血（>50ml/kg/h）或新生儿输血时应加温，防止低体温。一般输血不需加温。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q190",
+      "content": "血液加温的温度应控制在",
+      "options": [
+        "25-30°C",
+        "32-37°C",
+        "40-45°C",
+        "50°C"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血液加温应控制在32-37°C，不能超过37°C，防止红细胞损伤和细菌繁殖。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q191",
+      "content": "输血记录应保存",
+      "options": [
+        "1年",
+        "5年",
+        "10年",
+        "永久"
+      ],
+      "correctAnswer": "3",
+      "explanation": "输血记录应保存10年，以便发生输血不良反应或纠纷时追溯。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q192",
+      "content": "输血不良反应回报单应保存",
+      "options": [
+        "1年",
+        "5年",
+        "10年",
+        "永久"
+      ],
+      "correctAnswer": "3",
+      "explanation": "输血不良反应回报单应保存10年，用于统计分析和质量改进。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q201",
+      "content": "ABO血型系统中，O型血红细胞表面的抗原是",
+      "options": [
+        "A抗原",
+        "B抗原",
+        "A和B抗原",
+        "H抗原"
+      ],
+      "correctAnswer": "4",
+      "explanation": "O型血红细胞表面没有A、B抗原，但有H抗原（H物质），血清中有抗A和抗B抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q202",
+      "content": "ABO血型系统中，AB型血红细胞表面的抗原是",
+      "options": [
+        "A抗原",
+        "B抗原",
+        "A和B抗原",
+        "无抗原"
+      ],
+      "correctAnswer": "3",
+      "explanation": "AB型血红细胞表面有A和B两种抗原，血清中无抗A和抗B抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q203",
+      "content": "分泌型人群的唾液中含有",
+      "options": [
+        "免疫球蛋白",
+        "血型物质",
+        "激素",
+        "酶"
+      ],
+      "correctAnswer": "2",
+      "explanation": "分泌型人群（Se基因）的唾液等分泌液中含有可溶性ABH血型物质，可用于血型鉴定。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q204",
+      "content": "非分泌型人群的特点是",
+      "options": [
+        "唾液中无血型物质",
+        "红细胞上无抗原",
+        "血清中无抗体",
+        "不能输血"
+      ],
+      "correctAnswer": "1",
+      "explanation": "非分泌型人群（sese）唾液等分泌液中不含血型物质，但红细胞上仍有正常ABO抗原。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q205",
+      "content": "血型鉴定时，正反定型不一致的可能原因不包括",
+      "options": [
+        "技术错误",
+        "患者有亚型",
+        "患者有异常抗体",
+        "患者有正常抗体"
+      ],
+      "correctAnswer": "4",
+      "explanation": "正常抗体不会导致正反定型不一致。不一致原因包括技术错误、亚型、异常抗体、疾病状态等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q206",
+      "content": "新生儿ABO血型鉴定时，应注意",
+      "options": [
+        "只做正定型",
+        "只做反定型",
+        "正反定型都做",
+        "反定型不可靠"
+      ],
+      "correctAnswer": "4",
+      "explanation": "新生儿血清中抗体来自母亲，反定型不可靠，血型鉴定主要依靠正定型，或检测红细胞抗原。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q207",
+      "content": "全血采集后，应在多长时间内制备成分血",
+      "options": [
+        "2小时内",
+        "6-8小时内",
+        "24小时内",
+        "48小时内"
+      ],
+      "correctAnswer": "2",
+      "explanation": "全血采集后应在6-8小时内制备成分血，以保证血小板等成分的活性和功能。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q208",
+      "content": "血液成分制备时，白膜层主要含有",
+      "options": [
+        "红细胞",
+        "白细胞和血小板",
+        "血浆蛋白",
+        "纤维蛋白原"
+      ],
+      "correctAnswer": "2",
+      "explanation": "白膜层是离心后红细胞和血浆之间的白色层，主要含有白细胞和血小板，是制备浓缩血小板的原料。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q209",
+      "content": "血小板输注的剂量计算，1个治疗量通常指",
+      "options": [
+        "1单位手工血小板",
+        "10单位手工血小板",
+        "1个机采血小板",
+        "2个机采血小板"
+      ],
+      "correctAnswer": "3",
+      "explanation": "1个治疗量血小板通常指1个机采血小板（≥2.5×10¹¹），相当于10单位手工分离血小板。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q210",
+      "content": "预防性血小板输注的阈值通常设定为",
+      "options": [
+        "≥5×10⁹/L",
+        "≥10×10⁹/L",
+        "≥20×10⁹/L",
+        "≥50×10⁹/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "预防性血小板输注阈值通常为≥10×10⁹/L，有出血风险因素时可提高至≥20×10⁹/L。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q211",
+      "content": "轻度过敏反应的表现是",
+      "options": [
+        "呼吸困难",
+        "皮肤瘙痒、荨麻疹",
+        "休克",
+        "血红蛋白尿"
+      ],
+      "correctAnswer": "2",
+      "explanation": "轻度过敏反应表现为皮肤瘙痒、荨麻疹，严重时可出现呼吸困难、过敏性休克。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q212",
+      "content": "严重过敏反应的处理不包括",
+      "options": [
+        "立即停止输血",
+        "给予肾上腺素",
+        "加快输血速度",
+        "给予抗组胺药"
+      ],
+      "correctAnswer": "3",
+      "explanation": "严重过敏反应应立即停止输血，给予肾上腺素、抗组胺药、糖皮质激素等，绝不能加快输血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q213",
+      "content": "血站对献血者进行ALT检测，目的是",
+      "options": [
+        "检测肝功能",
+        "作为肝炎的替代指标",
+        "检测贫血",
+        "检测血型"
+      ],
+      "correctAnswer": "2",
+      "explanation": "ALT是肝细胞损伤的敏感指标，作为病毒性肝炎的替代筛查指标，ALT升高提示可能存在肝炎。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q214",
+      "content": "献血者ALT检测的合格标准是",
+      "options": [
+        "<20U/L",
+        "<40U/L",
+        "<60U/L",
+        "<100U/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国献血者ALT合格标准为<40U/L（速率法），超过此值应暂缓献血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q215",
+      "content": "HLA配型在器官移植中的意义是",
+      "options": [
+        "确定血型",
+        "预测移植排斥反应风险",
+        "检测感染",
+        "检测贫血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "HLA配型相合程度越高，移植排斥反应风险越低，移植物存活时间越长。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q216",
+      "content": "粒细胞特异性抗体可导致",
+      "options": [
+        "输血后紫癜",
+        "TRALI",
+        "发热反应",
+        "溶血反应"
+      ],
+      "correctAnswer": "2",
+      "explanation": "粒细胞特异性抗体（如抗-HNA抗体）是TRALI的重要发病机制之一。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "immunohematology"
+    },
+    {
+      "id": "q217",
+      "content": "急性失血患者，失血量达血容量的多少时需要输血",
+      "options": [
+        "10%",
+        "20%",
+        "30%",
+        "50%"
+      ],
+      "correctAnswer": "3",
+      "explanation": "急性失血量达血容量的30%（约1500ml）以上时，通常需要输血补充红细胞。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q218",
+      "content": "失血性休克患者，晶体液与红细胞输注的比例通常为",
+      "options": [
+        "1:1",
+        "2:1",
+        "3:1",
+        "4:1"
+      ],
+      "correctAnswer": "3",
+      "explanation": "失血性休克复苏时，晶体液与红细胞比例通常为3:1，即输注3份晶体液后输注1份红细胞。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q219",
+      "content": "直接抗人球蛋白试验阳性可见于",
+      "options": [
+        "正常人",
+        "自身免疫性溶血性贫血",
+        "缺铁性贫血",
+        "再生障碍性贫血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "DAT阳性见于自身免疫性溶血性贫血、新生儿溶血病、药物诱导的溶血性贫血等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q220",
+      "content": "间接抗人球蛋白试验阳性说明",
+      "options": [
+        "红细胞被致敏",
+        "血清中有游离的不完全抗体",
+        "有细菌感染",
+        "有病毒感染"
+      ],
+      "correctAnswer": "2",
+      "explanation": "IAT阳性说明血清中有游离的不完全抗体，可用于抗体筛选和鉴定。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q221",
+      "content": "血液制品标签上必须注明的内容不包括",
+      "options": [
+        "血型",
+        "采血日期",
+        "献血者姓名",
+        "血液成分名称"
+      ],
+      "correctAnswer": "3",
+      "explanation": "血液制品标签应注明血型、采血日期、血液成分、献血编号等，但不应显示献血者姓名以保护隐私。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q222",
+      "content": "血液制品的追溯系统应能追溯到",
+      "options": [
+        "献血者",
+        "采血时间",
+        "血液制备过程",
+        "以上全部"
+      ],
+      "correctAnswer": "4",
+      "explanation": "血液追溯系统应能追溯到献血者、采血时间、血液制备过程、检测信息、发放和使用等全过程。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q223",
+      "content": "输血过程中，患者出现呼吸困难、咳嗽、咳粉红色泡沫痰，应考虑",
+      "options": [
+        "过敏反应",
+        "溶血反应",
+        "循环超负荷",
+        "细菌污染"
+      ],
+      "correctAnswer": "3",
+      "explanation": "呼吸困难、咳嗽、咳粉红色泡沫痰是急性左心衰和肺水肿的表现，提示循环超负荷。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q224",
+      "content": "输血相关循环超负荷(TACO)的处理措施是",
+      "options": [
+        "加快输血",
+        "停止输血、利尿、半卧位",
+        "给予抗过敏药",
+        "给予抗生素"
+      ],
+      "correctAnswer": "2",
+      "explanation": "TACO处理包括立即停止输血、利尿、半卧位、吸氧等，必要时给予强心药。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q225",
+      "content": "Duffy血型系统的临床意义是",
+      "options": [
+        "与输血反应有关",
+        "与新生儿溶血病有关",
+        "与疟疾抗性有关",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "Duffy血型与输血反应、新生儿溶血病有关，Fy(a-b-)表型对间日疟原虫有抗性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q226",
+      "content": "Kidd血型系统的特点是",
+      "options": [
+        "抗体多为IgM型",
+        "抗体可引起严重迟发性溶血反应",
+        "与疾病无关",
+        "抗原性弱"
+      ],
+      "correctAnswer": "2",
+      "explanation": "Kidd抗体（抗-Jka、抗-Jkb）多为IgG型，可引起严重的迟发性溶血输血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q227",
+      "content": "交叉配血时，主侧凝集说明",
+      "options": [
+        "受血者血清中有抗供血者红细胞的抗体",
+        "供血者血清中有抗受血者红细胞的抗体",
+        "ABO血型相同",
+        "可以输血"
+      ],
+      "correctAnswer": "1",
+      "explanation": "主侧凝集说明受血者血清中有针对供血者红细胞的抗体，输血会发生溶血反应，不能输血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q228",
+      "content": "交叉配血时，次侧凝集说明",
+      "options": [
+        "受血者血清中有抗体",
+        "供血者血清中有抗受血者红细胞的抗体",
+        "绝对不能输血",
+        "无关紧要"
+      ],
+      "correctAnswer": "2",
+      "explanation": "次侧凝集说明供血者血清中有抗受血者红细胞的抗体，但供血者血浆被受血者血液稀释，通常不引起严重反应，但应谨慎。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q229",
+      "content": "血站对血液进行传染病检测，采用的方法是",
+      "options": [
+        "细菌培养",
+        "ELISA和核酸检测",
+        "血常规",
+        "尿常规"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站采用ELISA检测抗体/抗原，部分项目采用核酸检测(NAT)，提高检测灵敏度。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q230",
+      "content": "核酸检测(NAT)的优势是",
+      "options": [
+        "成本低",
+        "可缩短窗口期",
+        "操作简单",
+        "不需要设备"
+      ],
+      "correctAnswer": "2",
+      "explanation": "NAT直接检测病毒核酸，可缩短窗口期，比抗体检测更早发现感染。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q231",
+      "content": "肿瘤患者输血，应特别注意",
+      "options": [
+        "快速输血",
+        "去白细胞输血可减少复发",
+        "多输全血",
+        "不需要特殊注意"
+      ],
+      "correctAnswer": "2",
+      "explanation": "研究表明去白细胞输血可减少肿瘤患者术后感染和肿瘤复发，可能与减少免疫抑制有关。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q232",
+      "content": "心脏手术患者输血，Hb维持目标通常为",
+      "options": [
+        ">70g/L",
+        ">80g/L",
+        ">90g/L",
+        ">100g/L"
+      ],
+      "correctAnswer": "3",
+      "explanation": "心脏手术患者Hb维持目标通常为>90g/L，以保证心肌氧供，减少并发症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q233",
+      "content": "迟发性溶血性输血反应通常发生在输血后",
+      "options": [
+        "数分钟至数小时",
+        "24小时内",
+        "3-14天",
+        "1个月后"
+      ],
+      "correctAnswer": "3",
+      "explanation": "迟发性溶血反应通常发生在输血后3-14天，由回忆性免疫反应引起，症状较轻。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q234",
+      "content": "迟发性溶血性输血反应最常见的抗体是",
+      "options": [
+        "抗-A",
+        "抗-B",
+        "抗-Jka、抗-E等",
+        "抗-D"
+      ],
+      "correctAnswer": "3",
+      "explanation": "迟发性溶血反应多由Kidd、Rh等系统的抗体引起，这些抗体在初次免疫后水平下降，再次刺激后产生回忆反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q235",
+      "content": "血站应建立血液报废制度，报废血液应",
+      "options": [
+        "直接丢弃",
+        "记录原因并按规定处理",
+        "卖给其他机构",
+        "退回献血者"
+      ],
+      "correctAnswer": "2",
+      "explanation": "报废血液应记录报废原因、数量、处理方式等，并按医疗废物管理规定处理。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q236",
+      "content": "血液报废的常见原因不包括",
+      "options": [
+        "检测不合格",
+        "过期",
+        "外观异常",
+        "献血者要求"
+      ],
+      "correctAnswer": "4",
+      "explanation": "血液报废原因包括检测不合格、过期、外观异常、破损等，献血者要求不是报废原因。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q237",
+      "content": "术前自体储血适用于",
+      "options": [
+        "急诊手术",
+        "择期手术且预计出血量大",
+        "严重贫血患者",
+        "感染患者"
+      ],
+      "correctAnswer": "2",
+      "explanation": "术前自体储血适用于择期手术、预计出血量大、稀有血型或有多种抗体的患者。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q238",
+      "content": "术前自体储血，每次采血间隔至少",
+      "options": [
+        "1天",
+        "3天",
+        "7天",
+        "14天"
+      ],
+      "correctAnswer": "2",
+      "explanation": "术前自体储血每次采血间隔至少3天，最后一次采血应在术前3天进行，以保证患者恢复。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q239",
+      "content": "Lewis血型系统的特点是",
+      "options": [
+        "与ABO系统无关",
+        "Le(a+b+)是常见表型",
+        "分泌型人群多为Le(a-b+)",
+        "与疾病无关"
+      ],
+      "correctAnswer": "3",
+      "explanation": "分泌型人群多为Le(a-b+)，非分泌型多为Le(a+b-)，Lewis抗原与ABO系统相关。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q240",
+      "content": "MNSs血型系统的临床意义是",
+      "options": [
+        "与输血反应无关",
+        "抗-M、抗-N可引起溶血反应",
+        "与新生儿溶血病无关",
+        "抗原性弱"
+      ],
+      "correctAnswer": "2",
+      "explanation": "MNSs系统抗体（抗-M、抗-N、抗-S、抗-s）可引起溶血输血反应和新生儿溶血病。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q241",
+      "content": "血站工作人员应",
+      "options": [
+        "每年体检1次",
+        "每2年体检1次",
+        "不需要体检",
+        "每5年体检1次"
+      ],
+      "correctAnswer": "1",
+      "explanation": "血站工作人员应每年体检1次，建立健康档案，患有传染病者不得从事血液工作。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q242",
+      "content": "血站实验室人员应具备",
+      "options": [
+        "医学检验专业学历或培训合格",
+        "高中学历",
+        "不需要专业背景",
+        "仅需要工作经验"
+      ],
+      "correctAnswer": "1",
+      "explanation": "血站实验室人员应具备医学检验专业学历或经培训考核合格，持证上岗。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q243",
+      "content": "新生儿换血治疗的适应证不包括",
+      "options": [
+        "严重溶血病",
+        "胆红素脑病",
+        "轻度黄疸",
+        "血清胆红素快速上升"
+      ],
+      "correctAnswer": "3",
+      "explanation": "轻度黄疸可通过光疗治疗，换血治疗适用于严重溶血病、胆红素脑病或血清胆红素快速上升者。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q244",
+      "content": "新生儿换血的血量通常是患儿血容量的",
+      "options": [
+        "1倍",
+        "1.5-2倍",
+        "3倍",
+        "5倍"
+      ],
+      "correctAnswer": "2",
+      "explanation": "新生儿换血通常换血量为其血容量的1.5-2倍（约150-200ml/kg），可去除约85-90%的致敏红细胞和胆红素。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q261",
+      "content": "ZZAP试剂的作用是",
+      "options": [
+        "破坏红细胞",
+        "破坏细胞膜，释放抗体",
+        "增强抗原性",
+        "抑制抗体"
+      ],
+      "correctAnswer": "2",
+      "explanation": "ZZAP是半胱氨酸-木瓜蛋白酶试剂，可破坏红细胞膜，用于自身抗体吸收试验。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q262",
+      "content": "二硫苏糖醇(DTT)处理红细胞的目的是",
+      "options": [
+        "破坏IgM抗体",
+        "破坏IgG抗体",
+        "破坏二硫键，灭活Kell等血型抗原",
+        "增强抗原性"
+      ],
+      "correctAnswer": "3",
+      "explanation": "DTT可破坏二硫键，灭活Kell、Duffy等系统的抗原，用于抗体鉴定。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q263",
+      "content": "血站对献血者进行血红蛋白检测，男性合格标准是",
+      "options": [
+        "≥110g/L",
+        "≥120g/L",
+        "≥130g/L",
+        "≥140g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q264",
+      "content": "血站对献血者进行血红蛋白检测，女性合格标准是",
+      "options": [
+        "≥110g/L",
+        "≥115g/L",
+        "≥120g/L",
+        "≥130g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "我国献血者血红蛋白标准：男性≥120g/L，女性≥115g/L。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q265",
+      "content": "镰状细胞贫血患者输血，目的是",
+      "options": [
+        "纠正贫血",
+        "稀释患者红细胞，减少镰变",
+        "补充凝血因子",
+        "补充血小板"
+      ],
+      "correctAnswer": "2",
+      "explanation": "镰状细胞贫血患者输血主要目的是稀释患者红细胞，降低HbS比例，减少镰变和血管阻塞。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q266",
+      "content": "地中海贫血患者输血，目标是",
+      "options": [
+        "维持Hb>70g/L",
+        "维持Hb>90-105g/L",
+        "维持Hb正常",
+        "不需要输血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "地中海贫血患者输血目标是维持Hb>90-105g/L，抑制无效造血，保证生长发育。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q267",
+      "content": "输血相关免疫调节(TRIM)的主要机制是",
+      "options": [
+        "供者白细胞介导",
+        "血浆蛋白介导",
+        "红细胞碎片介导",
+        "以上都是"
+      ],
+      "correctAnswer": "1",
+      "explanation": "TRIM主要由供者白细胞介导，可抑制受者免疫功能，增加感染和肿瘤复发风险。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q268",
+      "content": "去白细胞输血可预防",
+      "options": [
+        "TRIM",
+        "非溶血性发热反应",
+        "HLA同种免疫",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "去白细胞输血可预防TRIM、非溶血性发热反应、HLA同种免疫、CMV感染等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q269",
+      "content": "血液成分制备时，离心温度通常控制在",
+      "options": [
+        "2-6°C",
+        "20-24°C",
+        "室温(18-24°C)",
+        "37°C"
+      ],
+      "correctAnswer": "3",
+      "explanation": "血液成分制备时，离心温度通常控制在室温(18-24°C)，防止冷凝集和影响血小板回收。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q270",
+      "content": "血浆速冻的方法最好是",
+      "options": [
+        "-20°C冰箱",
+        "-50°C以下快速冷冻",
+        "4°C冷藏",
+        "室温放置"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血浆应在-50°C以下快速冷冻，可形成小冰晶，减少蛋白质变性，更好保存凝血因子。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q271",
+      "content": "血栓性血小板减少性紫癜(TTP)患者输血，应避免",
+      "options": [
+        "输注血小板",
+        "输注红细胞",
+        "输注血浆",
+        "血浆置换"
+      ],
+      "correctAnswer": "1",
+      "explanation": "TTP患者禁忌输注血小板，可能加重微血栓形成，治疗首选血浆置换。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q272",
+      "content": "肝素诱导的血小板减少症(HIT)患者输血，应避免",
+      "options": [
+        "含肝素的血液制品",
+        "红细胞",
+        "血浆",
+        "血小板"
+      ],
+      "correctAnswer": "1",
+      "explanation": "HIT患者应避免含肝素的血液制品，因为肝素可诱发或加重血小板减少和血栓形成。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q273",
+      "content": "Diego血型系统的临床意义是",
+      "options": [
+        "与新生儿溶血病有关",
+        "与输血反应有关",
+        "Dia抗原主要分布在南美印第安人",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "Diego血型与新生儿溶血病、输血反应有关，Dia抗原主要分布在南美印第安人，亚洲人也有较高频率。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q274",
+      "content": "Colton血型系统的抗原是",
+      "options": [
+        "Coa和Cob",
+        "Coa和Coc",
+        "Cob和Cod",
+        "以上都不是"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Colton血型系统有2个抗原：Coa（高频）和Cob（低频），抗体可引起溶血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q275",
+      "content": "低离子强度盐溶液(LISS)的作用是",
+      "options": [
+        "降低离子强度，促进抗原抗体反应",
+        "增加离子强度",
+        "破坏红细胞",
+        "抑制抗体"
+      ],
+      "correctAnswer": "1",
+      "explanation": "LISS降低离子强度，减少抗原抗体间的静电排斥，促进反应，缩短孵育时间。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q276",
+      "content": "聚凝胺试验中，聚凝胺的作用是",
+      "options": [
+        "中和红细胞表面负电荷",
+        "增加红细胞表面负电荷",
+        "破坏红细胞",
+        "抑制抗体"
+      ],
+      "correctAnswer": "1",
+      "explanation": "聚凝胺是多价阳离子，可中和红细胞表面负电荷，促进红细胞聚集，便于检测不完全抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q277",
+      "content": "血站对献血者进行健康征询，应包括",
+      "options": [
+        "既往病史、用药史、旅行史",
+        "仅询问姓名",
+        "仅询问年龄",
+        "不需要征询"
+      ],
+      "correctAnswer": "1",
+      "explanation": "健康征询应包括既往病史、用药史、旅行史、高危行为等，以评估献血者健康状况。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q278",
+      "content": "献血者有以下哪种情况应暂缓献血",
+      "options": [
+        "感冒痊愈后1周",
+        "拔牙后1周",
+        "阑尾切除术后3个月",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "感冒痊愈后需1个月，拔牙后需2周，阑尾切除术后需3个月才能献血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q279",
+      "content": "弥散性血管内凝血(DIC)患者输血，应",
+      "options": [
+        "仅输红细胞",
+        "根据实验室检查结果补充相应成分",
+        "不输血小板",
+        "不输血浆"
+      ],
+      "correctAnswer": "2",
+      "explanation": "DIC患者应根据PT、APTT、纤维蛋白原、血小板等检查结果，针对性补充红细胞、血小板、血浆、冷沉淀等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q280",
+      "content": "血友病A患者应输注",
+      "options": [
+        "FVIII浓缩制剂",
+        "FIX浓缩制剂",
+        "新鲜冰冻血浆",
+        "冷沉淀"
+      ],
+      "correctAnswer": "1",
+      "explanation": "血友病A是FVIII缺乏，应输注FVIII浓缩制剂或重组FVIII，冷沉淀含FVIII也可用于轻症。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q281",
+      "content": "细菌污染性输血反应最常见的细菌是",
+      "options": [
+        "金黄色葡萄球菌",
+        "大肠杆菌",
+        "表皮葡萄球菌和革兰阴性杆菌",
+        "链球菌"
+      ],
+      "correctAnswer": "3",
+      "explanation": "细菌污染性输血反应最常见的细菌是表皮葡萄球菌（皮肤污染）和革兰阴性杆菌（如假单胞菌、肠杆菌）。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q282",
+      "content": "输血传播梅毒，应输注",
+      "options": [
+        "新鲜血液",
+        "储存4天以上的血液",
+        "冰冻血浆",
+        "以上都可以"
+      ],
+      "correctAnswer": "2",
+      "explanation": "梅毒螺旋体在4°C储存3-6天后死亡，因此储存4天以上的血液传播梅毒的风险极低。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q283",
+      "content": "血站应建立血液召回制度，召回血液的情况不包括",
+      "options": [
+        "献血者回告有高危行为",
+        "血液检测发现传染病标志物",
+        "血液外观正常",
+        "献血者回告有漏检情况"
+      ],
+      "correctAnswer": "3",
+      "explanation": "血液外观正常不是召回原因。召回原因包括献血者回告高危行为、漏检、检测发现传染病标志物等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q284",
+      "content": "血液召回后应",
+      "options": [
+        "立即丢弃",
+        "追踪调查，记录处理",
+        "继续使用",
+        "退回献血者"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血液召回后应追踪调查，了解血液使用情况，记录处理措施，必要时对受血者进行追踪检测。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q285",
+      "content": "血浆置换治疗吉兰-巴雷综合征，通常需要",
+      "options": [
+        "1-2次",
+        "3-5次",
+        "10次以上",
+        "不需要"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血浆置换治疗吉兰-巴雷综合征通常需要3-5次，隔日1次，可去除致病抗体。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q286",
+      "content": "治疗性血浆置换的适应证不包括",
+      "options": [
+        "吉兰-巴雷综合征",
+        "重症肌无力",
+        "缺铁性贫血",
+        "TTP"
+      ],
+      "correctAnswer": "3",
+      "explanation": "缺铁性贫血不是血浆置换适应证，应补充铁剂。血浆置换适用于吉兰-巴雷综合征、重症肌无力、TTP等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q287",
+      "content": "Yt血型系统的抗原是",
+      "options": [
+        "Yta和Ytb",
+        "Yta和Ytc",
+        "Ytb和Ytd",
+        "以上都不是"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Yt血型系统有2个抗原：Yta（高频）和Ytb（低频），抗体可引起溶血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q288",
+      "content": "Scianna血型系统的抗原是",
+      "options": [
+        "Sc1和Sc2",
+        "Sc1和Sc3",
+        "Sc2和Sc3",
+        "以上都不是"
+      ],
+      "correctAnswer": "1",
+      "explanation": "Scianna血型系统有2个抗原：Sc1（高频）和Sc2（低频），抗体罕见但可引起溶血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "basics",
+      "subjectId": "blood_basic"
+    },
+    {
+      "id": "q289",
+      "content": "流式细胞术在输血领域的应用是",
+      "options": [
+        "血型鉴定",
+        "血小板抗体检测",
+        "红细胞抗体检测",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "流式细胞术可用于血型鉴定、血小板抗体检测、红细胞抗体检测、血小板活化检测等。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q290",
+      "content": "基因芯片技术在输血领域的应用是",
+      "options": [
+        "大规模血型基因分型",
+        "病原体检测",
+        "HLA分型",
+        "以上都是"
+      ],
+      "correctAnswer": "4",
+      "explanation": "基因芯片技术可用于大规模血型基因分型、病原体检测、HLA分型等，提高检测通量。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "blood_test"
+    },
+    {
+      "id": "q291",
+      "content": "血站应参加室间质量评价(EQA)，频率是",
+      "options": [
+        "每年1次",
+        "每年2-3次",
+        "每5年1次",
+        "不需要参加"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血站应每年参加2-3次室间质量评价，以评估检测结果的准确性和可比性。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q292",
+      "content": "室内质控品应包括",
+      "options": [
+        "仅阳性对照",
+        "仅阴性对照",
+        "阳性和阴性对照，以及弱阳性对照",
+        "不需要质控品"
+      ],
+      "correctAnswer": "3",
+      "explanation": "室内质控应包括阳性对照、阴性对照和弱阳性对照，以全面监测试剂和方法的性能。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q293",
+      "content": "新生儿贫血的诊断标准是Hb低于",
+      "options": [
+        "100g/L",
+        "120g/L（脐血）或110g/L（静脉血）",
+        "140g/L",
+        "160g/L"
+      ],
+      "correctAnswer": "2",
+      "explanation": "新生儿贫血诊断标准：脐血Hb<120g/L或静脉血Hb<110g/L，因新生儿Hb正常值较高。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q294",
+      "content": "早产儿输血，红细胞输注指征是",
+      "options": [
+        "Hb<100g/L",
+        "根据症状和Hb综合判断，通常Hb<70-100g/L",
+        "Hb<60g/L",
+        "不需要输血"
+      ],
+      "correctAnswer": "2",
+      "explanation": "早产儿输血应综合考虑症状（呼吸、心率、喂养等）和Hb水平，通常Hb<70-100g/L考虑输血。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q295",
+      "content": "输血相关急性肺损伤(TRALI)的治疗主要是",
+      "options": [
+        "呼吸支持",
+        "利尿",
+        "强心",
+        "以上都是"
+      ],
+      "correctAnswer": "1",
+      "explanation": "TRALI主要是支持治疗，以呼吸支持（氧疗、机械通气）为主，避免利尿（非心源性肺水肿）。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q296",
+      "content": "输血相关循环超负荷(TACO)的治疗包括",
+      "options": [
+        "停止输血、利尿、半卧位",
+        "加快输血",
+        "继续输血",
+        "不需要处理"
+      ],
+      "correctAnswer": "1",
+      "explanation": "TACO处理包括立即停止输血、利尿、半卧位、吸氧，必要时给予强心药。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "professional",
+      "subjectId": "transfusion_reaction"
+    },
+    {
+      "id": "q297",
+      "content": "血站应建立血液标识制度，标识应",
+      "options": [
+        "唯一、可追溯",
+        "随意编写",
+        "仅写血型",
+        "不需要标识"
+      ],
+      "correctAnswer": "1",
+      "explanation": "血液标识应唯一、可追溯，从献血者登记到血液发放的全程可追踪。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q298",
+      "content": "血液隔离制度是指",
+      "options": [
+        "将血液放在隔离区",
+        "检测合格的血液才能发放，不合格血液隔离处理",
+        "不需要隔离",
+        "仅隔离阳性血液"
+      ],
+      "correctAnswer": "2",
+      "explanation": "血液隔离制度是指检测合格的血液才能转入合格品库发放，待检和不合格血液应隔离存放。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "related",
+      "subjectId": "blood_quality"
+    },
+    {
+      "id": "q299",
+      "content": "自体输血的优势不包括",
+      "options": [
+        "避免输血传播疾病",
+        "避免同种免疫",
+        "节约血液资源",
+        "增加输血反应"
+      ],
+      "correctAnswer": "4",
+      "explanation": "自体输血可避免输血传播疾病、同种免疫、节约血液资源，不会增加输血反应。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "hard",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    },
+    {
+      "id": "q300",
+      "content": "临床合理输血的原则是",
+      "options": [
+        "能不输就不输，能少输不多输",
+        "尽量多输血",
+        "预防性输血",
+        "根据患者要求输血"
+      ],
+      "correctAnswer": "1",
+      "explanation": "临床合理输血应遵循'能不输就不输，能少输不多输'的原则，严格掌握输血适应证。",
+      "extend": "📚 来源：基于教材生成",
+      "difficulty": "medium",
+      "category": "practical",
+      "subjectId": "clinical_transfusion"
+    }
+  ]
+}
