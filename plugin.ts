@@ -322,9 +322,13 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
       case "ct":
         return handleWrongQuestions(student);
         
+      case "错题复习":
+      case "ctfx":
+        return startWrongQuestionReview(qqId, student);
+        
       case "帮助":
       case "help":
-        return `📖 学习教练\n\n/练习 - 开始练习题\n/错题 - 查看错题本\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
+        return `📖 学习教练\n\n/练习 - 开始练习题\n/错题 - 查看错题本\n/错题复习 - 针对性练习错题\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
         
       default:
         return `未知命令：${cmd}\n\n发送 /帮助 查看可用命令。`;
@@ -466,6 +470,44 @@ function handleWrongQuestions(student: Student): string {
   reply += `━━━━━━━━━━━━━━━━━━━━`;
   
   return reply;
+}
+
+// 开始错题复习模式
+function startWrongQuestionReview(qqId: string, student: Student): string {
+  const wrongHistory = student.questionHistory?.filter(h => !h.isCorrect) || [];
+  
+  if (wrongHistory.length === 0) {
+    return "🎉 还没有错题，发送 /练习 开始正常练习";
+  }
+  
+  // 获取做错的题目ID（去重）
+  const wrongIds = [...new Set(wrongHistory.map(h => h.questionId))];
+  const wrongQuestions = questionBank.filter(q => wrongIds.includes(q.id));
+  
+  if (wrongQuestions.length === 0) {
+    return "📚 错题库为空，发送 /练习 开始正常练习";
+  }
+  
+  // 随机选一道错题
+  const question = wrongQuestions[Math.floor(Math.random() * wrongQuestions.length)];
+  
+  // 设置状态
+  const state = questionStates.get(qqId) || { 
+    currentQuestion: null, 
+    lastQuestion: null, 
+    waitingForContinue: false 
+  };
+  state.currentQuestion = question;
+  state.waitingForContinue = false;
+  questionStates.set(qqId, state);
+  
+  return `📝 错题复习模式\n` +
+         `━━━━━━━━━━━━━━━━━━━━\n` +
+         `📊 共 ${wrongQuestions.length} 道错题待复习\n\n` +
+         `${question.content}\n\n` +
+         `${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n` +
+         `━━━━━━━━━━━━━━━━━━━━\n` +
+         `💡 回复 1/2/3/4 选择答案`;
 }
 
 // 引导思考 - AI自由发挥（根据题目内容）
