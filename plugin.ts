@@ -1,11 +1,11 @@
 // Coach Agent Plugin for OpenClaw
 // 学习教练 Agent - 支持单 Bot 多角色路由
+// 优化版：用户说"继续"才出下一题
 
 import type { OpenClawPluginApi, AgentDefinition } from "openclaw/plugin-sdk";
 
 // ==================== 配置区域 ====================
 const ADMIN_QQ_IDS = new Set<string>([
-  // 从环境变量或配置文件加载
   ...(process.env.COACH_ADMIN_QQ_IDS?.split(",") || []),
 ]);
 
@@ -29,8 +29,47 @@ interface Student {
   lastActiveAt: string;
 }
 
+// 答题状态管理（新流程：等用户说"继续"才下一题）
+interface QuestionState {
+  currentQuestion: {
+    id: string;
+    content: string;
+    options: string[];
+    correctAnswer: string;
+    explanation: string;
+  } | null;
+  waitingForContinue: boolean;
+  lastAnswerCorrect: boolean | null;
+}
+
 // ==================== 数据存储 ====================
 const students = new Map<string, Student>();
+const questionStates = new Map<string, QuestionState>();
+
+// 模拟题库
+const questionBank = [
+  {
+    id: "q001",
+    content: "输血前检查，下列哪项是必查项目？",
+    options: ["ABO血型鉴定", "肝功能检查", "肾功能检查", "血糖检测"],
+    correctAnswer: "1",
+    explanation: "ABO血型鉴定是输血前必查项目，确保血型匹配避免溶血反应。"
+  },
+  {
+    id: "q002", 
+    content: "治疗性红细胞去除术适用于",
+    options: ["真性红细胞增多症", "缺铁性贫血", "再生障碍性贫血", "急性失血"],
+    correctAnswer: "1",
+    explanation: "真性红细胞增多症是红细胞异常增多，需要去除多余红细胞。"
+  },
+  {
+    id: "q003",
+    content: "慢性贫血患者输血的红细胞输注指征是Hb低于",
+    options: ["50g/L", "60g/L", "70g/L", "80g/L"],
+    correctAnswer: "2",
+    explanation: "慢性贫血患者Hb<60g/L且伴有明显缺氧症状时应考虑输血。"
+  }
+];
 
 // ==================== 路由核心 ====================
 function getUserType(qqId: string): 'admin' | 'student' | 'guest' {
@@ -117,25 +156,49 @@ function handlePersonalAssistant(message: string, qqId: string): string {
   return `👋 管理员你好！\n\n可用命令：\n/模式 - 查看当前模式\n/生成激活码 - 创建激活码\n/学生列表 - 查看学生\n/统计 - 查看数据`;
 }
 
-// ==================== 学生模式 ====================
+// ==================== 学生模式（新流程） ====================
 async function handleStudentMessage(message: string, qqId: string): Promise<string> {
-  const trimmed = message.trim();
+  const trimmed = message.trim().toLowerCase();
   const student = students.get(qqId)!;
   student.lastActiveAt = new Date().toISOString();
   
+  // 获取或初始化答题状态
+  let state = questionStates.get(qqId);
+  if (!state) {
+    state = { currentQuestion: null, waitingForContinue: false, lastAnswerCorrect: null };
+    questionStates.set(qqId, state);
+  }
+  
+  // 如果正在等待用户说"继续"
+  if (state.waitingForContinue) {
+    if (trimmed === "继续" || trimmed === "下一题" || trimmed === "jt" || trimmed === "xyt") {
+      state.waitingForContinue = false;
+      return generateQuestion(qqId);
+    }
+    // 用户还在讨论，继续对话
+    return handleDiscussion(message, qqId, state);
+  }
+  
+  // 检查是否在答题（回复 1-4）
+  if (state.currentQuestion && /^[1-4]$/.test(trimmed)) {
+    return handleAnswer(trimmed, qqId, state, student);
+  }
+  
+  // 命令处理
   if (trimmed.startsWith("/") || trimmed.startsWith("、")) {
     const cmd = trimmed.slice(1).split(" ")[0].toLowerCase();
-    const args = trimmed.slice(cmd.length + 2).trim();
     
     switch (cmd) {
       case "练习":
       case "lx":
-        return `📝 练习模式\n\n【题目 1/10】\n以下哪个选项是正确的？\n\nA. 选项一\nB. 选项二\nC. 选项三\nD. 选项四\n\n回复 A/B/C/D 选择答案。`;
+      case "开始":
+        return generateQuestion(qqId);
         
       case "查询":
       case "search":
-        if (!args) return "请输入关键词，例如：/查询 数学";
-        return `🔍 "${args}" 的搜索结果：\n\n1. 【数学】一元二次方程\n2. 【数学】函数图像\n3. 【物理】力学计算\n\n回复数字查看详情。`;
+        const args = message.slice(cmd.length + 2).trim();
+        if (!args) return "请输入关键词，例如：/查询 血型";
+        return `🔍 "${args}" 的搜索结果：\n\n1. 【输血】ABO血型鉴定\n2. 【输血】交叉配血试验\n3. 【检验】血常规检查\n\n回复数字查看详情。`;
         
       case "进度":
       case "progress":
@@ -146,14 +209,7 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
         
       case "帮助":
       case "help":
-        return `📖 学习教练\n\n/练习 - 开始练习题\n/查询 <关键词> - 搜索题目\n/进度 - 查看进度\n/帮助 - 显示帮助`;
-        
-      case "恢复":
-        if (process.env.COACH_ADMIN_QQ_IDS?.includes(qqId)) {
-          ADMIN_QQ_IDS.add(qqId);
-          return "✅ 已恢复管理员身份。";
-        }
-        return "未知命令，发送 /帮助 查看可用命令。";
+        return `📖 学习教练\n\n/练习 - 开始练习题\n/查询 <关键词> - 搜索题目\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
         
       default:
         return `未知命令：${cmd}\n\n发送 /帮助 查看可用命令。`;
@@ -166,6 +222,49 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
   if (message.includes("再见")) return "再见！明天继续练习 👋";
   
   return `收到！你可以：\n\n/练习 - 开始练习题\n/查询 ${message} - 搜索相关题目\n/帮助 - 查看所有命令`;
+}
+
+// 生成新题目
+function generateQuestion(qqId: string): string {
+  const state = questionStates.get(qqId)!;
+  const question = questionBank[Math.floor(Math.random() * questionBank.length)];
+  
+  state.currentQuestion = question;
+  state.waitingForContinue = false;
+  state.lastAnswerCorrect = null;
+  
+  return `📝 练习题\n━━━━━━━━━━━━━━━━━━━━\n\n📚 ${question.content}\n\n${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n━━━━━━━━━━━━━━━━━━━━\n💡 请回复 1/2/3/4 选择答案`;
+}
+
+// 处理答题
+function handleAnswer(answer: string, qqId: string, state: QuestionState, student: Student): string {
+  if (!state.currentQuestion) return "请先发送 /练习 开始答题";
+  
+  const isCorrect = answer === state.currentQuestion.correctAnswer;
+  state.lastAnswerCorrect = isCorrect;
+  state.waitingForContinue = true;
+  
+  // 更新统计
+  student.totalQuestions++;
+  if (isCorrect) student.correctAnswers++;
+  
+  if (isCorrect) {
+    return `✅ 对了！\n\n能简单说说为什么选这个吗？🤔\n\n（说完回复"继续"出下一题）`;
+  } else {
+    return `❌ 再想想。\n\n这道题的关键是什么？💡\n\n（想明白后回复"继续"出下一题）`;
+  }
+}
+
+// 处理讨论（用户答完后继续对话）
+function handleDiscussion(message: string, qqId: string, state: QuestionState): string {
+  const responses = [
+    "💡 很好的思考！\n\n回复"继续"出下一题",
+    "👍 理解到位！\n\n回复"继续"出下一题", 
+    "🤔 不错！\n\n回复"继续"出下一题",
+    "✨ 继续加油！\n\n回复"继续"出下一题"
+  ];
+  
+  return responses[Math.floor(Math.random() * responses.length)];
 }
 
 // ==================== 访客模式 ====================
@@ -202,8 +301,8 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
 const coachAgentPlugin = {
   id: "coach-agent",
   name: "学习教练 Agent",
-  description: "支持单 Bot 多角色的学习辅导系统",
-  version: "1.0.0",
+  description: "支持单 Bot 多角色的学习辅导系统（优化版：用户控制节奏）",
+  version: "1.1.0",
   
   register(api: OpenClawPluginApi) {
     console.log("[CoachAgent] 学习教练 Agent 已加载");
@@ -220,4 +319,4 @@ const coachAgentPlugin = {
 };
 
 export default coachAgentPlugin;
-export { handleMessage, getUserType, students, VALID_CODES, ADMIN_QQ_IDS };
+export { handleMessage, getUserType, students, VALID_CODES, ADMIN_QQ_IDS, questionStates };
