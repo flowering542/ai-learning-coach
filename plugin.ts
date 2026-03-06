@@ -60,6 +60,19 @@ function saveUserDataToFile(qqId: string, student: Student): void {
   }
 }
 
+// 题库数据（动态加载）
+let questionBank: Array<{
+  id: string;
+  content: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+  extend?: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  category: 'basics' | 'related' | 'professional' | 'practical';
+  subjectId: string;
+}> = [];
+
 // ==================== 类型定义 ====================
 interface Student {
   id: string;
@@ -111,8 +124,22 @@ interface QuestionState {
 const students = new Map<string, Student>();
 const questionStates = new Map<string, QuestionState>();
 
-// 模拟题库（带4大考试分类）
-const questionBank: Array<{
+// 加载题库
+function loadQuestionBank(): typeof questionBank {
+  try {
+    const dataPath = path.join(DATA_DIR, 'questions_converted.json');
+    const data = fs.readFileSync(dataPath, 'utf-8');
+    const parsed = JSON.parse(data);
+    console.log(`[Coach] 已加载 ${parsed.questions.length} 道题目`);
+    return parsed.questions;
+  } catch (e) {
+    console.error('[Coach] 题库加载失败，使用默认题库:', e);
+    return defaultQuestionBank;
+  }
+}
+
+// 默认题库（5道测试题）
+const defaultQuestionBank: Array<{
   id: string;
   content: string;
   options: string[];
@@ -772,10 +799,13 @@ const coachAgentPlugin = {
 
   register(api: OpenClawPluginApi) {
     console.log("[CoachAgent] v3.0 已加载");
-
+    
+    // 加载题库
+    questionBank = loadQuestionBank();
+    
     // 加载所有用户数据
     loadAllStudents();
-
+    
     api.registerHook?.("message:qqbot", async (ctx: any) => {
       const { message, userId } = ctx;
       const response = await handleMessage(message.text || message, userId, api);
