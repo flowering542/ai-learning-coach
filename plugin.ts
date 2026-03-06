@@ -318,9 +318,13 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
           : 0;
         return `📊 学习进度\n\n👤 ID: ${student.id.slice(-6)}\n📝 总题数: ${student.totalQuestions}\n✅ 正确率: ${acc}%\n🔥 连续打卡: 3天`;
         
+      case "错题":
+      case "ct":
+        return handleWrongQuestions(student);
+        
       case "帮助":
       case "help":
-        return `📖 学习教练\n\n/练习 - 开始练习题\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
+        return `📖 学习教练\n\n/练习 - 开始练习题\n/错题 - 查看错题本\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
         
       default:
         return `未知命令：${cmd}\n\n发送 /帮助 查看可用命令。`;
@@ -421,6 +425,46 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
     reply += `${question.extend}\n\n`;
   }
   reply += `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n回复"继续"出下一题`;
+  return reply;
+}
+
+// 处理错题本
+function handleWrongQuestions(student: Student): string {
+  const wrongHistory = student.questionHistory?.filter(h => !h.isCorrect) || [];
+  
+  if (wrongHistory.length === 0) {
+    return "🎉 还没有错题，继续保持！\n\n发送 /练习 开始针对性练习";
+  }
+  
+  // 统计错题
+  const wrongCount = wrongHistory.length;
+  const uniqueWrongIds = new Set(wrongHistory.map(h => h.questionId));
+  
+  let reply = `📝 错题本\n`;
+  reply += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+  reply += `📊 统计：共 ${wrongCount} 次错题，${uniqueWrongIds.size} 道不同题目\n\n`;
+  
+  // 按主题分组
+  const subjectCount: Record<string, number> = {};
+  wrongHistory.forEach(h => {
+    if (h.subjectId) {
+      subjectCount[h.subjectId] = (subjectCount[h.subjectId] || 0) + 1;
+    }
+  });
+  
+  if (Object.keys(subjectCount).length > 0) {
+    reply += `📚 薄弱知识点：\n`;
+    Object.entries(subjectCount)
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([subject, count]) => {
+        reply += `  • ${subject}：${count}次\n`;
+      });
+    reply += `\n`;
+  }
+  
+  reply += `💡 发送 /练习 开始针对性练习\n`;
+  reply += `━━━━━━━━━━━━━━━━━━━━`;
+  
   return reply;
 }
 
