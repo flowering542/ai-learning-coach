@@ -2,8 +2,12 @@
 // 学习教练 Agent - v3.0 用户中心版
 
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
+import * as fs from 'fs';
+import * as path from 'path';
 
 // ==================== 配置区域 ====================
+const DATA_DIR = process.env.COACH_DATA_DIR || './data';
+
 const ADMIN_QQ_IDS = new Set<string>([
   ...(process.env.COACH_ADMIN_QQ_IDS?.split(",") || []),
 ]);
@@ -15,6 +19,46 @@ const VALID_CODES = new Set<string>([
   "COACH-DEMO-001",
   "COACH-DEMO-002",
 ]);
+
+// ==================== 数据持久化 ====================
+
+// 确保数据目录存在
+function ensureDataDir(): void {
+  const dir = path.join(DATA_DIR, 'students');
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+}
+
+// 获取用户数据文件路径
+function getUserFilePath(qqId: string): string {
+  return path.join(DATA_DIR, 'students', `${qqId}.json`);
+}
+
+// 加载用户数据
+function loadUserData(qqId: string): Student | null {
+  try {
+    const filePath = getUserFilePath(qqId);
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, 'utf-8');
+      return JSON.parse(data);
+    }
+  } catch (e) {
+    console.error('[Coach] 加载用户数据失败:', e);
+  }
+  return null;
+}
+
+// 保存用户数据到文件
+function saveUserDataToFile(qqId: string, student: Student): void {
+  try {
+    ensureDataDir();
+    const filePath = getUserFilePath(qqId);
+    fs.writeFileSync(filePath, JSON.stringify(student, null, 2));
+  } catch (e) {
+    console.error('[Coach] 保存用户数据失败:', e);
+  }
+}
 
 // ==================== 类型定义 ====================
 interface Student {
@@ -123,7 +167,17 @@ const questionBank = [
 // ==================== 路由核心 ====================
 function getUserType(qqId: string): 'admin' | 'student' | 'guest' {
   if (ADMIN_QQ_IDS.has(qqId)) return 'admin';
+  
+  // 先检查内存
   if (students.has(qqId)) return 'student';
+  
+  // 再检查文件
+  const userData = loadUserData(qqId);
+  if (userData) {
+    students.set(qqId, userData);
+    return 'student';
+  }
+  
   return 'guest';
 }
 
@@ -389,9 +443,12 @@ function guideAndTeach(message: string, qqId: string, state: QuestionState, stud
   return generateQuestion(qqId, student);
 }
 
-// 保存用户数据
+// 保存用户数据（内存+文件）
 function saveUserData(qqId: string, student: Student): void {
+  // 更新内存
   students.set(qqId, student);
+  // 持久化到文件
+  saveUserDataToFile(qqId, student);
 }
 
 // ==================== 访客模式 ====================
@@ -418,6 +475,7 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
       currentDifficulty: 'easy',
     };
     students.set(qqId, student);
+    saveUserDataToFile(qqId, student); // 持久化
     
     return `🎉 激活成功！\n\n/练习 - 开始练习题\n/进度 - 查看进度`;
   }
@@ -519,6 +577,26 @@ function updateDifficulty(student: Student): void {
   }
 }
 
+// 加载所有学生数据
+function loadAllStudents(): void {
+  try {
+    const dir = path.join(DATA_DIR, 'students');
+    if (!fs.existsSync(dir)) return;
+    
+    const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+    for (const file of files) {
+      const qqId = file.replace('.json', '');
+      const userData = loadUserData(qqId);
+      if (userData) {
+        students.set(qqId, userData);
+      }
+    }
+    console.log(`[Coach] 已加载 ${students.size} 个学生数据`);
+  } catch (e) {
+    console.error('[Coach] 加载学生数据失败:', e);
+  }
+}
+
 // ==================== Plugin Export ====================
 const coachAgentPlugin = {
   id: "coach-agent",
@@ -528,6 +606,9 @@ const coachAgentPlugin = {
   
   register(api: OpenClawPluginApi) {
     console.log("[CoachAgent] v3.0 已加载");
+    
+    // 加载所有用户数据
+    loadAllStudents();
     
     api.registerHook?.("message:qqbot", async (ctx: any) => {
       const { message, userId } = ctx;
