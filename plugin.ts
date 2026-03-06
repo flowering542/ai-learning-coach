@@ -328,7 +328,12 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
         
       case "帮助":
       case "help":
-        return `📖 学习教练\n\n/练习 - 开始练习题\n/错题 - 查看错题本\n/错题复习 - 针对性练习错题\n/进度 - 查看进度\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
+        return `📖 学习教练\n\n/练习 - 开始练习题\n/错题 - 查看错题本\n/错题复习 - 针对性练习错题\n/进度 - 查看进度\n/退出 - 退出当前练习\n/帮助 - 显示帮助\n\n答题时回复 1/2/3/4`;
+        
+      case "退出":
+      case "tc":
+      case "quit":
+        return handleExit(qqId);
         
       default:
         return `未知命令：${cmd}\n\n发送 /帮助 查看可用命令。`;
@@ -508,6 +513,19 @@ function startWrongQuestionReview(qqId: string, student: Student): string {
          `${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n` +
          `━━━━━━━━━━━━━━━━━━━━\n` +
          `💡 回复 1/2/3/4 选择答案`;
+}
+
+// 处理退出
+function handleExit(qqId: string): string {
+  const state = questionStates.get(qqId);
+  if (state) {
+    // 清除当前状态
+    state.currentQuestion = null;
+    state.waitingForContinue = false;
+    questionStates.set(qqId, state);
+    return `👋 已退出当前练习\n\n发送 /练习 重新开始，或 /错题复习 针对性练习`;
+  }
+  return `💡 当前没有在练习中\n\n发送 /练习 开始练习`;
 }
 
 // 引导思考 - AI自由发挥（根据题目内容）
