@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "q301",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q302",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q303",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q304",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q305",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q306",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q307",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q308",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q309",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q310",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q311",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q312",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q313",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q314",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q315",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q316",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q317",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q318",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q319",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q320",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q321",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q322",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q323",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q324",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q325",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q326",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q327",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q328",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q329",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q330",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q331",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q332",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q333",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q334",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q335",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q336",
+    "content": "正常成人红细胞在循环血液中的平均寿命约为",
+    "options": [
+      "30天",
+      "60天",
+      "120天",
+      "180天"
+    ],
+    "correctAnswer": "3",
+    "explanation": "正常成人红细胞平均寿命约120天，衰老红细胞主要在脾脏被破坏。",
+    "extend": "📚 红细胞寿命测定可用于贫血诊断和溶血性疾病评估。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q337",
+    "content": "血小板的主要生理功能是",
+    "options": [
+      "运输氧气",
+      "参与凝血和止血",
+      "吞噬病原体",
+      "产生抗体"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血小板主要参与凝血过程和止血功能，维护血管壁完整性。",
+    "extend": "📚 血小板还含有多种生长因子，参与组织修复和再生。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q338",
+    "content": "血浆胶体渗透压主要由哪种蛋白质维持",
+    "options": [
+      "纤维蛋白原",
+      "白蛋白",
+      "球蛋白",
+      "凝血酶原"
+    ],
+    "correctAnswer": "2",
+    "explanation": "白蛋白分子量小、数量多，是维持血浆胶体渗透压的主要蛋白质。",
+    "extend": "📚 白蛋白浓度降低可导致水肿，临床需监测血浆白蛋白水平。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q339",
+    "content": "ABO血型系统中，A型血红细胞表面的抗原是",
+    "options": [
+      "A抗原",
+      "B抗原",
+      "A和B抗原",
+      "无抗原"
+    ],
+    "correctAnswer": "1",
+    "explanation": "A型血红细胞表面有A抗原，血浆中含有抗B抗体。",
+    "extend": "📚 ABO血型由9号染色体上的基因决定，遵循孟德尔遗传规律。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q340",
+    "content": "Rh阴性母亲怀有Rh阳性胎儿，可能发生的并发症是",
+    "options": [
+      "ABO溶血病",
+      "Rh新生儿溶血病",
+      "血小板减少症",
+      "血友病"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh阴性母亲接触Rh阳性胎儿红细胞后产生抗D抗体，再次妊娠时可导致Rh新生儿溶血病。",
+    "extend": "📚 预防方法：Rh阴性孕妇在产后72小时内注射抗D免疫球蛋白。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "physiology"
+  },
+  {
+    "id": "q341",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q342",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q343",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q344",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q345",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q346",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q347",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q348",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q349",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q350",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q351",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q352",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q353",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q354",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q355",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q356",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q357",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q358",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q359",
+    "content": "血红蛋白的辅基是",
+    "options": [
+      "铁离子",
+      "血红素",
+      "珠蛋白",
+      "叶酸"
+    ],
+    "correctAnswer": "2",
+    "explanation": "血红蛋白由珠蛋白和血红素组成，血红素是其辅基，含有铁离子。",
+    "extend": "📚 血红素合成需要铁和卟啉，缺铁可导致缺铁性贫血。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q360",
+    "content": "血糖的主要去路不包括",
+    "options": [
+      "氧化供能",
+      "合成糖原",
+      "转化为脂肪",
+      "合成血红蛋白"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血糖主要去路包括氧化供能、合成糖原、转化为脂肪，不用于合成血红蛋白。",
+    "extend": "📚 血红蛋白合成需要葡萄糖代谢提供能量，但血糖不直接参与血红蛋白合成。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "biochemistry"
+  },
+  {
+    "id": "q361",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q362",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q363",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q364",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q365",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q366",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q367",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q368",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q369",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q370",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q371",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q372",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q373",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q374",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q375",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q376",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q377",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q378",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q379",
+    "content": "可通过输血传播的主要病毒不包括",
+    "options": [
+      "HIV",
+      "HBV",
+      "HCV",
+      "流感病毒"
+    ],
+    "correctAnswer": "4",
+    "explanation": "流感病毒通过呼吸道传播，不通过输血传播。HIV、HBV、HCV可通过输血传播。",
+    "extend": "📚 输血传播病原体还包括梅毒螺旋体、疟原虫、CMV等。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q380",
+    "content": "血液中细菌污染的主要途径是",
+    "options": [
+      "献血者菌血症",
+      "采血过程污染",
+      "储存容器污染",
+      "以上都是"
+    ],
+    "correctAnswer": "4",
+    "explanation": "血液细菌污染可通过献血者菌血症、采血过程污染、储存容器污染等多种途径。",
+    "extend": "📚 细菌污染是输血严重并发症，可导致败血症和感染性休克。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "microbiology"
+  },
+  {
+    "id": "q381",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q382",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q383",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q384",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q385",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q386",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q387",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q388",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q389",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q390",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "hard",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q391",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q392",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q393",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q394",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q395",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "easy",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q396",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q397",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q398",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q399",
+    "content": "ABO血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "3",
+    "explanation": "ABO血型抗体主要是IgM类，在出生后3-6个月开始出现。",
+    "extend": "📚 IgM是五聚体，分子量大，不能通过胎盘，是天然抗体。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  },
+  {
+    "id": "q400",
+    "content": "Rh血型抗体属于",
+    "options": [
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
+    ],
+    "correctAnswer": "2",
+    "explanation": "Rh血型抗体是免疫性抗体，属于IgG类，可通过胎盘。",
+    "extend": "📚 IgG是唯一能通过胎盘的抗体，可导致新生儿溶血病。",
+    "difficulty": "medium",
+    "category": "basics",
+    "subjectId": "immunology"
+  }
+]
