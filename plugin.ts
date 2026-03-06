@@ -127,10 +127,20 @@ const questionStates = new Map<string, QuestionState>();
 // 加载题库
 function loadQuestionBank(): typeof questionBank {
   try {
-    const dataPath = path.join(DATA_DIR, 'questions_converted.json');
-    const data = fs.readFileSync(dataPath, 'utf-8');
+    // 优先加载400道题库
+    const dataPath400 = path.join(DATA_DIR, 'questions_400.json');
+    if (fs.existsSync(dataPath400)) {
+      const data = fs.readFileSync(dataPath400, 'utf-8');
+      const parsed = JSON.parse(data);
+      console.log(`[Coach] 已加载 ${parsed.questions.length} 道题目（400题库）`);
+      return parsed.questions;
+    }
+    
+    // 回退到300道题库
+    const dataPath300 = path.join(DATA_DIR, 'questions_converted.json');
+    const data = fs.readFileSync(dataPath300, 'utf-8');
     const parsed = JSON.parse(data);
-    console.log(`[Coach] 已加载 ${parsed.questions.length} 道题目`);
+    console.log(`[Coach] 已加载 ${parsed.questions.length} 道题目（300题库）`);
     return parsed.questions;
   } catch (e) {
     console.error('[Coach] 题库加载失败，使用默认题库:', e);
