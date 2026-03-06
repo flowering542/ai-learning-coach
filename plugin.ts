@@ -111,7 +111,16 @@ const students = new Map<string, Student>();
 const questionStates = new Map<string, QuestionState>();
 
 // 模拟题库（带难度和主题）
-const questionBank = [
+const questionBank: Array<{
+  id: string;
+  content: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+  extend?: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  subjectId: string;
+}> = [
   {
     id: "q001",
     content: "输血前检查，下列哪项是必查项目？",
@@ -224,19 +233,19 @@ async function handleAdminMessage(message: string, qqId: string): Promise<string
         if (students.size === 0) return "📋 暂无已激活学生。";
         let list = "📋 学生列表\n\n";
         let i = 1;
-        for (const s of students.values()) {
+        Array.from(students.values()).forEach(s => {
           list += `${i}. ID:${s.id.slice(-6)} 激活:${new Date(s.activatedAt).toLocaleDateString()}\n`;
           i++;
-        }
+        });
         return list;
         
       case "统计":
       case "stats":
         let totalQ = 0, totalC = 0;
-        for (const s of students.values()) {
+        Array.from(students.values()).forEach(s => {
           totalQ += s.totalQuestions;
           totalC += s.correctAnswers;
-        }
+        });
         const acc = totalQ > 0 ? Math.round((totalC / totalQ) * 100) : 0;
         return `📊 统计\n\n👥 学生: ${students.size}\n📝 答题: ${totalQ}\n✅ 正确率: ${acc}%`;
         
@@ -458,10 +467,9 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
   
   // 尝试激活
   if (VALID_CODES.has(trimmed)) {
-    for (const s of students.values()) {
-      if (s.activationCode === trimmed) {
-        return "❌ 该激活码已被使用。";
-      }
+    const isUsed = Array.from(students.values()).some(s => s.activationCode === trimmed);
+    if (isUsed) {
+      return "❌ 该激活码已被使用。";
     }
     
     const student: Student = {
