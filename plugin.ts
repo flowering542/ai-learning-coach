@@ -1,6 +1,5 @@
 // Coach Agent Plugin for OpenClaw
-// 学习教练 Agent - 支持单 Bot 多角色路由
-// 优化版：用户说"继续"才出下一题
+// 学习教练 Agent - 优化版：答对直接下一题，答错深入引导
 
 import type { OpenClawPluginApi, AgentDefinition } from "openclaw/plugin-sdk";
 
@@ -29,7 +28,7 @@ interface Student {
   lastActiveAt: string;
 }
 
-// 答题状态管理（新流程：等用户说"继续"才下一题）
+// 答题状态管理
 interface QuestionState {
   currentQuestion: {
     id: string;
@@ -39,7 +38,7 @@ interface QuestionState {
     explanation: string;
   } | null;
   waitingForContinue: boolean;
-  lastAnswerCorrect: boolean | null;
+  discussionRound: number; // 讨论轮数
 }
 
 // ==================== 数据存储 ====================
@@ -156,7 +155,7 @@ function handlePersonalAssistant(message: string, qqId: string): string {
   return `👋 管理员你好！\n\n可用命令：\n/模式 - 查看当前模式\n/生成激活码 - 创建激活码\n/学生列表 - 查看学生\n/统计 - 查看数据`;
 }
 
-// ==================== 学生模式（新流程） ====================
+// ==================== 学生模式（优化版） ====================
 async function handleStudentMessage(message: string, qqId: string): Promise<string> {
   const trimmed = message.trim().toLowerCase();
   const student = students.get(qqId)!;
@@ -165,18 +164,21 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
   // 获取或初始化答题状态
   let state = questionStates.get(qqId);
   if (!state) {
-    state = { currentQuestion: null, waitingForContinue: false, lastAnswerCorrect: null };
+    state = { currentQuestion: null, waitingForContinue: false, discussionRound: 0 };
     questionStates.set(qqId, state);
   }
   
-  // 如果正在等待用户说"继续"
+  // 如果正在等待用户说"继续"（答错后的讨论模式）
   if (state.waitingForContinue) {
-    if (trimmed === "继续" || trimmed === "下一题" || trimmed === "jt" || trimmed === "xyt") {
+    // 用户说继续/下一题
+    if (/^(继续|下一题|jt|xyt)$/.test(trimmed)) {
       state.waitingForContinue = false;
+      state.discussionRound = 0;
       return generateQuestion(qqId);
     }
-    // 用户还在讨论，继续对话
-    return handleDiscussion(message, qqId, state);
+    
+    // 用户继续讨论（多轮引导）
+    return handleDeepDiscussion(message, qqId, state);
   }
   
   // 检查是否在答题（回复 1-4）
@@ -231,33 +233,70 @@ function generateQuestion(qqId: string): string {
   
   state.currentQuestion = question;
   state.waitingForContinue = false;
-  state.lastAnswerCorrect = null;
+  state.discussionRound = 0;
   
   return `📝 ${question.content}\n\n${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n回复 1/2/3/4`;
 }
 
-// 处理答题
+// 处理答题（优化版）
 function handleAnswer(answer: string, qqId: string, state: QuestionState, student: Student): string {
   if (!state.currentQuestion) return "请先发送 /练习 开始答题";
   
-  const isCorrect = answer === state.currentQuestion.correctAnswer;
-  state.lastAnswerCorrect = isCorrect;
-  state.waitingForContinue = true;
+  const question = state.currentQuestion;
+  const isCorrect = answer === question.correctAnswer;
   
   // 更新统计
   student.totalQuestions++;
   if (isCorrect) student.correctAnswers++;
   
+  // 清除当前题目
+  delete state.currentQuestion;
+  saveUserData(qqId, student);
+  
   if (isCorrect) {
-    return `✅ 对了！为什么选这个？🤔\n\n（回复"继续"）`;
+    // 答对：直接出下一题（不打扰）
+    return `✅ 对了！👍\n\n${generateQuestion(qqId)}`;
   } else {
-    return `❌ 再想想。关键是什么？💡\n\n（回复"继续"）`;
+    // 答错：进入深入引导模式
+    state.waitingForContinue = true;
+    state.discussionRound = 1;
+    questionStates.set(qqId, state);
+    
+    return `❌ 再想想。\n\n这道题和"${getSimilarConcept(question)}"有什么区别？🤔\n\n（回复你的思考，或说"继续"）`;
   }
 }
 
-// 处理讨论（用户答完后继续对话）
-function handleDiscussion(message: string, qqId: string, state: QuestionState): string {
-  return `💡 收到！回复"继续"出下一题`;
+// 深入讨论引导（多轮）
+function handleDeepDiscussion(message: string, qqId: string, state: QuestionState): string {
+  state.discussionRound++;
+  questionStates.set(qqId, state);
+  
+  // 根据轮数给出不同深度的引导
+  if (state.discussionRound === 2) {
+    return `💡 有道理！那如果条件变了会怎样？\n\n（继续思考，或说"继续"出下一题）`;
+  } else if (state.discussionRound === 3) {
+    return `👍 理解到位！继续吗？\n\n（说"继续"出下一题）`;
+  } else {
+    // 超过3轮，提醒继续
+    return `💡 收到！继续吗？\n\n（说"继续"出下一题）`;
+  }
+}
+
+// 获取相似概念（用于引导）
+function getSimilarConcept(question: any): string {
+  // 根据题目返回相似但不同的概念
+  const concepts: Record<string, string> = {
+    '输血前检查': '输血后检查',
+    '红细胞去除': '红细胞输注',
+    '慢性贫血': '急性贫血',
+    'ABO血型': 'Rh血型',
+  };
+  
+  for (const [key, value] of Object.entries(concepts)) {
+    if (question.content.includes(key)) return value;
+  }
+  
+  return '其他类似情况';
 }
 
 // ==================== 访客模式 ====================
@@ -284,7 +323,7 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
     };
     students.set(qqId, student);
     
-    return `🎉 激活成功！欢迎加入学习教练！\n\n可用命令：\n• /练习 - 开始练习题\n• /查询 <关键词> - 搜索题目\n• /进度 - 查看学习进度\n• /帮助 - 显示帮助\n\n开始你的学习之旅吧！📚`;
+    return `🎉 激活成功！欢迎加入学习教练！\n\n可用命令：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /错题 - 查看错题\n• /分析 - 薄弱点分析\n• /徽章 - 成就徽章\n• /打卡 - 学习打卡`;
   }
   
   return `👋 欢迎使用学习教练！\n\n请输入激活码：\n\n示例：STUDENT2024A\n\n演示码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。`;
@@ -294,8 +333,8 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
 const coachAgentPlugin = {
   id: "coach-agent",
   name: "学习教练 Agent",
-  description: "支持单 Bot 多角色的学习辅导系统（优化版：用户控制节奏）",
-  version: "1.1.0",
+  description: "支持单 Bot 多角色的学习辅导系统（优化版：答对直接下一题，答错深入引导）",
+  version: "2.0.0",
   
   register(api: OpenClawPluginApi) {
     console.log("[CoachAgent] 学习教练 Agent 已加载");
