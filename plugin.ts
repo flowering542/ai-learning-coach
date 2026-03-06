@@ -26,6 +26,17 @@ interface Student {
   totalQuestions: number;
   correctAnswers: number;
   lastActiveAt: string;
+  // 智能出题需要的数据
+  questionHistory: QuestionHistory[];
+  currentDifficulty: 'easy' | 'medium' | 'hard';
+}
+
+// 答题历史
+interface QuestionHistory {
+  questionId: string;
+  isCorrect: boolean;
+  timestamp: string;
+  subjectId?: string;
 }
 
 // 答题状态管理
@@ -37,6 +48,8 @@ interface QuestionState {
     correctAnswer: string;
     explanation: string;
     extend?: string;
+    difficulty?: 'easy' | 'medium' | 'hard';
+    subjectId?: string;
   } | null;
   lastQuestion: {
     id: string;
@@ -53,7 +66,7 @@ interface QuestionState {
 const students = new Map<string, Student>();
 const questionStates = new Map<string, QuestionState>();
 
-// 模拟题库（带扩展知识点）
+// 模拟题库（带难度和主题）
 const questionBank = [
   {
     id: "q001",
@@ -61,7 +74,9 @@ const questionBank = [
     options: ["ABO血型鉴定", "肝功能检查", "肾功能检查", "血糖检测"],
     correctAnswer: "1",
     explanation: "ABO血型鉴定是输血前必查项目，确保血型匹配避免溶血反应。",
-    extend: "📚 扩展：除ABO血型外，Rh血型鉴定也很重要，特别是Rh阴性患者。输血前还需进行交叉配血试验，确保供血者和受血者血液相容。"
+    extend: "📚 扩展：除ABO血型外，Rh血型鉴定也很重要，特别是Rh阴性患者。输血前还需进行交叉配血试验，确保供血者和受血者血液相容。",
+    difficulty: "easy" as const,
+    subjectId: "blood_type"
   },
   {
     id: "q002", 
@@ -69,7 +84,9 @@ const questionBank = [
     options: ["真性红细胞增多症", "缺铁性贫血", "再生障碍性贫血", "急性失血"],
     correctAnswer: "1",
     explanation: "真性红细胞增多症是红细胞异常增多，需要去除多余红细胞。",
-    extend: "📚 扩展：治疗性血液成分去除术还包括血小板去除术（用于原发性血小板增多症）、白细胞去除术（用于高白细胞血症）等。"
+    extend: "📚 扩展：治疗性血液成分去除术还包括血小板去除术（用于原发性血小板增多症）、白细胞去除术（用于高白细胞血症）等。",
+    difficulty: "medium" as const,
+    subjectId: "therapeutic_apheresis"
   },
   {
     id: "q003",
@@ -77,7 +94,29 @@ const questionBank = [
     options: ["50g/L", "60g/L", "70g/L", "80g/L"],
     correctAnswer: "2",
     explanation: "慢性贫血患者Hb<60g/L且伴有明显缺氧症状时应考虑输血。",
-    extend: "📚 扩展：急性失血患者的输血指征不同，通常Hb<70g/L或出现明显休克症状时需要输血。老年人和心血管疾病患者的输血指征可适当放宽。"
+    extend: "📚 扩展：急性失血患者的输血指征不同，通常Hb<70g/L或出现明显休克症状时需要输血。老年人和心血管疾病患者的输血指征可适当放宽。",
+    difficulty: "medium" as const,
+    subjectId: "transfusion_indication"
+  },
+  {
+    id: "q004",
+    content: "ABO血型系统中，O型血的人红细胞上有什么抗原？",
+    options: ["A抗原", "B抗原", "A和B抗原", "无抗原"],
+    correctAnswer: "4",
+    explanation: "O型血的人红细胞上无A、B抗原，血浆中有抗A和抗B抗体。",
+    extend: "📚 扩展：ABO血型系统是根据红细胞表面是否存在A、B抗原来划分的。A型有A抗原，B型有B抗原，AB型有A和B抗原，O型无抗原。",
+    difficulty: "easy" as const,
+    subjectId: "blood_type"
+  },
+  {
+    id: "q005",
+    content: "交叉配血试验的主要目的是",
+    options: ["确定血型", "检测抗体", "检测受血者血清与供血者红细胞是否相容", "检测细菌污染"],
+    correctAnswer: "3",
+    explanation: "交叉配血试验是检测受血者血清与供血者红细胞是否相容，确保输血安全。",
+    extend: "📚 扩展：交叉配血包括主侧（受血者血清+供血者红细胞）和次侧（供血者血清+受血者红细胞）试验，两者都必须无凝集才能输血。",
+    difficulty: "hard" as const,
+    subjectId: "compatibility_testing"
   }
 ];
 
@@ -229,19 +268,27 @@ async function handleStudentMessage(message: string, qqId: string): Promise<stri
   return `收到！发送 /练习 开始练习题`;
 }
 
-// 生成新题目（带统计）
+// 生成新题目（智能出题）
 function generateQuestion(qqId: string, student: Student): string {
   const state = questionStates.get(qqId)!;
-  const question = questionBank[Math.floor(Math.random() * questionBank.length)];
+  
+  // 智能选择题目
+  const question = selectSmartQuestion(student);
   
   state.currentQuestion = question;
   state.waitingForContinue = false;
+  
+  // 显示难度和主题
+  const diffMap = { easy: '简单', medium: '中等', hard: '困难' };
+  const diffText = diffMap[question.difficulty || 'medium'];
   
   // 显示统计（如果有答题记录）
   let stats = "";
   if (student.totalQuestions > 0) {
     const acc = Math.round((student.correctAnswers / student.totalQuestions) * 100);
-    stats = `📊 已答${student.totalQuestions}题，正确率${acc}%\n\n`;
+    stats = `📊 已答${student.totalQuestions}题，正确率${acc}% | 难度：${diffText}\n\n`;
+  } else {
+    stats = `📊 难度：${diffText}\n\n`;
   }
   
   return `${stats}📝 ${question.content}\n\n${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}\n\n回复 1/2/3/4`;
@@ -264,8 +311,21 @@ function handleAnswer(answer: string, qqId: string, state: QuestionState, studen
     content: question.content,
     correctAnswer: question.correctAnswer,
     explanation: question.explanation,
+    extend: question.extend,
     isCorrect: isCorrect
   };
+  
+  // 记录答题历史
+  if (!student.questionHistory) student.questionHistory = [];
+  student.questionHistory.push({
+    questionId: question.id,
+    isCorrect: isCorrect,
+    timestamp: new Date().toISOString(),
+    subjectId: question.subjectId
+  });
+  
+  // 更新难度
+  updateDifficulty(student);
   
   // 清除当前题目
   state.currentQuestion = null;
@@ -337,6 +397,8 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
       totalQuestions: 0,
       correctAnswers: 0,
       lastActiveAt: new Date().toISOString(),
+      questionHistory: [],
+      currentDifficulty: 'easy',
     };
     students.set(qqId, student);
     
@@ -344,6 +406,71 @@ async function handleGuestMessage(message: string, qqId: string): Promise<string
   }
   
   return `👋 请输入激活码：\n\n演示码：COACH-DEMO-001`;
+}
+
+// ==================== 智能出题策略 ====================
+
+// 智能选择题目
+function selectSmartQuestion(student: Student): typeof questionBank[0] {
+  const history = student.questionHistory;
+  
+  // 1. 如果有错题，优先出相关类型的题目（薄弱点针对性）
+  const wrongQuestions = history.filter(h => !h.isCorrect);
+  if (wrongQuestions.length > 0) {
+    // 找出错误最多的主题
+    const subjectCount: Record<string, number> = {};
+    wrongQuestions.forEach(h => {
+      if (h.subjectId) {
+        subjectCount[h.subjectId] = (subjectCount[h.subjectId] || 0) + 1;
+      }
+    });
+    
+    // 找出最薄弱的主题
+    let weakestSubject = '';
+    let maxCount = 0;
+    for (const [subject, count] of Object.entries(subjectCount)) {
+      if (count > maxCount) {
+        maxCount = count;
+        weakestSubject = subject;
+      }
+    }
+    
+    // 从最薄弱主题中选一道没做过或做错的题
+    if (weakestSubject) {
+      const candidates = questionBank.filter(q => 
+        q.subjectId === weakestSubject && 
+        q.difficulty === student.currentDifficulty
+      );
+      if (candidates.length > 0) {
+        return candidates[Math.floor(Math.random() * candidates.length)];
+      }
+    }
+  }
+  
+  // 2. 根据当前难度选择题目
+  const candidates = questionBank.filter(q => q.difficulty === student.currentDifficulty);
+  if (candidates.length > 0) {
+    return candidates[Math.floor(Math.random() * candidates.length)];
+  }
+  
+  // 3. 默认随机
+  return questionBank[Math.floor(Math.random() * questionBank.length)];
+}
+
+// 更新难度
+function updateDifficulty(student: Student): void {
+  const recentHistory = student.questionHistory.slice(-10); // 最近10题
+  if (recentHistory.length < 5) return; // 数据不足
+  
+  const correctCount = recentHistory.filter(h => h.isCorrect).length;
+  const accuracy = correctCount / recentHistory.length;
+  
+  // 正确率>80%升级，<50%降级
+  if (accuracy > 0.8 && student.currentDifficulty !== 'hard') {
+    student.currentDifficulty = student.currentDifficulty === 'easy' ? 'medium' : 'hard';
+  } else if (accuracy < 0.5 && student.currentDifficulty !== 'easy') {
+    student.currentDifficulty = student.currentDifficulty === 'hard' ? 'medium' : 'easy';
+  }
 }
 
 // ==================== Plugin Export ====================
