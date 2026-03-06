@@ -127,7 +127,16 @@ const questionStates = new Map<string, QuestionState>();
 // 加载题库
 function loadQuestionBank(): typeof questionBank {
   try {
-    // 优先加载400道题库
+    // 优先加载精简题库（276道高质量真题）
+    const cleanPath = path.join(DATA_DIR, 'questions_clean.json');
+    if (fs.existsSync(cleanPath)) {
+      const data = fs.readFileSync(cleanPath, 'utf-8');
+      const parsed = JSON.parse(data);
+      console.log(`[Coach] 已加载 ${parsed.questions.length} 道题目（精简题库）`);
+      return parsed.questions;
+    }
+    
+    // 回退到400道题库
     const dataPath400 = path.join(DATA_DIR, 'questions_400.json');
     if (fs.existsSync(dataPath400)) {
       const data = fs.readFileSync(dataPath400, 'utf-8');
