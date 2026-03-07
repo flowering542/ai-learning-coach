@@ -9,7 +9,7 @@
         "NODE_ENV": "production",
         "COACH_PORT": 3000,
         "COACH_DATA_DIR": "./data",
-        "COACH_ADMIN_QQ_IDS": "0868C7A469194C24FDF03912C5313735"
+        "COACH_ADMIN_QQ_IDS": "0868C7A469194C24FDF03912C5313735,ou_59a71f8c62233d851385b132dcc8c09c"
       },
       "env_production": {
         "NODE_ENV": "production"

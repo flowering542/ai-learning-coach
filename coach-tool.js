@@ -371,8 +371,13 @@ export async function coachTool(command, userId, platform, adminIds) {
   }
 
   // ========== 自然语言处理 ==========
-  if (/^(练习|做题|答题|来一题|开始练习|我要练习|lx|zt|practice|start)$/.test(trimmed) ||
-      trimmed.includes('做道题') || trimmed.includes('来道题')) {
+  if (/^(练习|做题|答题|来一题|开始练习|我要练习|我想做题|lx|zt|practice|start)$/.test(trimmed) ||
+      trimmed.includes('做道题') || trimmed.includes('来道题') || trimmed.includes('做题')) {
+    if (!userData) {
+      return {
+        result: `👋 欢迎使用学习教练！\n\n请输入你的激活码以开始使用。\n\n示例激活码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。`
+      };
+    }
     return generateQuestion(userId, userData, platform);
   }
 
@@ -406,9 +411,16 @@ export async function coachTool(command, userId, platform, adminIds) {
     return coachTool('/帮助', userId, platform, adminIds);
   }
 
+  // 友好问候
+  if (/^(你好|您好|hello|hi|hey)$/.test(trimmed)) {
+    return {
+      result: `👋 你好！我是你的学习教练。\n\n发送 /帮助 查看可用命令，或发送 /练习 开始做题！`
+    };
+  }
+
   // 默认回复 - 未知命令
   return {
-    result: `❓ 未知命令：${command}\n\n可用命令：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /错题 - 错题复习\n• /帮助 - 显示完整帮助\n\n发送 /帮助 查看所有命令。`
+    result: `❓ 我不太理解「${command}」\n\n你可以试试：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /帮助 - 显示完整帮助`
   };
 }
 
