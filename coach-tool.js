@@ -80,6 +80,11 @@ function analyzeErrorReason(question, userAnswer) {
 
 // 主函数
 export async function coachTool(command, userId, platform, adminIds) {
+  // 处理空消息
+  if (!command || command.trim() === '') {
+    return { result: '👋 欢迎使用学习教练！\n\n发送 /帮助 查看可用命令。' };
+  }
+  
   const trimmed = command.trim();
   const userData = loadUserData(userId);
   const isAdmin = adminIds.includes(userId);
@@ -129,6 +134,12 @@ export async function coachTool(command, userId, platform, adminIds) {
 
   // ========== 学生命令 ==========
   if (trimmed === '/练习' || trimmed === '/lx') {
+    // 检查是否已激活
+    if (!userData) {
+      return {
+        result: `👋 欢迎使用学习教练！\n\n请输入你的激活码以开始使用。\n\n示例激活码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。`
+      };
+    }
     return generateQuestion(userId, userData, platform);
   }
 
@@ -210,6 +221,14 @@ export async function coachTool(command, userId, platform, adminIds) {
   if (trimmed.startsWith('COACH-DEMO') || trimmed.startsWith('STUDENT') || trimmed.startsWith('STU-')) {
     if (userData) {
       return { result: '❌ 你已经激活过了，直接发送 /练习 开始学习。' };
+    }
+
+    // 验证激活码格式
+    const validPrefixes = ['COACH-DEMO', 'STUDENT2024', 'STU-'];
+    const isValidFormat = validPrefixes.some(prefix => trimmed.startsWith(prefix));
+    
+    if (!isValidFormat) {
+      return { result: '❌ 无效激活码，请检查输入或联系管理员获取。' };
     }
 
     const newUser = {
@@ -353,9 +372,9 @@ export async function coachTool(command, userId, platform, adminIds) {
     return coachTool('/帮助', userId, platform, adminIds);
   }
 
-  // 默认回复
+  // 默认回复 - 未知命令
   return {
-    result: `收到！你可以：\n\n/练习 - 开始练习题\n/查询 ${command} - 搜索相关题目\n/帮助 - 查看所有命令`
+    result: `❓ 未知命令：${command}\n\n可用命令：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /错题 - 错题复习\n• /帮助 - 显示完整帮助\n\n发送 /帮助 查看所有命令。`
   };
 }
 

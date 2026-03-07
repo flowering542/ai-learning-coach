@@ -13,10 +13,11 @@ app.get('/health', (req, res) => {
 app.post('/api/coach', async (req, res) => {
     try {
         const { command, userId, platform = 'qq' } = req.body;
-        if (!command || !userId) {
-            return res.status(400).json({ error: 'Missing command or userId' });
+        if (!userId) {
+            return res.status(400).json({ error: 'Missing userId' });
         }
-        const result = await coachTool(command, userId, platform, ADMIN_IDS);
+        // 允许空 command，让 coachTool 处理
+        const result = await coachTool(command || '', userId, platform, ADMIN_IDS);
         res.json(result);
     }
     catch (error) {
