@@ -1,21 +1,44 @@
 {
-  "name": "coach-agent",
+  "name": "ai-learning-coach",
   "version": "1.0.0",
-  "description": "学习教练 QQ Bot Agent",
+  "description": "AI 学习教练 - 医学职称考试辅导系统",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "server.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node server.js",
+    "start:http": "node server.js",
+    "start:agent": "node dist/src/index.js",
+    "pm2:start": "pm2 start server.js --name ai-learning-coach",
+    "pm2:stop": "pm2 stop ai-learning-coach",
+    "pm2:restart": "pm2 restart ai-learning-coach",
+    "pm2:logs": "pm2 logs ai-learning-coach",
+    "backup": "node scripts/backup.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "ai",
+    "learning",
+    "coach",
+    "medical",
+    "exam",
+    "qq-bot",
+    "openclaw"
+  ],
+  "author": "flowering542",
+  "license": "MIT",
   "dependencies": {
     "@types/express": "^5.0.6",
+    "@types/node": "^20.0.0",
     "express": "^5.2.1",
     "openclaw": "^2026.2.9"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
     "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
