@@ -90,7 +90,7 @@ export async function coachTool(command, userId, platform, adminIds) {
   const isAdmin = adminIds.includes(userId);
 
   // ========== 管理员命令 ==========
-  if (isAdmin && (trimmed === '/学生列表' || trimmed === '/students')) {
+  if (isAdmin && (trimmed === '/学生列表' || trimmed === '/students' || trimmed === '/学生')) {
     const studentsDir = path.join(DATA_DIR, 'students');
     if (!fs.existsSync(studentsDir)) return { result: '📋 暂无已激活学生。' };
     
@@ -108,7 +108,7 @@ export async function coachTool(command, userId, platform, adminIds) {
     return { result: list };
   }
 
-  if (isAdmin && trimmed === '/统计') {
+  if (isAdmin && (trimmed === '/统计' || trimmed === '/stats' || trimmed === '/tj')) {
     const studentsDir = path.join(DATA_DIR, 'students');
     let totalStudents = 0, totalQ = 0, totalC = 0;
 
@@ -128,6 +128,19 @@ export async function coachTool(command, userId, platform, adminIds) {
     };
   }
 
+  if (isAdmin && (trimmed === '/生成激活码' || trimmed === '/gen')) {
+    const code = `STU-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+    return { result: `✅ 新激活码：${code}\n\n将此码发给学生即可激活。` };
+  }
+
+  if (isAdmin && (trimmed === '/模式' || trimmed === '/mode' || trimmed === '/ms')) {
+    return { result: '🎯 当前模式：管理员\n\n可用命令：\n• /生成激活码\n• /学生列表\n• /统计\n• /切换' };
+  }
+
+  if (isAdmin && (trimmed === '/切换' || trimmed === '/qh')) {
+    return { result: '✅ 已切换到学生模式，发送 /恢复 可恢复管理员身份。' };
+  }
+
   if (isAdmin && trimmed === '/切换') {
     return { result: '✅ 已切换到学生模式，发送 /恢复 可恢复管理员身份。' };
   }
@@ -143,13 +156,19 @@ export async function coachTool(command, userId, platform, adminIds) {
     return generateQuestion(userId, userData, platform);
   }
 
-  if (trimmed === '/错题' || trimmed === '/ct') {
+  if (trimmed === '/错题' || trimmed === '/ct' || trimmed === '/cw') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
     const wrongs = userData?.wrongAnswers || [];
     if (wrongs.length === 0) return { result: '🎉 还没有错题，继续保持！' };
     return { result: `🔄 错题复习\n\n你有 ${wrongs.length} 道错题\n发送 /练习 开始针对性练习` };
   }
 
-  if (trimmed === '/进度' || trimmed === '/progress') {
+  if (trimmed === '/进度' || trimmed === '/jd' || trimmed === '/progress' || trimmed === '/tj') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
     const s = userData || { totalQuestions: 0, correctAnswers: 0, streakDays: 0 };
     const acc = s.totalQuestions > 0 ? Math.round((s.correctAnswers / s.totalQuestions) * 100) : 0;
 
@@ -170,7 +189,10 @@ export async function coachTool(command, userId, platform, adminIds) {
     return { result: output };
   }
 
-  if (trimmed === '/分析' || trimmed === '/fx') {
+  if (trimmed === '/分析' || trimmed === '/fx' || trimmed === '/br') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
     const wrongs = userData?.wrongAnswers || [];
     if (wrongs.length === 0) {
       return {
@@ -194,7 +216,10 @@ export async function coachTool(command, userId, platform, adminIds) {
     return { result: report };
   }
 
-  if (trimmed === '/徽章' || trimmed === '/badge') {
+  if (trimmed === '/徽章' || trimmed === '/bj' || trimmed === '/badge' || trimmed === '/ch') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
     const badges = [];
     if ((userData?.totalQuestions || 0) >= 10) badges.push('🌱 初学者');
     if ((userData?.correctAnswers || 0) >= 10) badges.push('🎯 答题能手');
@@ -206,10 +231,19 @@ export async function coachTool(command, userId, platform, adminIds) {
     return { result: `🏅 我的徽章\n\n${badges.join('\n')}` };
   }
 
-  if (trimmed === '/打卡' || trimmed === '/checkin') {
+  if (trimmed === '/打卡' || trimmed === '/dk' || trimmed === '/checkin' || trimmed === '/qd') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
     const s = userData || { streakDays: 0 };
     return {
       result: `🌱 第${s.streakDays || 1}天学习，好的开始！\n\n💡 建议：基础还需巩固，建议从简单题开始，理解概念后再做题。`
+    };
+  }
+
+  if (trimmed === '/菜单' || trimmed === '/帮助' || trimmed === '/help' || trimmed === '/bz') {
+    return {
+      result: `📖 学习教练帮助\n\n【命令菜单】\n1. /练习 - 开始练习题\n2. /进度 - 查看学习统计\n3. /错题 - 错题复习\n4. /分析 - 薄弱点分析\n5. /徽章 - 成就徽章\n6. /打卡 - 学习打卡\n7. /帮助 - 显示帮助\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "继续"/"下一题" → 出下一题`
     };
   }
 
