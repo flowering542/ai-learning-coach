@@ -2,10 +2,10 @@
   "id": "stu_1772723192939",
   "userId": "feishu_ou_59a71f8c62233d851385b132dcc8c09c",
   "platform": "feishu",
-  "totalQuestions": 9,
+  "totalQuestions": 10,
   "correctAnswers": 1,
   "streakDays": 0,
-  "lastActiveAt": "2026-03-05T18:15:37.654Z",
+  "lastActiveAt": "2026-03-07T06:22:50.764Z",
   "wrongAnswers": [
     {
       "questionId": "q153",
@@ -62,34 +62,75 @@
       "yourAnswer": "C",
       "correctAnswer": "A",
       "timestamp": "2026-03-05T18:15:37.652Z"
+    },
+    {
+      "questionId": "q265",
+      "question": "镰状细胞贫血患者输血，目的是",
+      "yourAnswer": "A",
+      "correctAnswer": "B",
+      "reason": "粗心大意",
+      "timestamp": "2026-03-07T06:23:16.454Z"
     }
   ],
   "currentQuestion": {
-    "id": "q235",
-    "subjectId": "blood_quality",
+    "id": "q265",
+    "subjectId": "clinical_transfusion",
     "type": "single",
-    "difficulty": "medium",
-    "content": "血液储存冰箱的温度应保持在",
+    "difficulty": "hard",
+    "content": "镰状细胞贫血患者输血，目的是",
     "options": [
       {
         "id": "A",
-        "text": "0-2°C"
+        "text": "纠正贫血"
       },
       {
         "id": "B",
-        "text": "2-6°C"
+        "text": "稀释患者红细胞，减少镰变"
       },
       {
         "id": "C",
-        "text": "10-15°C"
+        "text": "补充凝血因子"
       },
       {
         "id": "D",
-        "text": "20-24°C"
+        "text": "补充血小板"
       }
     ],
     "correctAnswer": "B",
-    "explanation": "红细胞储存冰箱温度应保持在2-6°C，并24小时监控。",
+    "explanation": "镰状细胞贫血患者输血主要目的是稀释患者红细胞，降低HbS比例，减少镰变和血管阻塞。",
     "source": "基于教材生成"
+  },
+  "waitingForContinue": true,
+  "lastQuestionResult": {
+    "isCorrect": false,
+    "answer": "A",
+    "question": {
+      "id": "q265",
+      "subjectId": "clinical_transfusion",
+      "type": "single",
+      "difficulty": "hard",
+      "content": "镰状细胞贫血患者输血，目的是",
+      "options": [
+        {
+          "id": "A",
+          "text": "纠正贫血"
+        },
+        {
+          "id": "B",
+          "text": "稀释患者红细胞，减少镰变"
+        },
+        {
+          "id": "C",
+          "text": "补充凝血因子"
+        },
+        {
+          "id": "D",
+          "text": "补充血小板"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "镰状细胞贫血患者输血主要目的是稀释患者红细胞，降低HbS比例，减少镰变和血管阻塞。",
+      "source": "基于教材生成"
+    }
   }
 }
