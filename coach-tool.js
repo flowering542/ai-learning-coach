@@ -248,9 +248,53 @@ export async function coachTool(command, userId, platform, adminIds) {
     if (!userData) {
       return { result: '❌ 请先发送激活码激活。' };
     }
-    const s = userData || { streakDays: 0 };
+    
+    const now = new Date();
+    const today = now.toISOString().split('T')[0];
+    
+    // 初始化打卡记录
+    if (!userData.checkins) {
+      userData.checkins = [];
+    }
+    
+    // 检查今天是否已打卡
+    const alreadyCheckedIn = userData.checkins.includes(today);
+    
+    if (alreadyCheckedIn) {
+      return {
+        result: `✅ 今日已打卡！\n\n🔥 连续打卡 ${userData.streakDays || 1} 天\n📚 累计打卡 ${userData.checkins.length} 天\n\n💡 今天继续学习，保持好习惯！`
+      };
+    }
+    
+    // 记录打卡
+    userData.checkins.push(today);
+    userData.checkins = userData.checkins.slice(-30); // 只保留最近30天
+    
+    // 计算连续打卡天数
+    let streak = 1;
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+    
+    if (userData.checkins.includes(yesterdayStr)) {
+      streak = (userData.streakDays || 0) + 1;
+    }
+    
+    userData.streakDays = streak;
+    userData.lastCheckinAt = now.toISOString();
+    saveUserData(userId, userData);
+    
+    // 打卡奖励提示
+    let reward = '';
+    if (streak === 1) reward = '🌱 好的开始！';
+    else if (streak === 3) reward = '🎯 连续3天，养成习惯！';
+    else if (streak === 7) reward = '🔥 连续7天，太棒了！';
+    else if (streak === 30) reward = '🏆 连续30天，学习达人！';
+    else if (streak % 7 === 0) reward = `🔥 连续${streak}天，持之以恒！`;
+    else reward = `🔥 连续${streak}天，继续保持！`;
+    
     return {
-      result: `🌱 第${s.streakDays || 1}天学习，好的开始！\n\n💡 建议：基础还需巩固，建议从简单题开始，理解概念后再做题。`
+      result: `✅ 打卡成功！\n\n${reward}\n📚 累计打卡 ${userData.checkins.length} 天\n\n💡 坚持学习，每天进步一点点！`
     };
   }
 
@@ -443,14 +487,32 @@ export async function coachTool(command, userId, platform, adminIds) {
   };
 }
 
-// 生成题目
+// 生成题目 - 优先推荐错题
 function generateQuestion(userId, userData, platform) {
   const bank = loadQuestionBank();
   if (bank.questions.length === 0) {
     return { result: '❌ 题库加载失败' };
   }
 
-  const question = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+  let question;
+  let isWrongQuestion = false;
+  
+  // 优先推荐错题（70%概率）
+  const wrongs = userData?.wrongAnswers || [];
+  if (wrongs.length > 0 && Math.random() < 0.7) {
+    // 随机选一道错题
+    const wrongQuestionIds = wrongs.map(w => w.questionId);
+    const wrongQuestions = bank.questions.filter(q => wrongQuestionIds.includes(q.id));
+    if (wrongQuestions.length > 0) {
+      question = wrongQuestions[Math.floor(Math.random() * wrongQuestions.length)];
+      isWrongQuestion = true;
+    }
+  }
+  
+  // 如果没有错题或随机到30%，随机出题
+  if (!question) {
+    question = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+  }
 
   const updatedData = userData || {
     id: `stu_${Date.now()}`,
@@ -467,8 +529,11 @@ function generateQuestion(userId, userData, platform) {
   delete updatedData.lastQuestionResult;
   saveUserData(userId, updatedData);
 
-  let output = '📝 练习题\n';
-  output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+  let output = '📝 练习题';
+  if (isWrongQuestion) {
+    output += '（错题复习）';
+  }
+  output += '\n━━━━━━━━━━━━━━━━━━━━\n\n';
 
   const subjectMap = {
     'blood_basic': '血液学基础',
