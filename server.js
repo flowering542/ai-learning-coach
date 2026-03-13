@@ -24,8 +24,8 @@ app.post('/api/coach', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-// 启动服务
-app.listen(PORT, () => {
+// 启动服务 - 明确绑定到所有接口（IPv4 + IPv6）
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`[Coach HTTP] 服务已启动，端口: ${PORT}`);
     console.log(`[Coach HTTP] 管理员: ${ADMIN_IDS.length} 人`);
 });

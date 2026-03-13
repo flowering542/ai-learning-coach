@@ -162,7 +162,20 @@ export async function coachTool(command, userId, platform, adminIds) {
     }
     const wrongs = userData?.wrongAnswers || [];
     if (wrongs.length === 0) return { result: '🎉 还没有错题，继续保持！' };
-    return { result: `🔄 错题复习\n\n你有 ${wrongs.length} 道错题\n发送 /练习 开始针对性练习` };
+    
+    // 展示最近5道错题
+    let output = `🔄 错题复习\n━━━━━━━━━━━━━━━━━━━━\n\n`;
+    output += `📚 共 ${wrongs.length} 道错题，展示最近 ${Math.min(5, wrongs.length)} 道：\n\n`;
+    
+    const recentWrongs = wrongs.slice(-5).reverse();
+    recentWrongs.forEach((w, idx) => {
+      output += `${idx + 1}. ${w.question?.substring(0, 30) || '题目'}...\n`;
+      output += `   你的答案：${w.yourAnswer} | 正确答案：${w.correctAnswer}\n`;
+      output += `   错因：${w.reason}\n\n`;
+    });
+    
+    output += '💡 发送 /练习 开始针对性练习';
+    return { result: output };
   }
 
   if (trimmed === '/进度' || trimmed === '/jd' || trimmed === '/progress' || trimmed === '/tj') {
