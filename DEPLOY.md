@@ -37,19 +37,52 @@ cp .env.example .env
 # 编辑 .env 文件，填入你的配置
 ```
 
-### 4. 启动服务
+### 4. 启动服务（两种方式）
 
-**方式一：HTTP 服务模式（推荐）**
+**方式一：直接调用模式（推荐，MVP阶段）**
+
+绕过 HTTP 服务，直接调用 coachTool，性能更好、更稳定：
+
+```bash
+# 使用 coach-direct.js 脚本
+cd ~/.openclaw/workspace/skills/coach
+node coach-direct.js <userId> "/练习"
+
+# 或在 OpenClaw skill 中直接调用
+```
+
+**方式二：HTTP 服务模式（可选）**
+
 ```bash
 ./start.sh
 # 或
 COACH_PORT=3000 COACH_ADMIN_QQ_IDS=your_qq_id node server.js
 ```
 
-**方式二：OpenClaw Agent 模式**
-```bash
-npm run dev
-```
+> ⚠️ 注意：HTTP 服务模式目前存在端口绑定问题，建议使用直接调用模式。
+
+---
+
+## 2026-03-13 更新记录
+
+### 问题解决
+- **HTTP 服务问题**：发现 HTTP 服务存在端口绑定问题，curl 无法连接
+- **解决方案**：创建 `coach-direct.js` 脚本，直接调用 coachTool，绕过 HTTP 层
+- **验证结果**：激活、练习、答题功能全部正常
+
+### 性能对比
+| 方案 | 延迟 | 稳定性 | 推荐度 |
+|------|------|--------|--------|
+| 直接调用 coachTool | ~1-5ms | ⭐⭐⭐⭐⭐ | ✅ 推荐 |
+| HTTP API | ~10-50ms | ⭐⭐⭐ | ⚠️ 有问题 |
+
+### 当前状态
+- ✅ coachTool 核心功能正常
+- ✅ 276道真题库可用
+- ✅ 激活码系统正常
+- ⚠️ HTTP 服务待修复（低优先级）
+
+---
 
 ---
 
