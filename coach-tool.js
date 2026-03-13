@@ -354,11 +354,17 @@ export async function coachTool(command, userId, platform, adminIds) {
       output += '✅ 对了！\n';
       output += '━━━━━━━━━━━━━━━━━━━━\n\n';
       output += '能简单说说为什么选这个吗？🤔\n\n';
+      output += '📖 解析：\n';
+      output += `${question.explanation || '无解析'}\n\n`;
     } else {
-      output += '❌ 再想想。\n';
+      output += '❌ 错了，别灰心！\n';
       output += '━━━━━━━━━━━━━━━━━━━━\n\n';
-      output += '这道题的关键是什么？💡\n\n';
-      output += `提示：${question.explanation?.substring(0, 40) || '仔细分析题干'}...\n\n`;
+      output += '📖 先理解这个知识点：\n';
+      output += `${question.explanation || '暂无解析'}\n\n`;
+      output += `✅ 正确答案：${question.correctAnswer}\n\n`;
+      output += `📚 知识点：${question.subjectId || '输血检验'}\n\n`;
+      output += '🤔 你当时是怎么想的？\n';
+      output += '（回复你的想法，或直接发送"继续"下一题）\n';
     }
 
     output += '📊 学习统计\n';
