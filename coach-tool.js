@@ -543,7 +543,46 @@ export async function coachTool(command, userId, platform, adminIds) {
       output += '（回复你的想法，或直接发送"继续"下一题）\n';
     }
 
-    output += '📊 学习统计\n';
+    // 考前疏导话术（根据状态）
+    const encouragements = [];
+    
+    // 连续做题疲劳检测（>10题）
+    if (userData.totalQuestions % 10 === 0 && userData.totalQuestions >= 10) {
+      encouragements.push(`💪 已经做了${userData.totalQuestions}题了，休息一下吧！大脑需要充电~`);
+    }
+    
+    // 正确率下降鼓励
+    if (acc < 50 && userData.totalQuestions >= 5) {
+      encouragements.push('🌟 刚开始正确率低很正常，80%的人都在这里卡过，坚持就会进步！');
+    }
+    
+    // 进步鼓励（比上次高）
+    if (acc >= 60 && userData.totalQuestions >= 10) {
+      encouragements.push(`🎯 正确率${acc}%，比刚开始进步多了！继续保持这个节奏~`);
+    }
+    
+    // 打卡里程碑鼓励
+    if (userData.streakDays >= 3) {
+      encouragements.push(`🔥 连续${userData.streakDays}天学习，你已经超过大多数人了！`);
+    }
+    
+    // 随机鼓励（20%概率）
+    if (Math.random() < 0.2) {
+      const randomEncouragement = [
+        '💡 记住：考试不是目的，掌握知识才是。你正在变得更专业！',
+        '🌱 每一道题都是进步，不管对错，你都在成长。',
+        '⭐ 备考就像马拉松，不是短跑。你的坚持终将得到回报！',
+        '🎯 专注当下，不要想结果。做好每一道题，考试自然没问题。'
+      ];
+      encouragements.push(randomEncouragement[Math.floor(Math.random() * randomEncouragement.length)]);
+    }
+    
+    // 添加一条鼓励（最多一条，避免信息过载）
+    if (encouragements.length > 0) {
+      output += '\n' + encouragements[0] + '\n';
+    }
+
+    output += '\n📊 学习统计\n';
     output += '────────────────────\n';
     output += `📋 总题数：${userData.totalQuestions}\n`;
     output += `🎯 正确率：${acc}%\n`;
