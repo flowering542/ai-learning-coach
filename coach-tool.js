@@ -234,14 +234,68 @@ export async function coachTool(command, userId, platform, adminIds) {
       return { result: '❌ 请先发送激活码激活。' };
     }
     const badges = [];
-    if ((userData?.totalQuestions || 0) >= 10) badges.push('🌱 初学者');
-    if ((userData?.correctAnswers || 0) >= 10) badges.push('🎯 答题能手');
-    if ((userData?.streakDays || 0) >= 7) badges.push('🔥 连续打卡7天');
-
-    if (badges.length === 0) {
-      return { result: '🏅 还没有徽章，继续加油！\n\n💡 提示：答题10道获得🌱初学者徽章' };
+    const progress = [];
+    
+    // 学习数量徽章
+    if ((userData?.totalQuestions || 0) >= 100) badges.push('💯 百题达人');
+    else if ((userData?.totalQuestions || 0) >= 10) badges.push('🌱 初学者');
+    else progress.push(`🌱 初学者: ${userData?.totalQuestions || 0}/10题`);
+    
+    // 正确率徽章
+    if ((userData?.correctAnswers || 0) >= 50) badges.push('🎯 答题专家');
+    else if ((userData?.correctAnswers || 0) >= 10) badges.push('🎯 答题能手');
+    else progress.push(`🎯 答题能手: ${userData?.correctAnswers || 0}/10道正确`);
+    
+    // 连续打卡徽章
+    if ((userData?.streakDays || 0) >= 30) badges.push('📚 学习狂人');
+    else if ((userData?.streakDays || 0) >= 7) badges.push('🔥 连续打卡7天');
+    else progress.push(`🔥 连续打卡7天: ${userData?.streakDays || 0}/7天`);
+    
+    // 错题清零徽章
+    const wrongs = userData?.wrongAnswers || [];
+    if (wrongs.length === 0 && (userData?.totalQuestions || 0) >= 10) {
+      badges.push('🏆 错题清零');
+    } else if (wrongs.length > 0) {
+      progress.push(`🏆 错题清零: 还有${wrongs.length}道错题待复习`);
     }
-    return { result: `🏅 我的徽章\n\n${badges.join('\n')}` };
+    
+    // 完美周徽章（连续7天每天答题）
+    const last7Days = userData?.checkins?.slice(-7).length || 0;
+    if (last7Days >= 7 && (userData?.totalQuestions || 0) >= 70) {
+      badges.push('🌟 完美周');
+    } else if (last7Days > 0) {
+      progress.push(`🌟 完美周: ${last7Days}/7天`);
+    }
+    
+    // 全对大师（需要记录连续正确题数，简化版：正确率>80%且答题>20）
+    const acc = userData?.totalQuestions > 0 
+      ? Math.round((userData.correctAnswers / userData.totalQuestions) * 100) 
+      : 0;
+    if (acc >= 80 && (userData?.totalQuestions || 0) >= 20) {
+      badges.push('⭐ 全对大师');
+    } else if (userData?.totalQuestions >= 20) {
+      progress.push(`⭐ 全对大师: 正确率${acc}% (需80%)`);
+    }
+
+    let output = '🏅 我的徽章\n━━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    if (badges.length > 0) {
+      output += '✅ 已获得：\n';
+      badges.forEach(b => output += `  ${b}\n`);
+      output += '\n';
+    }
+    
+    if (progress.length > 0) {
+      output += '📊 进行中：\n';
+      progress.forEach(p => output += `  ${p}\n`);
+    }
+    
+    if (badges.length === 0 && progress.length === 0) {
+      output += '💡 开始答题获得你的第一个徽章吧！\n';
+      output += '  🌱 初学者: 答题10道';
+    }
+    
+    return { result: output };
   }
 
   if (trimmed === '/打卡' || trimmed === '/dk' || trimmed === '/checkin' || trimmed === '/qd') {
@@ -296,6 +350,84 @@ export async function coachTool(command, userId, platform, adminIds) {
     return {
       result: `✅ 打卡成功！\n\n${reward}\n📚 累计打卡 ${userData.checkins.length} 天\n\n💡 坚持学习，每天进步一点点！`
     };
+  }
+
+  if (trimmed === '/报告' || trimmed === '/bg' || trimmed === '/report') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    
+    const now = new Date();
+    const totalQ = userData?.totalQuestions || 0;
+    const correctQ = userData?.correctAnswers || 0;
+    const acc = totalQ > 0 ? Math.round((correctQ / totalQ) * 100) : 0;
+    const wrongs = userData?.wrongAnswers || [];
+    const streak = userData?.streakDays || 0;
+    const checkins = userData?.checkins?.length || 0;
+    
+    // 计算本周数据
+    const weekAgo = new Date(now);
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    const weekAgoStr = weekAgo.toISOString().split('T')[0];
+    const weeklyCheckins = userData?.checkins?.filter(d => d >= weekAgoStr).length || 0;
+    
+    let output = '📊 学习报告\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    output += '📈 总体统计\n';
+    output += `  总题数：${totalQ}\n`;
+    output += `  正确数：${correctQ}\n`;
+    output += `  正确率：${acc}%\n`;
+    output += `  错题数：${wrongs.length}\n\n`;
+    
+    output += '🔥 打卡情况\n';
+    output += `  连续打卡：${streak} 天\n`;
+    output += `  累计打卡：${checkins} 天\n`;
+    output += `  本周打卡：${weeklyCheckins} 天\n\n`;
+    
+    // 薄弱点分析
+    if (wrongs.length > 0) {
+      const subjects = {};
+      wrongs.forEach(w => {
+        const subj = w.question?.substring(0, 10) || '其他';
+        subjects[subj] = (subjects[subj] || 0) + 1;
+      });
+      
+      output += '⚠️ 薄弱点TOP3\n';
+      Object.entries(subjects)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .forEach(([subj, count]) => {
+          output += `  ${subj}... : ${count}道错题\n`;
+        });
+      output += '\n';
+    }
+    
+    // 学习建议
+    output += '💡 学习建议\n';
+    if (acc < 50) {
+      output += '  • 建议从基础题开始，先理解概念\n';
+      output += '  • 多复习错题，巩固薄弱点\n';
+    } else if (acc < 80) {
+      output += '  • 继续保持，针对性练习错题\n';
+      output += '  • 尝试挑战更高难度题目\n';
+    } else {
+      output += '  • 正确率很高，继续保持！\n';
+      output += '  • 可以尝试更多难题挑战自己\n';
+    }
+    
+    if (weeklyCheckins < 3) {
+      output += '  • 建议增加学习频率，保持连续性\n';
+    }
+    
+    if (wrongs.length > 5) {
+      output += '  • 错题较多，建议重点复习错题本\n';
+    }
+    
+    output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+    output += '📅 报告生成时间：' + now.toLocaleDateString('zh-CN');
+    
+    return { result: output };
   }
 
   if (trimmed === '/菜单' || trimmed === '/帮助' || trimmed === '/help' || trimmed === '/bz') {
