@@ -233,20 +233,23 @@ export async function coachToolV2(command, userId, platform, adminIds) {
     const correct = userData.stats.correct;
     const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
     
+    // 获取当前会话答题数
+    const sessionCount = userData.currentIndex + 1;
+    
     // 考前疏导话术（根据状态）
     const encouragements = [];
     
-    // 连续做题疲劳检测（>10题）
-    if (total % 10 === 0 && total >= 10) {
-      encouragements.push(`💪 已经做了${total}题了，休息一下吧！大脑需要充电~`);
+    // 连续做题疲劳检测（当前会话>10题）
+    if (sessionCount % 10 === 0 && sessionCount >= 10) {
+      encouragements.push(`💪 已经做了${sessionCount}题了，休息一下吧！大脑需要充电~`);
     }
     
-    // 正确率下降鼓励
+    // 正确率下降鼓励（累计<50%且答了5题以上）
     if (accuracy < 50 && total >= 5) {
       encouragements.push('🌟 刚开始正确率低很正常，80%的人都在这里卡过，坚持就会进步！');
     }
     
-    // 进步鼓励（比上次高）
+    // 进步鼓励（正确率>=60%且累计10题以上）
     if (accuracy >= 60 && total >= 10) {
       encouragements.push(`🎯 正确率${accuracy}%，比刚开始进步多了！继续保持这个节奏~`);
     }
@@ -256,13 +259,15 @@ export async function coachToolV2(command, userId, platform, adminIds) {
       encouragements.push(`🔥 连续${userData.streakDays}天学习，你已经超过大多数人了！`);
     }
     
-    // 随机鼓励（20%概率）
-    if (Math.random() < 0.2) {
+    // 随机鼓励（30%概率，提高触发率）
+    if (Math.random() < 0.3) {
       const randomEncouragement = [
         '💡 记住：考试不是目的，掌握知识才是。你正在变得更专业！',
         '🌱 每一道题都是进步，不管对错，你都在成长。',
         '⭐ 备考就像马拉松，不是短跑。你的坚持终将得到回报！',
-        '🎯 专注当下，不要想结果。做好每一道题，考试自然没问题。'
+        '🎯 专注当下，不要想结果。做好每一道题，考试自然没问题。',
+        '💪 今天的努力，是明天考试通过的底气！',
+        '🧠 大脑就像肌肉，越练越强。继续加油！'
       ];
       encouragements.push(randomEncouragement[Math.floor(Math.random() * randomEncouragement.length)]);
     }
