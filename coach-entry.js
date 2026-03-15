@@ -104,6 +104,17 @@ export async function coachTool(command, userId, platform, adminIds) {
     return analyticsCommand(command, userId);
   }
   
+  // 入学测评相关命令
+  const isAssessmentCommand = command?.startsWith('/入学测评') || command?.startsWith('/assessment') ||
+                              command?.startsWith('/开始测评') || command?.startsWith('/start');
+  const isAssessmentMode = userData?.assessment?.status === 'in_progress';
+  const isAssessmentAnswer = isAssessmentMode && /^[A-Ea-e]$/.test(command?.trim());
+  
+  if (isAssessmentCommand || isAssessmentAnswer) {
+    const { assessmentCommand } = await import('./assessment-module.js');
+    return assessmentCommand(command, userId);
+  }
+  
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
