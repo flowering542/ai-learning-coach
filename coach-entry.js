@@ -115,6 +115,15 @@ export async function coachTool(command, userId, platform, adminIds) {
     return assessmentCommand(command, userId);
   }
   
+  // 每日任务相关命令
+  const isDailyTaskCommand = command?.startsWith('/今日任务') || command?.startsWith('/daily') ||
+                             command?.startsWith('/完成任务') || command?.startsWith('/complete');
+  
+  if (isDailyTaskCommand) {
+    const { dailyTaskCommand } = await import('./daily-task-module.js');
+    return dailyTaskCommand(command, userId);
+  }
+  
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
