@@ -124,6 +124,14 @@ export async function coachTool(command, userId, platform, adminIds) {
     return dailyTaskCommand(command, userId);
   }
   
+  // 成就徽章相关命令
+  const isAchievementCommand = command?.startsWith('/徽章') || command?.startsWith('/achievements') || command?.startsWith('/成就');
+  
+  if (isAchievementCommand) {
+    const { achievementCommand } = await import('./achievement-module.js');
+    return achievementCommand(command, userId);
+  }
+  
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
