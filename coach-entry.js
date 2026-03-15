@@ -6,6 +6,19 @@ import * as path from 'path';
 
 const DATA_DIR = process.env.COACH_DATA_DIR || './data';
 
+// 加载考试数据（用于判断是否有进行中的考试）
+function loadExamData(userId) {
+  try {
+    const filePath = path.join(DATA_DIR, 'exams', `${userId}.json`);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    }
+  } catch (e) {
+    console.error('[CoachEntry] 加载考试数据失败:', e);
+  }
+  return null;
+}
+
 // 加载版本配置
 function loadVersionConfig() {
   try {
@@ -42,6 +55,22 @@ async function loadActiveModule() {
 
 // 主入口
 export async function coachTool(command, userId, platform, adminIds) {
+  const examData = loadExamData(userId);
+  const isExamInProgress = examData?.status === 'in_progress';
+  
+  // 考试相关命令
+  const isExamCommand = command?.startsWith('/模拟考试') || command?.startsWith('/exam') || 
+                        command?.startsWith('/交卷') || command?.startsWith('/submit') ||
+                        (command === '/开始' && isExamInProgress);
+  
+  // 考试中答题（A-E）
+  const isExamAnswer = isExamInProgress && /^[A-Ea-e]$/.test(command?.trim());
+  
+  if (isExamCommand || isExamAnswer) {
+    const { examCommand } = await import('./exam-module.js');
+    return examCommand(command, userId);
+  }
+  
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
