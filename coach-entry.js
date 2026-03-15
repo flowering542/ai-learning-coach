@@ -95,6 +95,15 @@ export async function coachTool(command, userId, platform, adminIds) {
     return wrongReviewCommand(command, userId);
   }
   
+  // 数据分析相关命令
+  const isAnalyticsCommand = command?.startsWith('/数据分析') || command?.startsWith('/analytics') ||
+                             command?.startsWith('/趋势') || command?.startsWith('/trend');
+  
+  if (isAnalyticsCommand) {
+    const { analyticsCommand } = await import('./analytics-module.js');
+    return analyticsCommand(command, userId);
+  }
+  
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
