@@ -12,10 +12,10 @@ const __dirname = dirname(__filename);
 
 // 设置环境变量
 process.env.COACH_ADMIN_QQ_IDS = process.env.COACH_ADMIN_QQ_IDS || '1933622876';
-process.env.COACH_DATA_DIR = process.env.COACH_DATA_DIR || join(__dirname, '../../ai-learning-coach/data');
+process.env.COACH_DATA_DIR = process.env.COACH_DATA_DIR || join(__dirname, 'data');
 
 // 加载 coachTool（使用智能入口）
-const { coachTool } = await import('../../ai-learning-coach/coach-entry.js');
+const { coachTool } = await import('./coach-entry.js');
 
 async function main() {
   const args = process.argv.slice(2);
