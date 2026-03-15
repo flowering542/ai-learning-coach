@@ -49,7 +49,7 @@ function loadVersionConfig() {
 async function loadActiveModule() {
   const config = loadVersionConfig();
   const moduleName = config.activeModule || 'v2';
-  
+
   try {
     if (moduleName === 'v2') {
       const module = await import('./coach-tool-v2.js');
@@ -73,75 +73,98 @@ export async function coachTool(command, userId, platform, adminIds) {
   const userData = loadUserData(userId);
   const isWrongReviewMode = userData?.currentMode === 'wrong_review';
   const isAssessmentMode = userData?.assessment?.status === 'in_progress';
+
+  // 分科模拟考试相关命令（放在最前面，避免被其他命令拦截）
+  const isSubjectExamCommand = command?.startsWith('/模拟考试-分科') || command?.startsWith('/exam-subject') ||
+                               (command?.startsWith('/考') && /^\/考\d$/.test(command?.trim())) ||
+                               command === '/开始考试' || command === '/start-exam';
   
+  // 检查是否有进行中的分科考试
+  let currentSubjectExam = null;
+  for (const subject of ['basic', 'related', 'professional', 'practice']) {
+    const exam = userData?.subjectExams?.[subject];
+    if (exam?.status === 'in_progress') {
+      currentSubjectExam = exam;
+      break;
+    }
+  }
+  
+  // 如果在分科考试中，所有A-E答题都走分科模块
+  const isSubjectExamAnswer = currentSubjectExam && /^[A-Ea-e]$/.test(command?.trim());
+  
+  if (isSubjectExamCommand || isSubjectExamAnswer) {
+    const { subjectExamCommand } = await import('./subject-exam-module.js');
+    return subjectExamCommand(command, userId);
+  }
+
   // 考试相关命令
-  const isExamCommand = command?.startsWith('/模拟考试') || command?.startsWith('/exam') || 
+  const isExamCommand = command?.startsWith('/模拟考试') || command?.startsWith('/exam') ||
                         command?.startsWith('/交卷') || command?.startsWith('/submit') ||
                         (command === '/开始' && isExamInProgress);
-  
+
   // 考试中答题（A-E）
   const isExamAnswer = isExamInProgress && /^[A-Ea-e]$/.test(command?.trim());
-  
+
   if (isExamCommand || isExamAnswer) {
     const { examCommand } = await import('./exam-module.js');
     return examCommand(command, userId);
   }
-  
+
   // 错题复习相关命令
   const isWrongReviewCommand = command?.startsWith('/错题') || command?.startsWith('/wrong');
   const isWrongReviewAnswer = isWrongReviewMode && /^[A-Ea-e]$/.test(command?.trim());
-  
+
   if (isWrongReviewCommand || isWrongReviewAnswer) {
     const { wrongReviewCommand } = await import('./wrong-review-module.js');
     return wrongReviewCommand(command, userId);
   }
-  
+
   // 数据分析相关命令
   const isAnalyticsCommand = command?.startsWith('/数据分析') || command?.startsWith('/analytics') ||
                              command?.startsWith('/趋势') || command?.startsWith('/trend');
-  
+
   if (isAnalyticsCommand) {
     const { analyticsCommand } = await import('./analytics-module.js');
     return analyticsCommand(command, userId);
   }
-  
+
   // 入学测评相关命令
   const isAssessmentCommand = command?.startsWith('/入学测评') || command?.startsWith('/assessment') ||
                               command?.startsWith('/开始测评') || command?.startsWith('/start');
   const isAssessmentAnswer = isAssessmentMode && /^[A-Ea-e]$/.test(command?.trim());
-  
+
   if (isAssessmentCommand || isAssessmentAnswer) {
     const { assessmentCommand } = await import('./assessment-module.js');
     return assessmentCommand(command, userId);
   }
-  
+
   // 每日任务相关命令
   const isDailyTaskCommand = command?.startsWith('/今日任务') || command?.startsWith('/daily') ||
                              command?.startsWith('/完成任务') || command?.startsWith('/complete');
-  
+
   if (isDailyTaskCommand) {
     const { dailyTaskCommand } = await import('./daily-task-module.js');
     return dailyTaskCommand(command, userId);
   }
-  
+
   // 成就徽章相关命令
   const isAchievementCommand = command?.startsWith('/徽章') || command?.startsWith('/achievements') || command?.startsWith('/成就');
-  
+
   if (isAchievementCommand) {
     const { achievementCommand } = await import('./achievement-module.js');
     return achievementCommand(command, userId);
   }
-  
+
   // 考前疏导相关命令
   const isCounselingCommand = command?.startsWith('/考前疏导') || command?.startsWith('/counseling') ||
                               command?.startsWith('/倒计时') || command?.startsWith('/countdown');
-  
+
   if (isCounselingCommand) {
     const { counselingCommand } = await import('./counseling-module.js');
     const result = await counselingCommand(command, userId);
     if (result) return result;
   }
-  
+
   // 检测焦虑关键词（在练习模式外）
   if (!isExamInProgress && !isWrongReviewMode && !isAssessmentMode) {
     const { detectAnxiety, counselingCommand } = await import('./counseling-module.js');
@@ -149,7 +172,7 @@ export async function coachTool(command, userId, platform, adminIds) {
       return counselingCommand(command, userId);
     }
   }
-  
+
   const activeFn = await loadActiveModule();
   return activeFn(command, userId, platform, adminIds);
 }
