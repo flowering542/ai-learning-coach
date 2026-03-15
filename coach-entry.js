@@ -19,6 +19,19 @@ function loadExamData(userId) {
   return null;
 }
 
+// 加载用户数据（用于错题复习）
+function loadUserData(userId) {
+  try {
+    const filePath = path.join(DATA_DIR, 'students', `${userId}.json`);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    }
+  } catch (e) {
+    console.error('[CoachEntry] 加载用户数据失败:', e);
+  }
+  return null;
+}
+
 // 加载版本配置
 function loadVersionConfig() {
   try {
@@ -69,6 +82,17 @@ export async function coachTool(command, userId, platform, adminIds) {
   if (isExamCommand || isExamAnswer) {
     const { examCommand } = await import('./exam-module.js');
     return examCommand(command, userId);
+  }
+  
+  // 错题复习相关命令
+  const isWrongReviewCommand = command?.startsWith('/错题') || command?.startsWith('/wrong');
+  const userData = loadUserData(userId);
+  const isWrongReviewMode = userData?.currentMode === 'wrong_review';
+  const isWrongReviewAnswer = isWrongReviewMode && /^[A-Ea-e]$/.test(command?.trim());
+  
+  if (isWrongReviewCommand || isWrongReviewAnswer) {
+    const { wrongReviewCommand } = await import('./wrong-review-module.js');
+    return wrongReviewCommand(command, userId);
   }
   
   const activeFn = await loadActiveModule();
