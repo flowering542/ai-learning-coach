@@ -70,6 +70,9 @@ async function loadActiveModule() {
 export async function coachTool(command, userId, platform, adminIds) {
   const examData = loadExamData(userId);
   const isExamInProgress = examData?.status === 'in_progress';
+  const userData = loadUserData(userId);
+  const isWrongReviewMode = userData?.currentMode === 'wrong_review';
+  const isAssessmentMode = userData?.assessment?.status === 'in_progress';
   
   // 考试相关命令
   const isExamCommand = command?.startsWith('/模拟考试') || command?.startsWith('/exam') || 
@@ -86,8 +89,6 @@ export async function coachTool(command, userId, platform, adminIds) {
   
   // 错题复习相关命令
   const isWrongReviewCommand = command?.startsWith('/错题') || command?.startsWith('/wrong');
-  const userData = loadUserData(userId);
-  const isWrongReviewMode = userData?.currentMode === 'wrong_review';
   const isWrongReviewAnswer = isWrongReviewMode && /^[A-Ea-e]$/.test(command?.trim());
   
   if (isWrongReviewCommand || isWrongReviewAnswer) {
@@ -107,7 +108,6 @@ export async function coachTool(command, userId, platform, adminIds) {
   // 入学测评相关命令
   const isAssessmentCommand = command?.startsWith('/入学测评') || command?.startsWith('/assessment') ||
                               command?.startsWith('/开始测评') || command?.startsWith('/start');
-  const isAssessmentMode = userData?.assessment?.status === 'in_progress';
   const isAssessmentAnswer = isAssessmentMode && /^[A-Ea-e]$/.test(command?.trim());
   
   if (isAssessmentCommand || isAssessmentAnswer) {
@@ -130,6 +130,24 @@ export async function coachTool(command, userId, platform, adminIds) {
   if (isAchievementCommand) {
     const { achievementCommand } = await import('./achievement-module.js');
     return achievementCommand(command, userId);
+  }
+  
+  // 考前疏导相关命令
+  const isCounselingCommand = command?.startsWith('/考前疏导') || command?.startsWith('/counseling') ||
+                              command?.startsWith('/倒计时') || command?.startsWith('/countdown');
+  
+  if (isCounselingCommand) {
+    const { counselingCommand } = await import('./counseling-module.js');
+    const result = await counselingCommand(command, userId);
+    if (result) return result;
+  }
+  
+  // 检测焦虑关键词（在练习模式外）
+  if (!isExamInProgress && !isWrongReviewMode && !isAssessmentMode) {
+    const { detectAnxiety, counselingCommand } = await import('./counseling-module.js');
+    if (detectAnxiety(command)) {
+      return counselingCommand(command, userId);
+    }
   }
   
   const activeFn = await loadActiveModule();
