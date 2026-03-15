@@ -131,12 +131,13 @@ function generateCountdownReminder(daysLeft, userData) {
 
 // ========== 命令处理 ==========
 
-export async function counselingCommand(command, userId) {
+export async function counselingCommand(command, userId, existingUserData = null) {
   const trimmed = command.trim();
-  const userData = loadUserData(userId);
+  // 优先使用传入的userData，如果不存在则加载
+  const userData = existingUserData || loadUserData(userId);
   
   if (!userData) {
-    return { result: '❌ 用户不存在' };
+    return { result: '❌ 请先开始练习，发送 /练习 或 /入学测评' };
   }
   
   // /考前疏导 命令

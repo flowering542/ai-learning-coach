@@ -161,7 +161,7 @@ export async function coachTool(command, userId, platform, adminIds) {
 
   if (isCounselingCommand) {
     const { counselingCommand } = await import('./counseling-module.js');
-    const result = await counselingCommand(command, userId);
+    const result = await counselingCommand(command, userId, userData);
     if (result) return result;
   }
 
