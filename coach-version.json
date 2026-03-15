@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "activeModule": "v2",
+  "modules": {
+    "v1": {
+      "file": "./coach-tool-v1-backup.js",
+      "description": "旧版本 - 300题"
+    },
+    "v2": {
+      "file": "./coach-tool-v2.js",
+      "description": "新版本 - 1000题4维度"
+    }
+  },
+  "rollbackEnabled": true,
+  "deployedAt": "2026-03-15T09:38:00Z"
+}

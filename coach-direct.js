@@ -14,8 +14,8 @@ const __dirname = dirname(__filename);
 process.env.COACH_ADMIN_QQ_IDS = process.env.COACH_ADMIN_QQ_IDS || '1933622876';
 process.env.COACH_DATA_DIR = process.env.COACH_DATA_DIR || join(__dirname, '../../ai-learning-coach/data');
 
-// 加载 coachTool
-const { coachTool } = await import('../../ai-learning-coach/coach-tool.js');
+// 加载 coachTool（使用智能入口）
+const { coachTool } = await import('../../ai-learning-coach/coach-entry.js');
 
 async function main() {
   const args = process.argv.slice(2);

@@ -1,0 +1,741 @@
+// Coach Tool - 学习教练功能模块 (编译后版本)
+// 无状态设计，通过 userId 支持多用户
+// 优化版：用户说"继续"才出下一题，支持数字1-4
+
+import * as fs from 'fs';
+import * as path from 'path';
+
+const DATA_DIR = process.env.COACH_DATA_DIR || './data';
+
+// 用户数据路径
+function getUserDataPath(userId) {
+  return path.join(DATA_DIR, 'students', `${userId}.json`);
+}
+
+// 加载用户数据
+function loadUserData(userId) {
+  try {
+    const filePath = getUserDataPath(userId);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    }
+  } catch (e) {
+    console.error('[CoachTool] 加载用户数据失败:', e);
+  }
+  return null;
+}
+
+// 保存用户数据
+function saveUserData(userId, data) {
+  try {
+    const dir = path.join(DATA_DIR, 'students');
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(getUserDataPath(userId), JSON.stringify(data, null, 2));
+  } catch (e) {
+    console.error('[CoachTool] 保存用户数据失败:', e);
+  }
+}
+
+// 加载题库
+function loadQuestionBank() {
+  try {
+    const dataPath = path.join(DATA_DIR, 'questions.json');
+    const data = fs.readFileSync(dataPath, 'utf-8');
+    return JSON.parse(data);
+  } catch (e) {
+    console.error('[CoachTool] 题库加载失败:', e);
+    return { questions: [] };
+  }
+}
+
+// AI 自动分析错因
+function analyzeErrorReason(question, userAnswer) {
+  const correctAnswer = question.correctAnswer;
+  const options = ['A', 'B', 'C', 'D'];
+  const userIdx = options.indexOf(userAnswer);
+  const correctIdx = options.indexOf(correctAnswer);
+  
+  if (Math.abs(userIdx - correctIdx) === 1) {
+    return '粗心大意';
+  }
+  
+  const difficulty = question.difficulty || 'medium';
+  const subject = question.subjectId || '';
+  
+  if (difficulty === 'hard') {
+    if (subject.includes('blood') || subject.includes('transfusion')) {
+      return '概念混淆';
+    }
+    return '知识盲区';
+  }
+  
+  if (difficulty === 'medium') {
+    return '题型不熟';
+  }
+  
+  return '粗心大意';
+}
+
+// 主函数
+export async function coachTool(command, userId, platform, adminIds) {
+  // 处理空消息
+  if (!command || command.trim() === '') {
+    return { result: '👋 欢迎使用学习教练！\n\n发送 /帮助 查看可用命令。' };
+  }
+  
+  const trimmed = command.trim();
+  const userData = loadUserData(userId);
+  const isAdmin = adminIds.includes(userId);
+
+  // ========== 管理员命令 ==========
+  if (isAdmin && (trimmed === '/学生列表' || trimmed === '/students' || trimmed === '/学生')) {
+    const studentsDir = path.join(DATA_DIR, 'students');
+    if (!fs.existsSync(studentsDir)) return { result: '📋 暂无已激活学生。' };
+    
+    const files = fs.readdirSync(studentsDir).filter(f => f.endsWith('.json'));
+    if (files.length === 0) return { result: '📋 暂无已激活学生。' };
+    
+    let list = '📋 学生列表\n\n';
+    let i = 1;
+    for (const file of files) {
+      const s = JSON.parse(fs.readFileSync(path.join(studentsDir, file), 'utf-8'));
+      const acc = s.totalQuestions > 0 ? Math.round((s.correctAnswers / s.totalQuestions) * 100) : 0;
+      list += `${i}. ID:${s.id?.slice(-6) || file.replace('.json', '').slice(-6)} 正确率:${acc}% 🔥${s.streakDays || 0}天\n`;
+      i++;
+    }
+    return { result: list };
+  }
+
+  if (isAdmin && (trimmed === '/统计' || trimmed === '/stats' || trimmed === '/tj')) {
+    const studentsDir = path.join(DATA_DIR, 'students');
+    let totalStudents = 0, totalQ = 0, totalC = 0;
+
+    if (fs.existsSync(studentsDir)) {
+      const files = fs.readdirSync(studentsDir).filter(f => f.endsWith('.json'));
+      totalStudents = files.length;
+      for (const file of files) {
+        const s = JSON.parse(fs.readFileSync(path.join(studentsDir, file), 'utf-8'));
+        totalQ += s.totalQuestions || 0;
+        totalC += s.correctAnswers || 0;
+      }
+    }
+
+    const acc = totalQ > 0 ? Math.round((totalC / totalQ) * 100) : 0;
+    return {
+      result: `📊 统计\n\n👥 学生: ${totalStudents}\n📝 答题: ${totalQ}\n✅ 平均正确率: ${acc}%`
+    };
+  }
+
+  if (isAdmin && (trimmed === '/生成激活码' || trimmed === '/gen')) {
+    const code = `STU-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+    return { result: `✅ 新激活码：${code}\n\n将此码发给学生即可激活。` };
+  }
+
+  if (isAdmin && (trimmed === '/模式' || trimmed === '/mode' || trimmed === '/ms')) {
+    return { result: '🎯 当前模式：管理员\n\n可用命令：\n• /生成激活码\n• /学生列表\n• /统计\n• /切换' };
+  }
+
+  if (isAdmin && (trimmed === '/切换' || trimmed === '/qh')) {
+    return { result: '✅ 已切换到学生模式，发送 /恢复 可恢复管理员身份。' };
+  }
+
+  if (isAdmin && trimmed === '/切换') {
+    return { result: '✅ 已切换到学生模式，发送 /恢复 可恢复管理员身份。' };
+  }
+
+  // ========== 学生命令 ==========
+  if (trimmed === '/练习' || trimmed === '/lx') {
+    // 检查是否已激活
+    if (!userData) {
+      return {
+        result: `👋 欢迎使用学习教练！\n\n请输入你的激活码以开始使用。\n\n示例激活码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。`
+      };
+    }
+    return generateQuestion(userId, userData, platform);
+  }
+
+  if (trimmed === '/错题' || trimmed === '/ct' || trimmed === '/cw') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    const wrongs = userData?.wrongAnswers || [];
+    if (wrongs.length === 0) return { result: '🎉 还没有错题，继续保持！' };
+    
+    // 展示最近5道错题
+    let output = `🔄 错题复习\n━━━━━━━━━━━━━━━━━━━━\n\n`;
+    output += `📚 共 ${wrongs.length} 道错题，展示最近 ${Math.min(5, wrongs.length)} 道：\n\n`;
+    
+    const recentWrongs = wrongs.slice(-5).reverse();
+    recentWrongs.forEach((w, idx) => {
+      output += `${idx + 1}. ${w.question?.substring(0, 30) || '题目'}...\n`;
+      output += `   你的答案：${w.yourAnswer} | 正确答案：${w.correctAnswer}\n`;
+      output += `   错因：${w.reason}\n\n`;
+    });
+    
+    output += '💡 发送 /练习 开始针对性练习';
+    return { result: output };
+  }
+
+  if (trimmed === '/进度' || trimmed === '/jd' || trimmed === '/progress' || trimmed === '/tj') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    const s = userData || { totalQuestions: 0, correctAnswers: 0, streakDays: 0 };
+    const acc = s.totalQuestions > 0 ? Math.round((s.correctAnswers / s.totalQuestions) * 100) : 0;
+
+    let output = '📊 学习进度\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+    output += '📋 答题统计\n';
+    output += `  总题数：${s.totalQuestions}\n`;
+    output += `  正确数：${s.correctAnswers}\n`;
+    output += `  正确率：${acc}%\n\n`;
+    output += '🔥 连续打卡\n';
+    output += `  ${s.streakDays || 0} 天\n\n`;
+
+    const filled = Math.round(acc / 10);
+    const empty = 10 - filled;
+    output += '📈 正确率\n';
+    output += `  [${'█'.repeat(filled)}${'░'.repeat(empty)}] ${acc}%`;
+
+    return { result: output };
+  }
+
+  if (trimmed === '/分析' || trimmed === '/fx' || trimmed === '/br') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    const wrongs = userData?.wrongAnswers || [];
+    if (wrongs.length === 0) {
+      return {
+        result: '📊 薄弱点分析报告\n\n📚 科目：输血检验\n\n🎉 还没有足够的错题数据，多做几道题再来分析吧！\n\n💡 总体建议：\n继续加油，查漏补缺！\n\n发送 /练习 开始针对性训练'
+      };
+    }
+
+    const reasons = {};
+    wrongs.forEach((w) => {
+      reasons[w.reason] = (reasons[w.reason] || 0) + 1;
+    });
+
+    let report = '📊 薄弱点分析报告\n\n📚 科目：输血检验\n\n';
+    report += `📝 错题总数：${wrongs.length}\n\n`;
+    report += '🎯 错因分布：\n';
+    Object.entries(reasons).forEach(([reason, count]) => {
+      report += `  • ${reason}：${count}道\n`;
+    });
+    report += '\n💡 建议：针对薄弱点加强练习\n\n发送 /练习 开始针对性训练';
+
+    return { result: report };
+  }
+
+  if (trimmed === '/徽章' || trimmed === '/bj' || trimmed === '/badge' || trimmed === '/ch') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    const badges = [];
+    const progress = [];
+    
+    // 学习数量徽章
+    if ((userData?.totalQuestions || 0) >= 100) badges.push('💯 百题达人');
+    else if ((userData?.totalQuestions || 0) >= 10) badges.push('🌱 初学者');
+    else progress.push(`🌱 初学者: ${userData?.totalQuestions || 0}/10题`);
+    
+    // 正确率徽章
+    if ((userData?.correctAnswers || 0) >= 50) badges.push('🎯 答题专家');
+    else if ((userData?.correctAnswers || 0) >= 10) badges.push('🎯 答题能手');
+    else progress.push(`🎯 答题能手: ${userData?.correctAnswers || 0}/10道正确`);
+    
+    // 连续打卡徽章
+    if ((userData?.streakDays || 0) >= 30) badges.push('📚 学习狂人');
+    else if ((userData?.streakDays || 0) >= 7) badges.push('🔥 连续打卡7天');
+    else progress.push(`🔥 连续打卡7天: ${userData?.streakDays || 0}/7天`);
+    
+    // 错题清零徽章
+    const wrongs = userData?.wrongAnswers || [];
+    if (wrongs.length === 0 && (userData?.totalQuestions || 0) >= 10) {
+      badges.push('🏆 错题清零');
+    } else if (wrongs.length > 0) {
+      progress.push(`🏆 错题清零: 还有${wrongs.length}道错题待复习`);
+    }
+    
+    // 完美周徽章（连续7天每天答题）
+    const last7Days = userData?.checkins?.slice(-7).length || 0;
+    if (last7Days >= 7 && (userData?.totalQuestions || 0) >= 70) {
+      badges.push('🌟 完美周');
+    } else if (last7Days > 0) {
+      progress.push(`🌟 完美周: ${last7Days}/7天`);
+    }
+    
+    // 全对大师（需要记录连续正确题数，简化版：正确率>80%且答题>20）
+    const acc = userData?.totalQuestions > 0 
+      ? Math.round((userData.correctAnswers / userData.totalQuestions) * 100) 
+      : 0;
+    if (acc >= 80 && (userData?.totalQuestions || 0) >= 20) {
+      badges.push('⭐ 全对大师');
+    } else if (userData?.totalQuestions >= 20) {
+      progress.push(`⭐ 全对大师: 正确率${acc}% (需80%)`);
+    }
+
+    let output = '🏅 我的徽章\n━━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    if (badges.length > 0) {
+      output += '✅ 已获得：\n';
+      badges.forEach(b => output += `  ${b}\n`);
+      output += '\n';
+    }
+    
+    if (progress.length > 0) {
+      output += '📊 进行中：\n';
+      progress.forEach(p => output += `  ${p}\n`);
+    }
+    
+    if (badges.length === 0 && progress.length === 0) {
+      output += '💡 开始答题获得你的第一个徽章吧！\n';
+      output += '  🌱 初学者: 答题10道';
+    }
+    
+    return { result: output };
+  }
+
+  if (trimmed === '/打卡' || trimmed === '/dk' || trimmed === '/checkin' || trimmed === '/qd') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    
+    const now = new Date();
+    const today = now.toISOString().split('T')[0];
+    
+    // 初始化打卡记录
+    if (!userData.checkins) {
+      userData.checkins = [];
+    }
+    
+    // 检查今天是否已打卡
+    const alreadyCheckedIn = userData.checkins.includes(today);
+    
+    if (alreadyCheckedIn) {
+      return {
+        result: `✅ 今日已打卡！\n\n🔥 连续打卡 ${userData.streakDays || 1} 天\n📚 累计打卡 ${userData.checkins.length} 天\n\n💡 今天继续学习，保持好习惯！`
+      };
+    }
+    
+    // 记录打卡
+    userData.checkins.push(today);
+    userData.checkins = userData.checkins.slice(-30); // 只保留最近30天
+    
+    // 计算连续打卡天数
+    let streak = 1;
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+    
+    if (userData.checkins.includes(yesterdayStr)) {
+      streak = (userData.streakDays || 0) + 1;
+    }
+    
+    userData.streakDays = streak;
+    userData.lastCheckinAt = now.toISOString();
+    saveUserData(userId, userData);
+    
+    // 打卡奖励提示
+    let reward = '';
+    if (streak === 1) reward = '🌱 好的开始！';
+    else if (streak === 3) reward = '🎯 连续3天，养成习惯！';
+    else if (streak === 7) reward = '🔥 连续7天，太棒了！';
+    else if (streak === 30) reward = '🏆 连续30天，学习达人！';
+    else if (streak % 7 === 0) reward = `🔥 连续${streak}天，持之以恒！`;
+    else reward = `🔥 连续${streak}天，继续保持！`;
+    
+    return {
+      result: `✅ 打卡成功！\n\n${reward}\n📚 累计打卡 ${userData.checkins.length} 天\n\n💡 坚持学习，每天进步一点点！`
+    };
+  }
+
+  if (trimmed === '/报告' || trimmed === '/bg' || trimmed === '/report') {
+    if (!userData) {
+      return { result: '❌ 请先发送激活码激活。' };
+    }
+    
+    const now = new Date();
+    const totalQ = userData?.totalQuestions || 0;
+    const correctQ = userData?.correctAnswers || 0;
+    const acc = totalQ > 0 ? Math.round((correctQ / totalQ) * 100) : 0;
+    const wrongs = userData?.wrongAnswers || [];
+    const streak = userData?.streakDays || 0;
+    const checkins = userData?.checkins?.length || 0;
+    
+    // 计算本周数据
+    const weekAgo = new Date(now);
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    const weekAgoStr = weekAgo.toISOString().split('T')[0];
+    const weeklyCheckins = userData?.checkins?.filter(d => d >= weekAgoStr).length || 0;
+    
+    let output = '📊 学习报告\n';
+    output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+    
+    output += '📈 总体统计\n';
+    output += `  总题数：${totalQ}\n`;
+    output += `  正确数：${correctQ}\n`;
+    output += `  正确率：${acc}%\n`;
+    output += `  错题数：${wrongs.length}\n\n`;
+    
+    output += '🔥 打卡情况\n';
+    output += `  连续打卡：${streak} 天\n`;
+    output += `  累计打卡：${checkins} 天\n`;
+    output += `  本周打卡：${weeklyCheckins} 天\n\n`;
+    
+    // 薄弱点分析
+    if (wrongs.length > 0) {
+      const subjects = {};
+      wrongs.forEach(w => {
+        const subj = w.question?.substring(0, 10) || '其他';
+        subjects[subj] = (subjects[subj] || 0) + 1;
+      });
+      
+      output += '⚠️ 薄弱点TOP3\n';
+      Object.entries(subjects)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .forEach(([subj, count]) => {
+          output += `  ${subj}... : ${count}道错题\n`;
+        });
+      output += '\n';
+    }
+    
+    // 学习建议
+    output += '💡 学习建议\n';
+    if (acc < 50) {
+      output += '  • 建议从基础题开始，先理解概念\n';
+      output += '  • 多复习错题，巩固薄弱点\n';
+    } else if (acc < 80) {
+      output += '  • 继续保持，针对性练习错题\n';
+      output += '  • 尝试挑战更高难度题目\n';
+    } else {
+      output += '  • 正确率很高，继续保持！\n';
+      output += '  • 可以尝试更多难题挑战自己\n';
+    }
+    
+    if (weeklyCheckins < 3) {
+      output += '  • 建议增加学习频率，保持连续性\n';
+    }
+    
+    if (wrongs.length > 5) {
+      output += '  • 错题较多，建议重点复习错题本\n';
+    }
+    
+    output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+    output += '📅 报告生成时间：' + now.toLocaleDateString('zh-CN');
+    
+    return { result: output };
+  }
+
+  if (trimmed === '/菜单' || trimmed === '/帮助' || trimmed === '/help' || trimmed === '/bz') {
+    return {
+      result: `📖 学习教练帮助\n\n【命令菜单】\n1. /练习 - 开始练习题\n2. /进度 - 查看学习统计\n3. /错题 - 错题复习\n4. /分析 - 薄弱点分析\n5. /徽章 - 成就徽章\n6. /打卡 - 学习打卡\n7. /帮助 - 显示帮助\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "继续"/"下一题" → 出下一题`
+    };
+  }
+
+  if (trimmed === '/恢复') {
+    return { result: '✅ 已恢复管理员身份。' };
+  }
+
+  // ========== 激活码 ==========
+  if (trimmed.startsWith('COACH-DEMO') || trimmed.startsWith('STUDENT') || trimmed.startsWith('STU-')) {
+    if (userData) {
+      return { result: '❌ 你已经激活过了，直接发送 /练习 开始学习。' };
+    }
+
+    // 验证激活码格式
+    const validPrefixes = ['COACH-DEMO', 'STUDENT2024', 'STU-'];
+    const isValidFormat = validPrefixes.some(prefix => trimmed.startsWith(prefix));
+    
+    if (!isValidFormat) {
+      return { result: '❌ 无效激活码，请检查输入或联系管理员获取。' };
+    }
+
+    const newUser = {
+      id: `stu_${Date.now()}`,
+      userId,
+      platform,
+      activatedAt: new Date().toISOString(),
+      activationCode: trimmed,
+      totalQuestions: 0,
+      correctAnswers: 0,
+      lastActiveAt: new Date().toISOString(),
+      streakDays: 0,
+      wrongAnswers: [],
+    };
+
+    saveUserData(userId, newUser);
+    return {
+      result: '🎉 激活成功！欢迎加入学习教练！\n\n可用命令：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /错题 - 查看错题\n• /分析 - 薄弱点分析\n• /徽章 - 成就徽章\n• /打卡 - 学习打卡'
+    };
+  }
+
+  // ========== 继续下一题 ==========
+  if (/^(继续|下一题|jt|xyt)$/.test(trimmed)) {
+    if (!userData?.waitingForContinue) {
+      return { result: '请先发送 /练习 开始答题。' };
+    }
+
+    // 清除等待状态
+    delete userData.waitingForContinue;
+    delete userData.lastQuestionResult;
+    delete userData.currentQuestion;
+    saveUserData(userId, userData);
+
+    // 出下一题
+    return generateQuestion(userId, userData, platform);
+  }
+
+  // ========== 答题（支持数字 1-4 和字母 A-D）==========
+  if (/^[1-4A-Da-d]$/.test(trimmed)) {
+    if (!userData?.currentQuestion) {
+      return { result: '请先发送 /练习 开始答题。' };
+    }
+
+    const question = userData.currentQuestion;
+    // 转换数字到字母
+    const answerMap = { '1': 'A', '2': 'B', '3': 'C', '4': 'D' };
+    const answer = answerMap[trimmed] || trimmed.toUpperCase();
+    const isCorrect = answer === question.correctAnswer;
+
+    // 更新统计
+    userData.totalQuestions++;
+    if (isCorrect) {
+      userData.correctAnswers++;
+    } else {
+      if (!userData.wrongAnswers) userData.wrongAnswers = [];
+      const errorReason = analyzeErrorReason(question, answer);
+      userData.wrongAnswers.push({
+        questionId: question.id,
+        question: question.content,
+        yourAnswer: answer,
+        correctAnswer: question.correctAnswer,
+        reason: errorReason,
+        timestamp: new Date().toISOString(),
+      });
+    }
+
+    // 设置等待状态
+    userData.waitingForContinue = true;
+    userData.lastQuestionResult = { isCorrect, answer, question };
+    saveUserData(userId, userData);
+
+    const acc = Math.round((userData.correctAnswers / userData.totalQuestions) * 100);
+
+    let output = '';
+    if (isCorrect) {
+      output += '✅ 对了！\n';
+      output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+      output += '能简单说说为什么选这个吗？🤔\n\n';
+      output += '📖 解析：\n';
+      output += `${question.explanation || '无解析'}\n\n`;
+    } else {
+      output += '❌ 错了，别灰心！\n';
+      output += '━━━━━━━━━━━━━━━━━━━━\n\n';
+      output += '📖 先理解这个知识点：\n';
+      output += `${question.explanation || '暂无解析'}\n\n`;
+      output += `✅ 正确答案：${question.correctAnswer}\n\n`;
+      output += `📚 知识点：${question.subjectId || '输血检验'}\n\n`;
+      output += '🤔 你当时是怎么想的？\n';
+      output += '（回复你的想法，或直接发送"继续"下一题）\n';
+    }
+
+    // 考前疏导话术（根据状态）
+    const encouragements = [];
+    
+    // 连续做题疲劳检测（>10题）
+    if (userData.totalQuestions % 10 === 0 && userData.totalQuestions >= 10) {
+      encouragements.push(`💪 已经做了${userData.totalQuestions}题了，休息一下吧！大脑需要充电~`);
+    }
+    
+    // 正确率下降鼓励
+    if (acc < 50 && userData.totalQuestions >= 5) {
+      encouragements.push('🌟 刚开始正确率低很正常，80%的人都在这里卡过，坚持就会进步！');
+    }
+    
+    // 进步鼓励（比上次高）
+    if (acc >= 60 && userData.totalQuestions >= 10) {
+      encouragements.push(`🎯 正确率${acc}%，比刚开始进步多了！继续保持这个节奏~`);
+    }
+    
+    // 打卡里程碑鼓励
+    if (userData.streakDays >= 3) {
+      encouragements.push(`🔥 连续${userData.streakDays}天学习，你已经超过大多数人了！`);
+    }
+    
+    // 随机鼓励（20%概率）
+    if (Math.random() < 0.2) {
+      const randomEncouragement = [
+        '💡 记住：考试不是目的，掌握知识才是。你正在变得更专业！',
+        '🌱 每一道题都是进步，不管对错，你都在成长。',
+        '⭐ 备考就像马拉松，不是短跑。你的坚持终将得到回报！',
+        '🎯 专注当下，不要想结果。做好每一道题，考试自然没问题。'
+      ];
+      encouragements.push(randomEncouragement[Math.floor(Math.random() * randomEncouragement.length)]);
+    }
+    
+    // 添加一条鼓励（最多一条，避免信息过载）
+    if (encouragements.length > 0) {
+      output += '\n' + encouragements[0] + '\n';
+    }
+
+    output += '\n📊 学习统计\n';
+    output += '────────────────────\n';
+    output += `📋 总题数：${userData.totalQuestions}\n`;
+    output += `🎯 正确率：${acc}%\n`;
+    output += `🔥 连续打卡：${userData.streakDays || 1}天\n\n`;
+
+    if (!isCorrect) {
+      output += '📝 错题已记录\n\n';
+    }
+
+    output += '（想明白后回复"继续"出下一题）';
+
+    return { result: output };
+  }
+
+  // ========== 帮助 ==========
+  if (trimmed === '/帮助' || trimmed === '/help') {
+    return {
+      result: `📖 学习教练帮助\n\n【命令菜单】\n1. /练习 - 开始练习题\n2. /进度 - 查看学习统计\n3. /错题 - 错题复习\n4. /分析 - 薄弱点分析\n5. /徽章 - 成就徽章\n6. /打卡 - 学习打卡\n7. /帮助 - 显示帮助\n\n【自然语言】\n• "练习"/"做题"/"来一题" → 开始练习\n• "进度"/"成绩" → 查看统计\n• "错题"/"错了哪些" → 错题复习\n• "继续"/"下一题" → 出下一题`
+    };
+  }
+
+  // ========== 自然语言处理 ==========
+  if (/^(练习|做题|答题|来一题|开始练习|我要练习|我想做题|lx|zt|practice|start)$/.test(trimmed) ||
+      trimmed.includes('做道题') || trimmed.includes('来道题') || trimmed.includes('做题')) {
+    if (!userData) {
+      return {
+        result: `👋 欢迎使用学习教练！\n\n请输入你的激活码以开始使用。\n\n示例激活码：\n• COACH-DEMO-001\n• COACH-DEMO-002\n\n没有激活码？联系管理员获取。`
+      };
+    }
+    return generateQuestion(userId, userData, platform);
+  }
+
+  if (/^(进度|统计|成绩|多少分|正确率|jd|tj|progress|stats)$/.test(trimmed) ||
+      trimmed.includes('正确率') || trimmed.includes('成绩')) {
+    return coachTool('/进度', userId, platform, adminIds);
+  }
+
+  if (/^(错题|错|复习|错了哪些|错题本|ct|cw|wrong|review)$/.test(trimmed) ||
+      trimmed.includes('错题') || trimmed.includes('错了')) {
+    return coachTool('/错题', userId, platform, adminIds);
+  }
+
+  if (/^(分析|薄弱|哪里不行|弱点|fx|br|analysis|weak)$/.test(trimmed) ||
+      trimmed.includes('薄弱') || trimmed.includes('分析')) {
+    return coachTool('/分析', userId, platform, adminIds);
+  }
+
+  if (/^(徽章|成就|奖励|bj|ch|badge|achievement)$/.test(trimmed) ||
+      trimmed.includes('徽章') || trimmed.includes('成就')) {
+    return coachTool('/徽章', userId, platform, adminIds);
+  }
+
+  if (/^(打卡|签到|来了|开始学习|dk|qd|checkin|sign)$/.test(trimmed) ||
+      trimmed.includes('打卡')) {
+    return coachTool('/打卡', userId, platform, adminIds);
+  }
+
+  if (/^(帮助|怎么|怎么用|不会|bz|help|\?)$/.test(trimmed) ||
+      trimmed.startsWith('怎么') || trimmed.includes('帮助')) {
+    return coachTool('/帮助', userId, platform, adminIds);
+  }
+
+  // 友好问候
+  if (/^(你好|您好|hello|hi|hey)$/.test(trimmed)) {
+    return {
+      result: `👋 你好！我是你的学习教练。\n\n发送 /帮助 查看可用命令，或发送 /练习 开始做题！`
+    };
+  }
+
+  // 默认回复 - 未知命令
+  return {
+    result: `❓ 我不太理解「${command}」\n\n你可以试试：\n• /练习 - 开始练习题\n• /进度 - 查看学习进度\n• /帮助 - 显示完整帮助`
+  };
+}
+
+// 生成题目 - 优先推荐错题
+function generateQuestion(userId, userData, platform) {
+  const bank = loadQuestionBank();
+  if (bank.questions.length === 0) {
+    return { result: '❌ 题库加载失败' };
+  }
+
+  let question;
+  let isWrongQuestion = false;
+  
+  // 优先推荐错题（70%概率）
+  const wrongs = userData?.wrongAnswers || [];
+  if (wrongs.length > 0 && Math.random() < 0.7) {
+    // 随机选一道错题
+    const wrongQuestionIds = wrongs.map(w => w.questionId);
+    const wrongQuestions = bank.questions.filter(q => wrongQuestionIds.includes(q.id));
+    if (wrongQuestions.length > 0) {
+      question = wrongQuestions[Math.floor(Math.random() * wrongQuestions.length)];
+      isWrongQuestion = true;
+    }
+  }
+  
+  // 如果没有错题或随机到30%，随机出题
+  if (!question) {
+    question = bank.questions[Math.floor(Math.random() * bank.questions.length)];
+  }
+
+  const updatedData = userData || {
+    id: `stu_${Date.now()}`,
+    userId,
+    platform,
+    totalQuestions: 0,
+    correctAnswers: 0,
+    streakDays: 0,
+  };
+  
+  updatedData.currentQuestion = question;
+  updatedData.lastActiveAt = new Date().toISOString();
+  delete updatedData.waitingForContinue;
+  delete updatedData.lastQuestionResult;
+  saveUserData(userId, updatedData);
+
+  let output = '📝 练习题';
+  if (isWrongQuestion) {
+    output += '（错题复习）';
+  }
+  output += '\n━━━━━━━━━━━━━━━━━━━━\n\n';
+
+  const subjectMap = {
+    'blood_basic': '血液学基础',
+    'clinical_transfusion': '临床输血',
+    'blood_quality': '血液质量',
+    'immunohematology': '免疫血液学',
+    'transfusion_reaction': '输血反应',
+    'component_therapy': '成分输血',
+    'apheresis': '单采技术'
+  };
+  const subjectName = subjectMap[question.subjectId] || question.subjectId || '医学检验';
+  const diffMap = { 'easy': '简单', 'medium': '中等', 'hard': '困难' };
+  const diffName = diffMap[question.difficulty] || question.difficulty || '中等';
+
+  output += `📚 ${subjectName}  |  ${diffName}\n\n`;
+  output += `${question.content}\n\n`;
+
+  if (question.options) {
+    output += '────────────────────\n';
+    // 统一用数字 1-4
+    const optionMap = { 'A': '1', 'B': '2', 'C': '3', 'D': '4' };
+    question.options.forEach((opt) => {
+      const numId = optionMap[opt.id] || opt.id;
+      output += `${numId}. ${opt.text}\n`;
+    });
+  }
+
+  output += '\n━━━━━━━━━━━━━━━━━━━━\n';
+  output += '💡 请回复 1/2/3/4 选择答案';
+  
+  return { result: output, data: { question } };
+}
+
+console.log('[CoachTool] 学习教练 Tool 已加载');
